@@ -1,0 +1,57 @@
+-- Properties 
+
+default_textwidth = 80
+default_tabwidth = 2
+leader = " "
+
+-- End of Properties
+
+-- Basic defaults
+vim.g.mapleader = " "
+
+vim.g.wrap = true
+vim.g.textwidth = default_textwidth
+
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=" .. default_tabwidth)
+vim.cmd("set softtabstop=" .. default_tabwidth)
+vim.cmd("set shiftwidth=" .. default_tabwidth)
+
+vim.cmd("set number")
+vim.cmd("set relativenumber")
+
+vim.g.smarttab = true
+
+-- autocmds based on file extensions
+for _,v in ipairs(require("autocmds")) do
+  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = v.extension,
+    callback = v.callback,
+  })
+end
+
+-- Installing lazy.nvim --
+--
+-- This combines this path with /lazy/lazy.nvim I think?
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- If no files exist at that path
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+-- Adds the lazy path to the runtime paths
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup(require("plugins"), {})
+
+-- Load file mappings
+require("mappings")
+
+-- Run Rc
+require("rc")

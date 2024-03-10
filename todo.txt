@@ -1,0 +1,11 @@
+ - harpoon (w/ telescope)
+ - treesitter ( nvim-colorizer + indent-blankline + gitsigns + )
+ - nvcheatsheet (+ whichkey)
+ - nvtree
+ - nvim-autopairs + comment
+ - mason.nvim
+ - LSP support
+    - nvim-cmp
+    - lsp-config???
+    - null-ls???
+ - tmux support
