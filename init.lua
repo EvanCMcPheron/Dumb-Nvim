@@ -51,7 +51,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(require("plugins"), {})
 
 -- Load file mappings
-require("mappings")
+local maps = require("mappings");
+for mode, mappings in pairs(maps) do
+  require('which-key').register(mappings, { mode = mode })
+end
 
 -- Run Rc
 require("rc")

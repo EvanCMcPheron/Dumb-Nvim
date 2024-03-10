@@ -1,2 +1,2 @@
-local r = { options = { theme = "base16" }}
+local r = { options = { theme = "everforest" }}
 return r
