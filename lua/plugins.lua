@@ -133,6 +133,7 @@ local r = {
     'lewis6991/gitsigns.nvim',
     opts = {},
   },
+  { 'alec-gibson/nvim-tetris' },
 }
 return r
 

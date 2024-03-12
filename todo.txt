@@ -1,4 +1,4 @@
- - treesitter ( nvim-colorizer + indent-blankline + gitsigns + )
+ - treesitter ( indent-blankline  )
  - remake dashboard
  - git integration
  - leap.nvim
