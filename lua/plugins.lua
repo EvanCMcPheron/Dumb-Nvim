@@ -1,13 +1,5 @@
 local r = {
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("tokyonight").setup(require("configs.tokyonight"))
-    end,
-  },
-  {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
      lazy = false,
@@ -131,6 +123,16 @@ local r = {
   },
   { "folke/neodev.nvim", opts = {} },
   { 'echasnovski/mini.nvim', version = false, config=function() require('configs.mini') end },
+  { 'NvChad/nvim-colorizer.lua', opts = {} },
+  {
+    'tomasiser/vim-code-dark',
+    config = function() vim.cmd(":colorscheme codedark") end,
+  },
+  { 'dstein64/nvim-scrollview', opts = {} },
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {},
+  },
 }
 return r
 

@@ -1,8 +1,8 @@
 -- Properties 
 
-default_textwidth = 80
-default_tabwidth = 2
-leader = " "
+local default_textwidth = 80
+local default_tabwidth = 2
+local leader = " "
 vim.cmd("map ; :")
 
 -- End of Properties
@@ -14,7 +14,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- Basic defaults
-vim.g.mapleader = " "
+vim.g.mapleader = leader
 
 vim.g.wrap = true
 vim.g.textwidth = default_textwidth

@@ -1,9 +1,10 @@
- - fix strange boarders
  - treesitter ( nvim-colorizer + indent-blankline + gitsigns + )
+ - remake dashboard
+ - git integration
  - leap.nvim
  - nvim-autopairs + comment
  - go through mini.nvim
- - MSIC
+ - MISC
   - ai
   - Markdown
   - hlargs (highlight args)
@@ -17,9 +18,7 @@
  - git integration
  - mason.nvim
  - LSP support
-    - nvim-cmp
-    - lsp-config???
-    - null-ls???
+    - LSP config keybindings
     - snippets
  - DAP support??
   - DAP ui

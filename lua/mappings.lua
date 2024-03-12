@@ -19,7 +19,6 @@ local r = {
 --    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
     ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
-    ['<leader>fh'] = { ":NvimTreeToggle<CR>", "File Tree Focus Here" },
     ['<leader>fc'] = { ":NvimTreeCollapse<CR>", "Collapse File Tree" },
 
     ['<leader>fh'] = { ":Telescope harpoon marks <CR>", "Harpoon Marks" },
