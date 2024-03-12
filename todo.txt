@@ -1,11 +1,22 @@
- - harpoon (w/ telescope)
  - treesitter ( nvim-colorizer + indent-blankline + gitsigns + )
- - nvcheatsheet (+ whichkey)
- - nvtree
+ - leap.nvim
  - nvim-autopairs + comment
+ - go through mini.nvim
+ - MSIC
+  - ai
+  - Markdown
+  - hlargs (highlight args)
+  - nvim-nu for nushell
+  - better search and replace https://github.com/roobert/search-replace.nvim
+  - peepsight
+  - deadcolumn
+  - dropbar.nvim
+  - cursorline.nvim
  - mason.nvim
  - LSP support
     - nvim-cmp
     - lsp-config???
     - null-ls???
+    - snippets
+ - DAP support??
  - tmux support

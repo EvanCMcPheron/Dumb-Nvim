@@ -3,8 +3,15 @@
 default_textwidth = 80
 default_tabwidth = 2
 leader = " "
+vim.cmd("map ; :")
 
 -- End of Properties
+
+-- disable netrw at the very start of your init.lua (required by nvim-tree)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.termguicolors = true
 
 -- Basic defaults
 vim.g.mapleader = " "
