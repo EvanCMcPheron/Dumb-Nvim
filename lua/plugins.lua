@@ -44,11 +44,22 @@ local r = {
   {
     "ThePrimeagen/vim-be-good",
   },
-  {
+  {                    -- noice is a cool idea, but it breaks typing so no can do lmao
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
-      -- add any options here
+      messages = {
+        enabled = false,
+      },
+      -- lsp = {
+      --   -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+      --   override = {
+      --     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      --     ["vim.lsp.util.stylize_markdown"] = true,
+      --     ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+      --   },
+      -- },
+      -- you can enable a preset for easier configuration
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -122,7 +133,7 @@ local r = {
     'neovim/nvim-lspconfig',
   },
   { "folke/neodev.nvim", opts = {} },
-  { 'echasnovski/mini.nvim', version = false, config=function() require('configs.mini') end },
+  { 'echasnovski/mini.nvim', version = false, init = function() require('configs.mini') end },
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   {
     'tomasiser/vim-code-dark',
@@ -134,6 +145,28 @@ local r = {
     opts = {},
   },
   { 'alec-gibson/nvim-tetris' },
+  {
+    'ggandor/leap.nvim',
+    init = function() require('leap').create_default_mappings() end,
+  },
+  { 'anuvyklack/keymap-amend.nvim' },
+  { "rcarriga/nvim-notify" },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      vim.cmd(":TSUpdate")
+    end
+  },
+  -- { "lukas-reineke/indent-blankline.nvim", config = function() require('indent_blankline.init').setup({
+  --
+  -- }) end },
+  {
+    'Bekaboo/dropbar.nvim',
+    -- optional, but required for fuzzy finder support
+    dependencies = {
+      'nvim-telescope/telescope-fzf-native.nvim'
+    }
+  },
 }
 return r
 

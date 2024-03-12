@@ -1,7 +1,7 @@
 -- Runs last, for setups
 
 -- Setting up neodev
-require('neodev').setup()
+-- require('neodev').setup()
 
 -- SETUP LSP CONFIG HERE
 local lsp = require('lspconfig')

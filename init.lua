@@ -19,6 +19,10 @@ vim.g.mapleader = leader
 vim.g.wrap = true
 vim.g.textwidth = default_textwidth
 
+-- vim.cmd("set foldmethod=indent")
+
+vim.cmd("set cmdheight=0")
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=" .. default_tabwidth)
 vim.cmd("set softtabstop=" .. default_tabwidth)

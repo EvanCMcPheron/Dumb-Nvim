@@ -1,8 +1,4 @@
- - treesitter ( indent-blankline  )
  - remake dashboard
- - git integration
- - leap.nvim
- - nvim-autopairs + comment
  - go through mini.nvim
  - MISC
   - ai
@@ -14,11 +10,10 @@
   - deadcolumn
   - dropbar.nvim
   - cursorline.nvim
-  - fold preview
  - git integration
  - mason.nvim
  - LSP support
-    - LSP config keybindings
+    - make autocomplete work
     - snippets
  - DAP support??
   - DAP ui
