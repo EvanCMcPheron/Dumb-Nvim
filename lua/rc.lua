@@ -1,8 +1,15 @@
 -- Runs last, for setups
 
+-- Setting up neodev
+require('neodev').setup()
+
+-- SETUP LSP CONFIG HERE
+local lsp = require('lspconfig')
+lsp.lua_ls.setup({})
+
 -- Setting up harppon to use telescope
 local harpoon = require('harpoon')
-harpoon:setup()
+harpoon:setup({})
 
 -- basic telescope configuration
 local conf = require("telescope.config").values

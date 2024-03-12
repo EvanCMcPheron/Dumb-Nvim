@@ -116,7 +116,21 @@ local r = {
      config = function()
         require('fold-preview').setup(require('configs.fold-preview'))
      end
-  }
+  },
+  {
+    "willothy/flatten.nvim",
+    config = true,
+    -- or pass configuration with
+    -- opts = {  }
+    -- Ensure that it runs first to minimize delay when opening file from terminal
+    lazy = false,
+    priority = 1001,
+  },
+  {
+    'neovim/nvim-lspconfig',
+  },
+  { "folke/neodev.nvim", opts = {} },
+  { 'echasnovski/mini.nvim', version = false, config=function() require('configs.mini') end },
 }
 return r
 
