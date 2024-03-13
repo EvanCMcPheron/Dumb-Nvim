@@ -1,4 +1,3 @@
- - remake dashboard
  - go through mini.nvim
  - MISC
   - ai
@@ -10,8 +9,6 @@
   - deadcolumn
   - dropbar.nvim
   - cursorline.nvim
- - git integration
- - mason.nvim
  - LSP support
     - make autocomplete work
     - snippets

@@ -36,14 +36,14 @@ local r = {
     ['<leader>nt'] = { function() harpoon:list():select(3) end, "Third harpoon item" },
     ['<leader>ns'] = { function() harpoon:list():select(4) end, "Fourth harpoon item" },
 
+    ['<leader>m'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
+
     -- lspconfig suggested keybindings
     ['<space>e'] = { vim.diagnostic.open_float, "" },
     ['[d'] = { vim.diagnostic.goto_prev, "" },
     [']d'] = { vim.diagnostic.goto_next, "" },
     ['<space>q'] = { vim.diagnostic.setloclist, "" },
-    
 
-    
 --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
 --    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },
 

@@ -2,9 +2,9 @@ local r = {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-     lazy = false,
+    lazy = false,
     priority = 999,
-    init = function() 
+    init = function()
       require("lualine").setup(require("configs.lualine"))
     end
   },
@@ -14,7 +14,7 @@ local r = {
     config = function()
       require('dashboard').setup(require("configs.dashboard"))
     end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   },
   {
     'nvim-lua/plenary.nvim',
@@ -22,7 +22,8 @@ local r = {
     priority = 900,
   },
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function() require('telescope').setup(require('configs.telescope')) end,
   },
@@ -44,7 +45,7 @@ local r = {
   {
     "ThePrimeagen/vim-be-good",
   },
-  {                    -- noice is a cool idea, but it breaks typing so no can do lmao
+  { -- noice is a cool idea, but it breaks typing so no can do lmao
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
@@ -75,13 +76,14 @@ local r = {
   },
   {
     "nvim-tree/nvim-tree.lua",
-    config = function() 
+    config = function()
       require('nvim-tree').setup(require('configs.nvim-tree'))
     end,
   },
   {
     "williamboman/mason.nvim",
     config = function() require('mason').setup() end,
+    build = ":MasonUpdate",
   },
   {
     'jghauser/mkdir.nvim',
@@ -104,9 +106,9 @@ local r = {
     'sudormrfbin/cheatsheet.nvim',
 
     requires = {
-      {'nvim-telescope/telescope.nvim'},
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
+      { 'nvim-telescope/telescope.nvim' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
     }
   },
   {
@@ -114,11 +116,12 @@ local r = {
     lazy = false,
     opts = {},
   },
-  { 'anuvyklack/fold-preview.nvim',
-     requires = 'anuvyklack/keymap-amend.nvim',
-     config = function()
-        require('fold-preview').setup(require('configs.fold-preview'))
-     end
+  {
+    'anuvyklack/fold-preview.nvim',
+    requires = 'anuvyklack/keymap-amend.nvim',
+    config = function()
+      require('fold-preview').setup(require('configs.fold-preview'))
+    end
   },
   {
     "willothy/flatten.nvim",
@@ -132,11 +135,13 @@ local r = {
   {
     'neovim/nvim-lspconfig',
   },
-  { "folke/neodev.nvim", opts = {} },
-  { 'echasnovski/mini.nvim', version = false, init = function() require('configs.mini') end },
+  { "folke/neodev.nvim",         opts = {} },
+  { 'echasnovski/mini.nvim',     version = false, init = function() require('configs.mini') end },
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   {
     'tomasiser/vim-code-dark',
+    lazy = false,
+    priority = 1000,
     config = function() vim.cmd(":colorscheme codedark") end,
   },
   { 'dstein64/nvim-scrollview', opts = {} },
@@ -153,26 +158,33 @@ local r = {
   { "rcarriga/nvim-notify" },
   {
     'nvim-treesitter/nvim-treesitter',
-    config = function()
-      vim.cmd(":TSUpdate")
-    end
+    opts = require 'configs.treesitter',
+    dependencies = {
+      -- NOTE: additional parser
+      { "nushell/tree-sitter-nu" },
+    },
+    build = ":TSUpdate",
   },
   -- { "lukas-reineke/indent-blankline.nvim", config = function() require('indent_blankline.init').setup({
   --
   -- }) end },
+  -- {    requires 0.10.0, which is broken for me
+  --   'Bekaboo/dropbar.nvim',
+  --   -- optional, but required for fuzzy finder support
+  --   dependencies = {
+  --     'nvim-telescope/telescope-fzf-native.nvim'
+  --   }
+  -- },
+  -- {
+  --   'LhKipp/nvim-nu',
+  --   opts = {},
+  -- }
   {
-    'Bekaboo/dropbar.nvim',
-    -- optional, but required for fuzzy finder support
-    dependencies = {
-      'nvim-telescope/telescope-fzf-native.nvim'
-    }
-  },
+  'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({--[[ your config ]]})
+    end,
+  }
 }
 return r
-
-
-
-
-
-
-
