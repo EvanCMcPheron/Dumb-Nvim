@@ -6,7 +6,7 @@
 
 -- NOTES
 -- GCC comments out the current line in normal mode
--- GC comments out the selected area in visual mode
+-- GC comments out the selected area in v mode
 
 local tb = require('telescope.builtin')
 local harpoon = require('harpoon')
@@ -38,13 +38,32 @@ local r = {
     ['<leader>ns'] = { function() harpoon:list():select(4) end, "Fourth harpoon item" },
 
     ['<leader>m'] = { name = "+syntax"},
-    ['<leader>t'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
+    ['<leader>ts'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
 
     -- lspconfig suggested keybindings
     ['<space>e'] = { vim.diagnostic.open_float, "" },
     ['[d'] = { vim.diagnostic.goto_prev, "" },
     [']d'] = { vim.diagnostic.goto_next, "" },
     ['<space>q'] = { vim.diagnostic.setloclist, "" },
+
+    ["r"] = { name = "SearchReplaceSingleBuffer" },
+
+    ["rs"] = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
+    ["ro"] = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
+    ["rw"] = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
+    ["rW"] = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" },
+    ["re"] = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
+    ["rf"] = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
+
+    ["rb"] = { name = "SearchReplaceMultiBuffer" },
+
+    ["rbs"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>","SearchReplaceMultiBuffer [s]elction list" },
+    ["rbo"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
+    ["rbw"] = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" },
+    ["rbW"] = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" },
+    ["rbe"] = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
+    ["rbf"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
+
 
 --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
 --    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },
@@ -57,8 +76,17 @@ local r = {
 -- Toggle previou}s & next buffers stored within Harpoon list
 --    ["<C-S-P>"] = { function() harpoon:list():prev() end, "Harpoon prev" },
 --    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
-  }
+  },
+  v = {
+    ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
+    ["<C-s>"] = [[<CMD>SearchReplaceWithinVisualSelection<CR>]],
+    ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
+  },
 }
+
+
+-- show the effects of a search / replace in a live preview window
+vim.o.inccommand = "split"
 
 -- LSPCONFIG recommended thing, idk how I could do this different;y :/
 -- Use LspAttach autocommand to only map the following keys

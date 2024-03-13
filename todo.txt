@@ -1,9 +1,7 @@
  - go through mini.nvim
+ - fix leet
  - MISC
   - ai
-  - Markdown
-  - hlargs (highlight args)
-  - nvim-nu for nushell
   - better search and replace https://github.com/roobert/search-replace.nvim
   - peepsight
   - deadcolumn

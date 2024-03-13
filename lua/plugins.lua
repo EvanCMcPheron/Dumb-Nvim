@@ -206,6 +206,15 @@ local r = {
         "nvim-tree/nvim-web-devicons",
     },
     opts = require('configs.leetcode'),
-  }
+  },
+  { 'm-demare/hlargs.nvim', opts = {} },
+  {
+    "roobert/search-replace.nvim",
+    opts = {
+      -- optionally override defaults
+      default_replace_single_buffer_options = "gcI",
+      default_replace_multi_buffer_options = "egcI",
+    },
+  },
 }
 return r
