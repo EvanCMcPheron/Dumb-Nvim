@@ -3,11 +3,12 @@
 local default_textwidth = 80
 local default_tabwidth = 2
 local leader = " "
-vim.cmd("map ; :")
 
 -- End of Properties
 
 -- disable netrw at the very start of your init.lua (required by nvim-tree)
+vim.wo.fillchars='eob: '
+vim.cmd("map ; :")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 

@@ -90,6 +90,14 @@ local r = {
         key = 'h',
       },
       {
+        icon = '󰊪 ',
+        icon_hl = '@variable',
+        desc = 'Leet',
+        group = 'label',
+        action = 'Leet',
+        key = 'l',
+      },
+      {
         desc = '󰊳 Update',
         group = '@property',
         action = 'Lazy update',

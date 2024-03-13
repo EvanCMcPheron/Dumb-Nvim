@@ -27,16 +27,18 @@ local r = {
     ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
     ['<leader>fc'] = { ":NvimTreeCollapse<CR>", "Collapse File Tree" },
 
+    ['<leader>h'] = { name = "+harpoon" },
     ['<leader>fh'] = { ":Telescope harpoon marks <CR>", "Harpoon Marks" },
-    ['<leader>m'] = { function() harpoon:list():append() end , "Add Harpoon Mark" },
-    ['<leader>h'] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Toggle Harpoon (quickmenu)" },
+    ['<leader>hm'] = { function() harpoon:list():append() end , "Add Harpoon Mark" },
+    ['<leader>hh'] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Toggle Harpoon (quickmenu)" },
     ['<leader>n'] = { name = "+Harpoon quickselects" },
     ['<leader>nn'] = { function() harpoon:list():select(1) end, "First harpoon item" },
     ['<leader>nh'] = { function() harpoon:list():select(2) end, "Second harpoon item" },
     ['<leader>nt'] = { function() harpoon:list():select(3) end, "Third harpoon item" },
     ['<leader>ns'] = { function() harpoon:list():select(4) end, "Fourth harpoon item" },
 
-    ['<leader>m'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
+    ['<leader>m'] = { name = "+syntax"},
+    ['<leader>t'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
 
     -- lspconfig suggested keybindings
     ['<space>e'] = { vim.diagnostic.open_float, "" },

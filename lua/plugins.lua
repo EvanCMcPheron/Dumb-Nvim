@@ -152,7 +152,9 @@ local r = {
   { 'alec-gibson/nvim-tetris' },
   {
     'ggandor/leap.nvim',
-    init = function() require('leap').create_default_mappings() end,
+    init = function() 
+      require('leap').create_default_mappings() 
+    end,
   },
   { 'anuvyklack/keymap-amend.nvim' },
   { "rcarriga/nvim-notify" },
@@ -182,9 +184,28 @@ local r = {
   {
   'Wansmer/treesj',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = function()
-      require('treesj').setup({--[[ your config ]]})
-    end,
+    opts = {
+      use_default_keymaps = false,
+    }
+  },
+  {
+    "folke/twilight.nvim",
+    opts = require('configs.twilight'),
+  },
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim", -- required by telescope
+        "MunifTanjim/nui.nvim",
+
+        -- optional
+        "nvim-treesitter/nvim-treesitter",
+        "rcarriga/nvim-notify",
+        "nvim-tree/nvim-web-devicons",
+    },
+    opts = require('configs.leetcode'),
   }
 }
 return r
