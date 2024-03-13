@@ -1,5 +1,4 @@
 -- Properties 
-
 local default_textwidth = 80
 local default_tabwidth = 2
 local leader = " "
@@ -19,6 +18,7 @@ vim.g.mapleader = leader
 
 vim.g.wrap = true
 vim.g.textwidth = default_textwidth
+vim.cmd("set colorcolumn=" .. default_textwidth)
 
 -- vim.cmd("set foldmethod=indent")
 
@@ -36,7 +36,7 @@ vim.g.smarttab = true
 
 -- autocmds based on file extensions
 for _,v in ipairs(require("autocmds")) do
-  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "BufFilePost"}, {
     pattern = v.extension,
     callback = v.callback,
   })

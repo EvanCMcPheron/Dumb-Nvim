@@ -2,9 +2,6 @@
  - fix leet
  - MISC
   - ai
-  - better search and replace https://github.com/roobert/search-replace.nvim
-  - peepsight
-  - deadcolumn
   - cursorline.nvim
  - LSP support
     - make autocomplete work

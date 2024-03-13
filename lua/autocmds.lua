@@ -1,6 +1,12 @@
 -- setting autocmds for overriding settings on certain filetypes
 local autocmds = {
   {
+    extension = "*.*",
+    callback = function()
+      vim.cmd("TwilightEnable")
+    end,
+  },
+  {
     extension = "*.rs",
     callback = function() 
       vim.cmd("set tabstop=4")

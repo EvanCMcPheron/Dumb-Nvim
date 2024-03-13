@@ -64,6 +64,7 @@ local r = {
     ["rbe"] = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
     ["rbf"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
 
+    ['tt'] = { ":Twilight<CR>", "Toggle Twilight" },
 
 --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
 --    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },

@@ -108,7 +108,7 @@ local r = {
         group = 'Label',
         action = function() 
           vim.cmd("cd " .. vim.fn.stdpath("config"))
-          vim.cmd("e init.lua")
+          vim.cmd("e lua/plugins.lua")
         end,
         key = 'c',
       },

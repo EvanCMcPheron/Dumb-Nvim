@@ -35,3 +35,4 @@ require('mini.comment').setup()
 --  -- Also can be set per plugin (see |MiniBase16.config|).
 --  plugins = { default = true },
 --})
+
