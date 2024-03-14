@@ -1,8 +1,10 @@
-require('mini.completion').setup()
+-- require('mini.completion').setup()
+
+require('mini.ai').setup()
 require('mini.pairs').setup()
 require('mini.indentscope').setup()
 require('mini.comment').setup()
--- require('mini.notify').setup()
+require('mini.notify').setup()
 --require('mini.base16').setup({
 --  -- Table with names from `base00` to `base0F` and values being strings of
 --  -- HEX colors with format "#RRGGBB". NOTE: this should be explicitly

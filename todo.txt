@@ -1,10 +1,9 @@
- - go through mini.nvim
  - fix leet
  - MISC
   - ai
-  - cursorline.nvim
+  - surround
  - LSP support
-    - make autocomplete work
+    - autoformat
     - snippets
  - DAP support??
   - DAP ui

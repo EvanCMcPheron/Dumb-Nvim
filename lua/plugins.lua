@@ -45,32 +45,19 @@ local r = {
   {
     "ThePrimeagen/vim-be-good",
   },
-  { -- noice is a cool idea, but it breaks typing so no can do lmao
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      messages = {
-        enabled = false,
-      },
-      -- lsp = {
-      --   -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-      --   override = {
-      --     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-      --     ["vim.lsp.util.stylize_markdown"] = true,
-      --     ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-      --   },
-      -- },
-      -- you can enable a preset for easier configuration
-    },
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
-    }
-  },
+ { -- noice is a cool idea, but it breaks typing so no can do lmao
+   "folke/noice.nvim",
+   event = "VeryLazy",
+   opts = require('configs.noice'),
+   dependencies = {
+     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+     "MunifTanjim/nui.nvim",
+     -- OPTIONAL:
+     --   `nvim-notify` is only needed, if you want to use the notification view.
+     --   If not available, we use `mini` as the fallback
+     "rcarriga/nvim-notify",
+   }
+ },
   {
     "nvim-tree/nvim-web-devicons"
   },
@@ -199,7 +186,6 @@ local r = {
         "nvim-telescope/telescope.nvim",
         "nvim-lua/plenary.nvim", -- required by telescope
         "MunifTanjim/nui.nvim",
-
         -- optional
         "nvim-treesitter/nvim-treesitter",
         "rcarriga/nvim-notify",
@@ -234,6 +220,40 @@ local r = {
         hl = { underline = true },
       }
     }
+  },
+  { 'rktjmp/lush.nvim'},
+  { 'metalelf0/jellybeans-nvim' },
+  {
+   'hrsh7th/nvim-cmp',
+   priority = 100,
+    opts = require('configs.cmp.nvim'),
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp',
+    opts = require('configs.cmp.nvim-lsp'),
+  },
+  {
+    'hrsh7th/cmp-buffer',
+  },
+  {
+    'hrsh7th/cmp-path',
+  },
+  {
+    'hrsh7th/cmp-cmdline',
+  },
+  {
+    'saadparwaiz1/cmp_luasnip',
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
+  },
+  {
+  "folke/zen-mode.nvim",
+  opts = require('configs.zen-mode'),
   },
 }
 return r

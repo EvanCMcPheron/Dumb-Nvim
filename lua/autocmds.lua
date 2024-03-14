@@ -3,7 +3,6 @@ local autocmds = {
   {
     extension = "*.*",
     callback = function()
-      vim.cmd("TwilightEnable")
     end,
   },
   {

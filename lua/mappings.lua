@@ -13,6 +13,9 @@ local harpoon = require('harpoon')
 
 local r = {
   i = {
+    ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips"},
+    ['<C-l>'] = { function() require('luasnip').jump( 1) end, "Snippet Jump"},
+    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back"},
   },
   n = {
     ["<leader>t"] = { name = "+bindings" },
@@ -66,6 +69,13 @@ local r = {
 
     ['tt'] = { ":Twilight<CR>", "Toggle Twilight" },
 
+    -- Autocomplete
+    ['<C-n>'] = { "Autocomplete move down." },
+    ['<C-p>'] = { "Autocomplete move up." },
+
+    ['<leader>tz'] = { function() require("zen-mode").toggle({window = { width = .55 }}) end, "Toggle zen mode"},
+
+
 --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
 --    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },
 
@@ -79,6 +89,10 @@ local r = {
 --    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
   },
   v = {
+    ['<C-l>'] = { function() require('luasnip').jump( 1) end, "Snippet Jump"},
+    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back"},
+  },
+  s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
     ["<C-s>"] = [[<CMD>SearchReplaceWithinVisualSelection<CR>]],
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
