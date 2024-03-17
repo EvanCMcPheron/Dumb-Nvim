@@ -13,26 +13,34 @@ local harpoon = require('harpoon')
 
 local r = {
   i = {
-    ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips"},
-    ['<C-l>'] = { function() require('luasnip').jump( 1) end, "Snippet Jump"},
-    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back"},
+    ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips" },
+    ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
+    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },
   n = {
     ["<leader>t"] = { name = "+bindings" },
     ["<leader>th"] = { function() vim.cmd("sp " .. vim.fn.stdpath("config") .. "/lua/mappings.lua") end, "Oppen mappings file" },
     ['<leader>tc'] = { ":Cheatsheet<CR>", "Open cheatsheet (doesn't include mappings" },
 
-    ["<leader>f"] = { name = "+navigation"},
+    ["<leader>f"] = { name = "+navigation" },
     ["<leader>ff"] = { tb.find_files, "Find File" },
     ["<leader>fg"] = { tb.live_grep, "Live Grep" },
---    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
+    ['<leader>fs'] = {
+      function()
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term nu')
+      end,
+      "Open shell"
+    },
+    --    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
     ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
     ['<leader>fc'] = { ":NvimTreeCollapse<CR>", "Collapse File Tree" },
 
     ['<leader>h'] = { name = "+harpoon" },
     ['<leader>fh'] = { ":Telescope harpoon marks <CR>", "Harpoon Marks" },
-    ['<leader>hm'] = { function() harpoon:list():append() end , "Add Harpoon Mark" },
+    ['<leader>hm'] = { function() harpoon:list():append() end, "Add Harpoon Mark" },
     ['<leader>hh'] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Toggle Harpoon (quickmenu)" },
     ['<leader>n'] = { name = "+Harpoon quickselects" },
     ['<leader>nn'] = { function() harpoon:list():select(1) end, "First harpoon item" },
@@ -40,7 +48,7 @@ local r = {
     ['<leader>nt'] = { function() harpoon:list():select(3) end, "Third harpoon item" },
     ['<leader>ns'] = { function() harpoon:list():select(4) end, "Fourth harpoon item" },
 
-    ['<leader>m'] = { name = "+syntax"},
+    ['<leader>m'] = { name = "+syntax" },
     ['<leader>ts'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
 
     -- lspconfig suggested keybindings
@@ -60,7 +68,7 @@ local r = {
 
     ["rb"] = { name = "SearchReplaceMultiBuffer" },
 
-    ["rbs"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>","SearchReplaceMultiBuffer [s]elction list" },
+    ["rbs"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" },
     ["rbo"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
     ["rbw"] = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" },
     ["rbW"] = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" },
@@ -73,25 +81,26 @@ local r = {
     ['<C-p>'] = { "Autocomplete move up." },
 
     ['<leader>c'] = { name = '+code' },
-    ['<leader>cz'] = { function() require("zen-mode").toggle({window = { width = .55 }}) end, "Toggle zen mode"},
+    ['<leader>cz'] = { function() require("zen-mode").toggle({ window = { width = .55 } }) end, "Toggle zen mode" },
     ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
 
+    ['<leader>?'] = { ":Cheatsheet<CR>", "Open Cheatsheet" },
 
---    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
---    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },
+    --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
+    --    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },
 
---    ["<C-h>"] = { function() harpoon:list():select(1) end, "Harppon select 1" },
---    ["<C-t>"] = { function() harpoon:list():select(2) end, "Harppon select 2" },
---    ["<C-n>"] = { function() harpoon:list():select(3) end, "Harppon select 3" },
---    ["<C-s>"] = { function() harpoon:list():select(4) end, "Harppon select 4" },
+    --    ["<C-h>"] = { function() harpoon:list():select(1) end, "Harppon select 1" },
+    --    ["<C-t>"] = { function() harpoon:list():select(2) end, "Harppon select 2" },
+    --    ["<C-n>"] = { function() harpoon:list():select(3) end, "Harppon select 3" },
+    --    ["<C-s>"] = { function() harpoon:list():select(4) end, "Harppon select 4" },
 
--- Toggle previou}s & next buffers stored within Harpoon list
---    ["<C-S-P>"] = { function() harpoon:list():prev() end, "Harpoon prev" },
---    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
+    -- Toggle previou}s & next buffers stored within Harpoon list
+    --    ["<C-S-P>"] = { function() harpoon:list():prev() end, "Harpoon prev" },
+    --    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
   },
   v = {
-    ['<C-l>'] = { function() require('luasnip').jump( 1) end, "Snippet Jump"},
-    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back"},
+    ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
+    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
@@ -99,7 +108,6 @@ local r = {
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
 }
-
 
 -- show the effects of a search / replace in a live preview window
 vim.o.inccommand = "split"
@@ -120,7 +128,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set({'n','i'}, '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
     vim.keymap.set('n', '<space>wl', function()

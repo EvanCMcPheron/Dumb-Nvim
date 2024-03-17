@@ -1,0 +1,10 @@
+Open cheatsheet | <leader>?
+
+## Surround @sandwich @parentheses @brackets
+Add surrounding | tsa
+Delete surrounding | tsd
+Replace surrounding | tsr
+Find surrounding (right) | tsf
+Find surroundings (left) | tsF
+Highlight surrounding | tsh
+Update n lines surroundings | tsn

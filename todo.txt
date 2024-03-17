@@ -1,10 +1,9 @@
  - MISC
-  - surround
  - Label un labbeled <leader> mappings (primarily lsp!!!)
+ - Write cheetsheet file
  - LSP support
     - autoformat
     - write rust snippets
- - fix treesitter errors!!!
  - DAP support??
   - DAP ui
  - better git integration?? (https://www.youtube.com/watch?v=K-FKqXj8BAQ&t=2s&ab_channel=DevOpsToolbox)
