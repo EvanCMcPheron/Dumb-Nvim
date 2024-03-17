@@ -89,6 +89,21 @@ local r = {
         key = 'h',
       },
       {
+        icon = '󱁽 ',
+        icon_hl = '@variable',
+        desc = 'Change Directory',
+        group = 'label',
+        action = function ()
+          local new_dir = vim.fn.input({
+            prompt = "",
+            default = vim.loop.cwd(),
+            completion = "file"
+          })
+          vim.fn.chdir(new_dir)
+        end,
+        key = 'd',
+      },
+      {
         icon = '󰊪 ',
         icon_hl = '@variable',
         desc = 'Leet',

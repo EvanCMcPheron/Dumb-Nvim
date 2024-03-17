@@ -154,10 +154,9 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-for _,v in ipairs(require('lsp-list')) do
-  require('lspconfig')[v].setup {
-    capabilities = capabilities
-  }
+for l,o in pairs(require('lsp-list')) do
+  o.capabilities = capabilities
+  require('lspconfig')[l].setup(o)
 end
 
 
