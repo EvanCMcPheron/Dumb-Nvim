@@ -1,6 +1,5 @@
  - MISC
   - surround
-  - smooth scrolling
  - Label un labbeled <leader> mappings (primarily lsp!!!)
  - LSP support
     - autoformat

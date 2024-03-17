@@ -67,13 +67,14 @@ local r = {
     ["rbe"] = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
     ["rbf"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
 
-    ['tt'] = { ":Twilight<CR>", "Toggle Twilight" },
 
     -- Autocomplete
     ['<C-n>'] = { "Autocomplete move down." },
     ['<C-p>'] = { "Autocomplete move up." },
 
-    ['<leader>tz'] = { function() require("zen-mode").toggle({window = { width = .55 }}) end, "Toggle zen mode"},
+    ['<leader>c'] = { name = '+code' },
+    ['<leader>cz'] = { function() require("zen-mode").toggle({window = { width = .55 }}) end, "Toggle zen mode"},
+    ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
 
 
 --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },

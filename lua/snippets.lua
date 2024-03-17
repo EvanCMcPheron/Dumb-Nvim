@@ -30,15 +30,6 @@ local r = {
       t("')"),
       i(2)
     }),
-    s(
-      "function", {
-        t("function("),
-        i(1),
-        t(") "),
-        d(2),
-        t(" end")
-      }
-    )
   },
 }
 return r
