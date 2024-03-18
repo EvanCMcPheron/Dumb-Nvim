@@ -3,6 +3,8 @@ local autocmds = {
   {
     extension = "*.*",
     callback = function()
+      vim.cmd('set number')
+      vim.cmd('set relativenumber')
     end,
   },
   {

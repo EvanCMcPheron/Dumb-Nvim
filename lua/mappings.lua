@@ -25,6 +25,7 @@ local r = {
     ["<leader>f"] = { name = "+navigation" },
     ["<leader>ff"] = { tb.find_files, "Find File" },
     ["<leader>fg"] = { tb.live_grep, "Live Grep" },
+    ["<leader>fb"] = { ":Telescope help_tags<CR>", "Find Help" },
     ['<leader>fs'] = {
       function()
         vim.cmd("set nonumber")
@@ -97,6 +98,16 @@ local r = {
     -- Toggle previou}s & next buffers stored within Harpoon list
     --    ["<C-S-P>"] = { function() harpoon:list():prev() end, "Harpoon prev" },
     --    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
+    ['<leader>w'] = { name = 'workspace' },
+    ['<leader>wa'] = { "Add workspace folder" },
+    ['<leader>wr'] = { "Remove workspace folder" },
+    ['<leader>wl'] = { "Print workspace folders" },
+    ['<leader>D'] = { "Type definitions" },
+    ['<leader>r'] = { name = 'rename' },
+    ['<leader>rn'] = { "Rename buffer (lsp)" },
+    ['<leader>c'] = { name = "+code" },
+    ['<leader>ca'] = { "Code Actions" },
+    ['<leader>cf'] = { "Format Code" },
   },
   v = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
@@ -138,7 +149,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', function()
+    vim.keymap.set('n', '<space>cf', function()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,

@@ -45,19 +45,19 @@ local r = {
   {
     "ThePrimeagen/vim-be-good",
   },
- { -- noice is a cool idea, but it breaks typing so no can do lmao
-   "folke/noice.nvim",
-   event = "VeryLazy",
-   opts = require('configs.noice'),
-   dependencies = {
-     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-     "MunifTanjim/nui.nvim",
-     -- OPTIONAL:
-     --   `nvim-notify` is only needed, if you want to use the notification view.
-     --   If not available, we use `mini` as the fallback
-     "rcarriga/nvim-notify",
-   }
- },
+  { -- noice is a cool idea, but it breaks typing so no can do lmao
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = require('configs.noice'),
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  },
   {
     "nvim-tree/nvim-web-devicons"
   },
@@ -139,8 +139,8 @@ local r = {
   { 'alec-gibson/nvim-tetris' },
   {
     'ggandor/leap.nvim',
-    init = function() 
-      require('leap').create_default_mappings() 
+    init = function()
+      require('leap').create_default_mappings()
     end,
   },
   { 'anuvyklack/keymap-amend.nvim' },
@@ -169,7 +169,7 @@ local r = {
   --   opts = {},
   -- }
   {
-  'Wansmer/treesj',
+    'Wansmer/treesj',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {
       use_default_keymaps = false,
@@ -183,17 +183,17 @@ local r = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim", -- required by telescope
-        "MunifTanjim/nui.nvim",
-        -- optional
-        "nvim-treesitter/nvim-treesitter",
-        "rcarriga/nvim-notify",
-        "nvim-tree/nvim-web-devicons",
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
     },
     opts = require('configs.leetcode'),
   },
-  { 'm-demare/hlargs.nvim', opts = {} },
+  { 'm-demare/hlargs.nvim',     opts = {} },
   {
     "roobert/search-replace.nvim",
     opts = {
@@ -221,11 +221,11 @@ local r = {
       }
     }
   },
-  { 'rktjmp/lush.nvim'},
+  { 'rktjmp/lush.nvim' },
   { 'metalelf0/jellybeans-nvim' },
   {
-   'hrsh7th/nvim-cmp',
-   priority = 100,
+    'hrsh7th/nvim-cmp',
+    priority = 100,
     opts = require('configs.cmp.nvim'),
   },
   {
@@ -252,12 +252,12 @@ local r = {
     build = "make install_jsregexp"
   },
   {
-  "folke/zen-mode.nvim",
-  opts = require('configs.zen-mode'),
+    "folke/zen-mode.nvim",
+    opts = require('configs.zen-mode'),
   },
   {
     "karb94/neoscroll.nvim",
-    config = function ()
+    config = function()
       require('configs.neoscroll')
     end
   },
