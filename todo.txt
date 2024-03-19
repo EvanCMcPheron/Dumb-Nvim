@@ -1,4 +1,3 @@
- - terminal integration
  - DAP support??
   - DAP ui
  - ai autocomplete/etc (https://github.com/aduros/ai.vim)
