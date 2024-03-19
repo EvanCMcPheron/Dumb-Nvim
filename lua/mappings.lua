@@ -139,7 +139,7 @@ local r = {
         vim.cmd('set norelativenumber')
         vim.cmd('term nu')
       end,
-      "Open nushell here"
+      "Open nushell split"
     },
     ['<leader>tsg'] = {
       function()
@@ -148,7 +148,7 @@ local r = {
         vim.cmd('set norelativenumber')
         vim.cmd('term lazygit')
       end,
-      "Open lazygit here"
+      "Open lazygit split"
     },
     ['<leader>tvn'] = {
       function()
@@ -157,7 +157,7 @@ local r = {
         vim.cmd('set norelativenumber')
         vim.cmd('term nu')
       end,
-      "Open nushell here"
+      "Open nushell vertical"
     },
     ['<leader>tvg'] = {
       function()
@@ -166,7 +166,7 @@ local r = {
         vim.cmd('set norelativenumber')
         vim.cmd('term lazygit')
       end,
-      "Open lazygit here"
+      "Open lazygit vertical"
     },
   },
   v = {

@@ -101,5 +101,11 @@ Swap window right | <leader><leader>j
 Swap window up | <leader><leader>k
 Swap winow right | <leader><leader>l
 
-## Terminal
+## Terminal @shell @comand @cmd @git
 Exit Terminal Insert Mode | <C-\><C-n>
+Open nushell here | <leader>tn
+Open lazygit here | <leader>tg
+Open nushell split | <leader>tsn
+Open lazygit split | <leader>tsg
+Open nushell vertical | <leader>tvn
+Open lazygit vertical | <leader>tvg
