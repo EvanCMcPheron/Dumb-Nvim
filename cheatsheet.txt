@@ -90,7 +90,7 @@ S{cc} | Search backwards for the 2 {cc} chars
 Save current session | <leader>ss
 Load session attatched to current dir |<leader>sl
 
-## WindowManagment @Resize @panes @split
+## WindowManagment @Resize @panes @split @move
 Resize window left | <A-h>
 Resize window down | <A-j>
 Resize window up | <A-k>
@@ -100,6 +100,11 @@ Swap window left | <leader><leader>h
 Swap window right | <leader><leader>j
 Swap window up | <leader><leader>k
 Swap winow right | <leader><leader>l
+
+Move cursor left | <C-A-h>
+Move cursor down | <C-A-j>
+Move cursor up | <C-A-k>
+Move cursor right | <C-A-l>
 
 ## Terminal @shell @comand @cmd @git
 Exit Terminal Insert Mode | <C-\><C-n>

@@ -280,6 +280,14 @@ local r = {
   {
     'mrjones2014/smart-splits.nvim',
     opts = {}
-  }
+  },
+  -- {
+  --   'rebelot/terminal.nvim',
+  --   opts = {
+  --     layout = { open_cmd = "float" },
+  --     cmd = { vim.o.shell },
+  --     autoclose = false,
+  --   },
+  -- }
 }
 return r

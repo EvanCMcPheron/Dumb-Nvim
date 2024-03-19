@@ -10,12 +10,17 @@
 
 local tb = require('telescope.builtin')
 local harpoon = require('harpoon')
+local term_map = require("terminal.mappings")
 
 local r = {
   i = {
     ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips" },
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
+    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "" },
+    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
+    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
+    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
   },
   n = {
     ["<leader>f"] = { name = "+navigation" },
@@ -105,10 +110,10 @@ local r = {
     ['<A-k>'] = { require('smart-splits').resize_up, "Resize window up" },
     ['<A-l>'] = { require('smart-splits').resize_right, "Resize window right" },
 
-    -- ['<C-H>'] = { require('smart-splits').move_cursor_left, "" },
-    -- ['<C-J>'] = { require('smart-splits').move_cursor_down, "" },
-    -- ['<C-K>'] = { require('smart-splits').move_cursor_up, "" },
-    -- ['<C-L>'] = { require('smart-splits').move_cursor_right, "" },
+    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
+    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
+    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
+    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
 
     ['<leader><leader>h'] = { require('smart-splits').swap_buf_left, "Swap window left" },
     ['<leader><leader>j'] = { require('smart-splits').swap_buf_down, "Swap window right" },
@@ -178,6 +183,12 @@ local r = {
     ["<C-s>"] = [[<CMD>SearchReplaceWithinVisualSelection<CR>]],
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
+  t = {
+    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "" },
+    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
+    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
+    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
+  }
 }
 
 -- show the effects of a search / replace in a live preview window
