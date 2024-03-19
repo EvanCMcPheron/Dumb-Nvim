@@ -8,3 +8,80 @@ Find surrounding (right) | tsf
 Find surroundings (left) | tsF
 Highlight surrounding | tsh
 Update n lines surroundings | tsn
+
+## Snippets @autocomplete @luasnips
+Expand luasnips | <C-k>
+Snippet Jump | <C-l>
+Snippet Jump Back | <C-h>
+
+## Mappings @bindings @keys
+Open mappings file | <leader>th
+Open Cheatsheet | <leader>?
+
+## Navigation @Telescope @Grep @Search @Files
+Find File | <leader>ff
+Live Grep | <leader>fg
+Find Help | <leader>fb
+Open shell | <leader>fs
+Toggle File Tree | <leader>ft
+Collapse File Tree | <leader>fc
+
+## Harpoon @quickselects
+Harpoon Marks | <leader>fh
+Add Harpoon Mark | <leader>hm
+Toggle Harpoon (quickmenu) | <leader>hh
+First harpoon item | <leader>nn
+Second harpoon item | <leader>nh
+Third harpoon item | <leader>nt
+Fourth harpoon item | <leader>ns
+
+## TreeSJ @blocks @split @join @Tree @Sitter @syntax @lines
+Split/unsplit text blocks | <leader>ts
+
+## Diagnostics @errors @warnings @lsp
+Open diagnostics floating | <space>e
+Goto previous diagnostic | [d
+Goto next diagnostic | ]d
+Open diagnostics list | <space>q
+
+## SearchAndReplace @substitute
+SearchReplaceSingleBuffer [s]elction list | rs
+[o]pen | ro
+[w]ord | rw
+[W]ORD | rW
+[e]xpr | re
+[f]ile | rf
+SearchReplaceMultiBuffer [s]elction list | rbs
+[o]pen | rbo
+[w]ord | rbw
+[W]ORD | rbW
+[e]xpr | rbe
+[f]ile | rbf
+Search and Replace Single Buffer (Visual) | <C-r>
+Search and Replace Within Selection (Visual) | <C-s>
+Search and Replace within Selection Word (Visual) | <C-b>
+
+## Autocomplete @lsp @cmp
+Autocomplete move down. | <C-n>
+Autocomplete move up. | <C-p>
+
+## Appearance
+Toggle zen mode | <leader>cz
+Toggle Twilight | <leader>ct
+
+## Workspace
+Add workspace folder | <leader>wa
+Remove workspace folder | <leader>wr
+Print workspace folders | <leader>wl
+
+## RenameBuffer
+Rename buffer (lsp) | <leader>rn
+
+## Code @lsp
+Type definitions | <leader>D
+Code Actions | <leader>ca
+Format Code | <leader>cf
+
+## Leap @movement
+s{cc} | Search forward for the 2 {cc} chars
+S{cc} | Search backwards for the 2 {cc} chars

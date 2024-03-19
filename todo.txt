@@ -1,5 +1,6 @@
- - Write cheetsheet file
  - DAP support??
   - DAP ui
  - tmux support
  - ai autocomplete/etc (https://github.com/aduros/ai.vim)
+ - Trouble (for better viewing diagnostics)
+ - Lazy loading :/

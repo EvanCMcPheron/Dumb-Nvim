@@ -19,8 +19,7 @@ local r = {
   },
   n = {
     ["<leader>t"] = { name = "+bindings" },
-    ["<leader>th"] = { function() vim.cmd("sp " .. vim.fn.stdpath("config") .. "/lua/mappings.lua") end, "Oppen mappings file" },
-    ['<leader>tc'] = { ":Cheatsheet<CR>", "Open cheatsheet (doesn't include mappings" },
+    ["<leader>th"] = { function() vim.cmd("sp " .. vim.fn.stdpath("config") .. "/lua/mappings.lua") end, "Open mappings file" },
 
     ["<leader>f"] = { name = "+navigation" },
     ["<leader>ff"] = { tb.find_files, "Find File" },
@@ -53,12 +52,12 @@ local r = {
     ['<leader>ts'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
 
     -- lspconfig suggested keybindings
-    ['<space>e'] = { vim.diagnostic.open_float, "" },
-    ['[d'] = { vim.diagnostic.goto_prev, "" },
-    [']d'] = { vim.diagnostic.goto_next, "" },
-    ['<space>q'] = { vim.diagnostic.setloclist, "" },
+    ['<space>e'] = { vim.diagnostic.open_float, "Open diagnostics floating" },
+    ['[d'] = { vim.diagnostic.goto_prev, "Goto previous diagnostic" },
+    [']d'] = { vim.diagnostic.goto_next, "Goto next diagnostic" },
+    ['<space>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
 
-    ["r"] = { name = "SearchReplaceSingleBuffer" },
+    ["r"] = { name = "+Search and Replace" },
 
     ["rs"] = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
     ["ro"] = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
@@ -67,7 +66,7 @@ local r = {
     ["re"] = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
     ["rf"] = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
 
-    ["rb"] = { name = "SearchReplaceMultiBuffer" },
+    ["rb"] = { name = "+Search and replace multi-buffer" },
 
     ["rbs"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" },
     ["rbo"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
@@ -98,12 +97,12 @@ local r = {
     -- Toggle previou}s & next buffers stored within Harpoon list
     --    ["<C-S-P>"] = { function() harpoon:list():prev() end, "Harpoon prev" },
     --    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
-    ['<leader>w'] = { name = 'workspace' },
+    ['<leader>w'] = { name = '+workspace' },
     ['<leader>wa'] = { "Add workspace folder" },
     ['<leader>wr'] = { "Remove workspace folder" },
     ['<leader>wl'] = { "Print workspace folders" },
     ['<leader>D'] = { "Type definitions" },
-    ['<leader>r'] = { name = 'rename' },
+    ['<leader>r'] = { name = '+rename' },
     ['<leader>rn'] = { "Rename buffer (lsp)" },
     ['<leader>c'] = { name = "+code" },
     ['<leader>ca'] = { "Code Actions" },
