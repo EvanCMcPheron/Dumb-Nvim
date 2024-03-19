@@ -18,21 +18,10 @@ local r = {
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },
   n = {
-    ["<leader>t"] = { name = "+bindings" },
-    ["<leader>th"] = { function() vim.cmd("sp " .. vim.fn.stdpath("config") .. "/lua/mappings.lua") end, "Open mappings file" },
-
     ["<leader>f"] = { name = "+navigation" },
     ["<leader>ff"] = { tb.find_files, "Find File" },
     ["<leader>fg"] = { tb.live_grep, "Live Grep" },
     ["<leader>fb"] = { ":Telescope help_tags<CR>", "Find Help" },
-    ['<leader>fs'] = {
-      function()
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term nu')
-      end,
-      "Open shell"
-    },
     --    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
     ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
@@ -49,7 +38,6 @@ local r = {
     ['<leader>ns'] = { function() harpoon:list():select(4) end, "Fourth harpoon item" },
 
     ['<leader>m'] = { name = "+syntax" },
-    ['<leader>ts'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
 
     -- lspconfig suggested keybindings
     ['<space>e'] = { vim.diagnostic.open_float, "Open diagnostics floating" },
@@ -81,6 +69,7 @@ local r = {
     ['<C-p>'] = { "Autocomplete move up." },
 
     ['<leader>c'] = { name = '+code' },
+    ['<leader>cs'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
     ['<leader>cz'] = { function() require("zen-mode").toggle({ window = { width = .55 } }) end, "Toggle zen mode" },
     ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
 
@@ -104,9 +93,81 @@ local r = {
     ['<leader>D'] = { "Type definitions" },
     ['<leader>r'] = { name = '+rename' },
     ['<leader>rn'] = { "Rename buffer (lsp)" },
-    ['<leader>c'] = { name = "+code" },
     ['<leader>ca'] = { "Code Actions" },
     ['<leader>cf'] = { "Format Code" },
+
+    ['<leader>s'] = { name = '+sessions' },
+    ['<leader>ss'] = { ":SessionsSave<CR>", "Save current session" },
+    ['<leader>sl'] = { ":SessionsLoad<CR>", "Load session attatched to current dir" },
+
+    ['<A-h>'] = { require('smart-splits').resize_left, "Resize window left" },
+    ['<A-j>'] = { require('smart-splits').resize_down, "Resize window down" },
+    ['<A-k>'] = { require('smart-splits').resize_up, "Resize window up" },
+    ['<A-l>'] = { require('smart-splits').resize_right, "Resize window right" },
+
+    -- ['<C-H>'] = { require('smart-splits').move_cursor_left, "" },
+    -- ['<C-J>'] = { require('smart-splits').move_cursor_down, "" },
+    -- ['<C-K>'] = { require('smart-splits').move_cursor_up, "" },
+    -- ['<C-L>'] = { require('smart-splits').move_cursor_right, "" },
+
+    ['<leader><leader>h'] = { require('smart-splits').swap_buf_left, "Swap window left" },
+    ['<leader><leader>j'] = { require('smart-splits').swap_buf_down, "Swap window right" },
+    ['<leader><leader>k'] = { require('smart-splits').swap_buf_up, "Swap window up" },
+    ['<leader><leader>l'] = { require('smart-splits').swap_buf_right, "Swap winow right" },
+
+    ['<leader>t'] = { name = "+terminal" },
+    ['<leader>tn'] = {
+      function()
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term nu')
+      end,
+      "Open nushell here"
+    },
+    ['<leader>tg'] = {
+      function()
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term lazygit')
+      end,
+      "Open lazygit here"
+    },
+    ['<leader>tsn'] = {
+      function()
+        vim.cmd('split')
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term nu')
+      end,
+      "Open nushell here"
+    },
+    ['<leader>tsg'] = {
+      function()
+        vim.cmd('split')
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term lazygit')
+      end,
+      "Open lazygit here"
+    },
+    ['<leader>tvn'] = {
+      function()
+        vim.cmd('vsplit')
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term nu')
+      end,
+      "Open nushell here"
+    },
+    ['<leader>tvg'] = {
+      function()
+        vim.cmd('vsplit')
+        vim.cmd("set nonumber")
+        vim.cmd('set norelativenumber')
+        vim.cmd('term lazygit')
+      end,
+      "Open lazygit here"
+    },
   },
   v = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },

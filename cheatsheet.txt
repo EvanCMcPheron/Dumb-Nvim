@@ -85,3 +85,21 @@ Format Code | <leader>cf
 ## Leap @movement
 s{cc} | Search forward for the 2 {cc} chars
 S{cc} | Search backwards for the 2 {cc} chars
+
+## Sessions @Saving @Layout
+Save current session | <leader>ss
+Load session attatched to current dir |<leader>sl
+
+## WindowManagment @Resize @panes @split
+Resize window left | <A-h>
+Resize window down | <A-j>
+Resize window up | <A-k>
+Resize window right | <A-l>
+
+Swap window left | <leader><leader>h
+Swap window right | <leader><leader>j
+Swap window up | <leader><leader>k
+Swap winow right | <leader><leader>l
+
+## Terminal
+Exit Terminal Insert Mode | <C-\><C-n>

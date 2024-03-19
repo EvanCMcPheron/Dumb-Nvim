@@ -73,6 +73,14 @@ local r = {
     header = stupid_nvim,
     center = {
       {
+        icon = '󰘛 ',
+        icon_hl = '@variable',
+        desc = 'Load Session',
+        group = 'Label',
+        action = 'SessionsLoad',
+        key = 's',
+      },
+      {
         icon = ' ',
         icon_hl = '@variable',
         desc = 'Files',

@@ -261,5 +261,25 @@ local r = {
       require('configs.neoscroll')
     end
   },
+  -- {
+  --   "Shatur/neovim-session-manager",
+  --   config = function()
+  --     require('neovim-session-manager').setup {
+  --       autoload_mode = require('neovim_session_manager.config').AutoloadMode.CurrentDir,
+  --     }
+  --   end
+  -- },
+  {
+    "natecraddock/sessions.nvim",
+    opts = {
+      events = { "WinEnter", "VimLeavePre" },
+      session_filepath = vim.fn.stdpath("data") .. "/sessions",
+      absolute = true,
+    }
+  },
+  {
+    'mrjones2014/smart-splits.nvim',
+    opts = {}
+  }
 }
 return r
