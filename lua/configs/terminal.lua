@@ -1,10 +1,10 @@
 require('terminal').setup {
   layout = { open_cmd = "float" },
   cmd = {
-    function()
+    function(idk)
       vim.cmd("set nonumber")
       vim.cmd('set norelativenumber')
-      vim.cmd('term nu')
+      vim.o.shell(idk)
     end,
   },
   autoclose = false,
