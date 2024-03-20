@@ -124,3 +124,8 @@ Move terminal bottomright | <leader>tH
 Move terminal to floating | <leader>tf
 Open Lazygit (floating) | <leader>tg
 
+## AI @ML @GPT @Open-ai @generation
+Summarize slection | <leader>as
+Commit message (normal) | <leader>ag
+
+

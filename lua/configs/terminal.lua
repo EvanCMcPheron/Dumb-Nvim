@@ -7,7 +7,7 @@ require('terminal').setup {
       vim.o.shell(idk)
     end,
   },
-  autoclose = false,
+  autoclose = true,
 }
 
 local lazygit = require("terminal").terminal:new({

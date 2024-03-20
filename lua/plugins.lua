@@ -287,5 +287,61 @@ local r = {
       require('configs.terminal')
     end,
   },
+  {
+    "Bryley/neoai.nvim",
+    dependencies = {
+        "MunifTanjim/nui.nvim",
+    },
+    cmd = {
+        "NeoAI",
+        "NeoAIOpen",
+        "NeoAIClose",
+        "NeoAIToggle",
+        "NeoAIContext",
+        "NeoAIContextOpen",
+        "NeoAIContextClose",
+        "NeoAIInject",
+        "NeoAIInjectCode",
+        "NeoAIInjectContext",
+        "NeoAIInjectContextCode",
+    },
+    keys = {
+        { "<leader>as", desc = "summarize text" },
+        { "<leader>ag", desc = "generate git message" },
+    },
+    config = function ()
+      vim.env['OPENAI_API_KEY'] = require('openai_key')
+      require('neoai').setup {
+
+      }
+    end,
+  }
+  -- {
+  --   "ellisonleao/carbon-now.nvim",
+  --   lazy = true,
+  --   cmd = "CarbonNow",
+  --   opts = {
+  --     open_cmd = "cmd start chrome",
+  --   },
+  -- },
+  -- {
+  --   "michaelrommel/nvim-silicon",
+  --   lazy = true,
+  --   cmd = "Silicon",
+  --   config = function()
+  --     require("silicon").setup({
+  --       -- Configuration here, or leave empty to use defaults
+  --       font = "VictorMono NF=34;Noto Emoji=34"
+  --     })
+  --   end
+  -- },
+  -- {
+  --   'mistricky/codesnap.nvim',
+  --   build = "make build_generator",
+  --   version = "^1",
+  --   opts = {
+  --     has_breadcrumbs = true,
+  --   }
+  -- }
 }
 return r

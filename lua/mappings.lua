@@ -136,6 +136,9 @@ local r = {
     ['<leader>tH'] = { term_map.move({ open_cmd = "botright new" }), "Move terminal bottomright" },
     ['<leader>tf'] = { term_map.move({ open_cmd = "float" }), "Move terminal to floating" },
     ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
+
+    ['<leader>a'] = { name = "+AI" },
+    ['<leader>ag'] = { "AI commit message" },
     -- ['<leader>tn'] = {
     --   function()
     --     vim.cmd("set nonumber")
@@ -192,6 +195,8 @@ local r = {
   v = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
+    ['<leader>a'] = { name = "AI" },
+    ['<leader>as'] = { "AI summarize text" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],

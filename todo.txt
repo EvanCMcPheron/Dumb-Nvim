@@ -1,5 +1,4 @@
  - DAP support??
   - DAP ui
  - ai autocomplete/etc (https://github.com/aduros/ai.vim)
- - Trouble (for better viewing diagnostics)
  - Lazy loading :/
