@@ -178,6 +178,7 @@ local r = {
     ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
     ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
     ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
+    ['<Esc>'] = { '<C-\\><C-n>', "quick escape" },
   }
 }
 
