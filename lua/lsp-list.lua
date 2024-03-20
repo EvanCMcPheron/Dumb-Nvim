@@ -3,7 +3,10 @@ local r = {
 
   },
   rust_analyzer = {
-    
+
   },
+  clangd = {
+
+  }
 }
 return r

@@ -138,65 +138,34 @@ local r = {
     ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
 
     ['<leader>a'] = { name = "+AI" },
-    ['<leader>ag'] = { "AI commit message" },
-    -- ['<leader>tn'] = {
-    --   function()
-    --     vim.cmd("set nonumber")
-    --     vim.cmd('set norelativenumber')
-    --     vim.cmd('term nu')
-    --   end,
-    --   "Open nushell here"
-    -- },
-    -- ['<leader>tg'] = {
-    --   function()
-    --     vim.cmd("set nonumber")
-    --     vim.cmd('set norelativenumber')
-    --     vim.cmd('term lazygit')
-    --   end,
-    --   "Open lazygit here"
-    -- },
-    -- ['<leader>tsn'] = {
-    --   function()
-    --     vim.cmd('split')
-    --     vim.cmd("set nonumber")
-    --     vim.cmd('set norelativenumber')
-    --     vim.cmd('term nu')
-    --   end,
-    --   "Open nushell split"
-    -- },
-    -- ['<leader>tsg'] = {
-    --   function()
-    --     vim.cmd('split')
-    --     vim.cmd("set nonumber")
-    --     vim.cmd('set norelativenumber')
-    --     vim.cmd('term lazygit')
-    --   end,
-    --   "Open lazygit split"
-    -- },
-    -- ['<leader>tvn'] = {
-    --   function()
-    --     vim.cmd('vsplit')
-    --     vim.cmd("set nonumber")
-    --     vim.cmd('set norelativenumber')
-    --     vim.cmd('term nu')
-    --   end,
-    --   "Open nushell vertical"
-    -- },
-    -- ['<leader>tvg'] = {
-    --   function()
-    --     vim.cmd('vsplit')
-    --     vim.cmd("set nonumber")
-    --     vim.cmd('set norelativenumber')
-    --     vim.cmd('term lazygit')
-    --   end,
-    --   "Open lazygit vertical"
-    -- },
+    ['<leader>ag'] = { ":NeoAI<CR>", "Open NeoAI TUI" },
+    ['<leader>ai'] = {
+      function()
+        local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
+        if i ~= "nil" then
+          vim.cmd("NeoAIInject " .. i)
+        end
+      end,
+      "NeoAI Inject"
+    },
+    ['<leader>ac'] = {
+      function()
+        local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
+        if i ~= "nil" then
+          vim.cmd("NeoAIInjectCode " .. i)
+        end
+      end,
+      "NeoAI Inject (only code)"
+    },
   },
   v = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
     ['<leader>a'] = { name = "AI" },
     ['<leader>as'] = { "AI summarize text" },
+    ['<leader>ag'] = { ":'<,'>NeoAIContext<CR>", "Open NeoAI TUI" },
+    ['<leader>ai'] = { ":'<,'>NeoAIInjectContext ", "NeoAI Inject" },
+    ['<leader>ac'] = { ":'<,'>NeoAIInjectContextCode ", "NeoAI Inject (only code)" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
