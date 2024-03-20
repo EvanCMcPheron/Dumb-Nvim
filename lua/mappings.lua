@@ -21,6 +21,7 @@ local r = {
     ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
     ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
     ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
+    ['<C-o>'] = { '<Escape>', "quick escape" },
   },
   n = {
     ["<leader>f"] = { name = "+navigation" },
@@ -121,58 +122,72 @@ local r = {
     ['<leader><leader>l'] = { require('smart-splits').swap_buf_right, "Swap winow right" },
 
     ['<leader>t'] = { name = "+terminal" },
-    ['<leader>tn'] = {
-      function()
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term nu')
-      end,
-      "Open nushell here"
-    },
-    ['<leader>tg'] = {
-      function()
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term lazygit')
-      end,
-      "Open lazygit here"
-    },
-    ['<leader>tsn'] = {
-      function()
-        vim.cmd('split')
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term nu')
-      end,
-      "Open nushell split"
-    },
-    ['<leader>tsg'] = {
-      function()
-        vim.cmd('split')
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term lazygit')
-      end,
-      "Open lazygit split"
-    },
-    ['<leader>tvn'] = {
-      function()
-        vim.cmd('vsplit')
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term nu')
-      end,
-      "Open nushell vertical"
-    },
-    ['<leader>tvg'] = {
-      function()
-        vim.cmd('vsplit')
-        vim.cmd("set nonumber")
-        vim.cmd('set norelativenumber')
-        vim.cmd('term lazygit')
-      end,
-      "Open lazygit vertical"
-    },
+    ['<leader>ts'] = { term_map.operator_send, { expr = true }, "Operator send (not sure tbh)" },
+    ['<leader>to'] = { term_map.toggle, "Toggle Terminal" },
+    ['<leader>tO'] = { term_map.toggle({ open_cmd = "belowright" }), "Toggle Terminal belowright" },
+    ['<leader>tr'] = { term_map.run, "Create a new terminal" },
+    ['<leader>tR'] = { term_map.run(nil, { layout = { open_cmd = "belowright" } }), "Create a new terminal belowright" },
+    ['<leader>tk'] = { term_map.kill, "kill current terminal" },
+    ['<leader>t]'] = { term_map.cycle_next, "Cycle terminal next" },
+    ['<leader>t['] = { term_map.cycle_prev, "Cycle terminal prev" },
+    ['<leader>tl'] = { term_map.move({ open_cmd = "belowright vnew" }), "Move terminal belowright vertical" },
+    ['<leader>tL'] = { term_map.move({ open_cmd = "botright vnew" }), "Move terminal bottomright vertical" },
+    ['<leader>th'] = { term_map.move({ open_cmd = "belowright new" }), "Move terminal belowright" },
+    ['<leader>tH'] = { term_map.move({ open_cmd = "botright new" }), "Move terminal bottomright" },
+    ['<leader>tf'] = { term_map.move({ open_cmd = "float" }), "Move terminal to floating" },
+    ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
+    -- ['<leader>tn'] = {
+    --   function()
+    --     vim.cmd("set nonumber")
+    --     vim.cmd('set norelativenumber')
+    --     vim.cmd('term nu')
+    --   end,
+    --   "Open nushell here"
+    -- },
+    -- ['<leader>tg'] = {
+    --   function()
+    --     vim.cmd("set nonumber")
+    --     vim.cmd('set norelativenumber')
+    --     vim.cmd('term lazygit')
+    --   end,
+    --   "Open lazygit here"
+    -- },
+    -- ['<leader>tsn'] = {
+    --   function()
+    --     vim.cmd('split')
+    --     vim.cmd("set nonumber")
+    --     vim.cmd('set norelativenumber')
+    --     vim.cmd('term nu')
+    --   end,
+    --   "Open nushell split"
+    -- },
+    -- ['<leader>tsg'] = {
+    --   function()
+    --     vim.cmd('split')
+    --     vim.cmd("set nonumber")
+    --     vim.cmd('set norelativenumber')
+    --     vim.cmd('term lazygit')
+    --   end,
+    --   "Open lazygit split"
+    -- },
+    -- ['<leader>tvn'] = {
+    --   function()
+    --     vim.cmd('vsplit')
+    --     vim.cmd("set nonumber")
+    --     vim.cmd('set norelativenumber')
+    --     vim.cmd('term nu')
+    --   end,
+    --   "Open nushell vertical"
+    -- },
+    -- ['<leader>tvg'] = {
+    --   function()
+    --     vim.cmd('vsplit')
+    --     vim.cmd("set nonumber")
+    --     vim.cmd('set norelativenumber')
+    --     vim.cmd('term lazygit')
+    --   end,
+    --   "Open lazygit vertical"
+    -- },
   },
   v = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
@@ -188,6 +203,7 @@ local r = {
     ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
     ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
     ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
+    ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
   }
 }
 

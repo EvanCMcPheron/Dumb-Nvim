@@ -4,7 +4,7 @@ require('mini.ai').setup()
 require('mini.pairs').setup()
 require('mini.indentscope').setup()
 require('mini.comment').setup()
-require('mini.notify').setup()
+-- require('mini.notify').setup()
 require('mini.surround').setup {
   -- Add custom surroundings to be used on top of builtin ones. For more
   -- information with examples, see `:h MiniSurround.config`.

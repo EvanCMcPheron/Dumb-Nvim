@@ -1,26 +1,27 @@
+-- If error is going away to fast bcs notify, change view_error to "messages"
 local r = {
   messages = {
     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
     -- This is a current Neovim limitation.
     enabled = true, -- enables the Noice messages UI
-    view = "mini", -- default view for messages
-    view_error = "messages", -- view for errors
-    view_warn = "mini", -- view for warnings
-    view_history = "messages", -- view for :messages
+    view = "notify", -- default view for messages
+    view_error = "notify", -- view for errors
+    view_warn = "notify", -- view for warnings
+    view_history = "notify", -- view for :messages
     view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
   },
   commands = {
     history = {
       -- options for the message history that you get with `:Noice`
-      view = "split",
+      view = "notify",
       opts = { enter = true, format = "details" },
       filter = {
         any = {
-          { event = "mini" },
+          { event = "notify" },
           { error = true },
           { warning = true },
           { event = "msg_show", kind = { "" } },
-          { event = "lsp", kind = "message" },
+          { event = "lsp", kind = "notify" },
         },
       },
     },
@@ -30,11 +31,11 @@ local r = {
       opts = { enter = true, format = "details" },
       filter = {
         any = {
-          { event = "mini" },
+          { event = "notify" },
           { error = true },
           { warning = true },
           { event = "msg_show", kind = { "" } },
-          { event = "lsp", kind = "message" },
+          { event = "lsp", kind = "notify" },
         },
       },
       filter_opts = { count = 1 },
@@ -54,8 +55,8 @@ local r = {
     -- event is always "notify" and kind can be any log level as a string
     -- The default routes will forward notifications to nvim-notify
     -- Benefit of using Noice for this is the routing and consistent history view
-    enabled = false,
-    view = "mini",
+    enabled = true,
+    view = "notify",
   },
   lsp = {
     progress = {
@@ -80,7 +81,7 @@ local r = {
     message = {
       -- Messages shown by lsp servers
       enabled = false,
-      view = "mini",
+      view = "notify",
       opts = {},
     },
   },

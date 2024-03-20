@@ -1,4 +1,5 @@
 Open cheatsheet | <leader>?
+quick normal (insert and term) | <C-o>
 
 ## Surround @sandwich @parentheses @brackets
 Add surrounding | tsa
@@ -107,10 +108,19 @@ Move cursor up | <C-A-k>
 Move cursor right | <C-A-l>
 
 ## Terminal @shell @comand @cmd @git
-Exit Terminal Insert Mode | <C-\><C-n>
-Open nushell here | <leader>tn
-Open lazygit here | <leader>tg
-Open nushell split | <leader>tsn
-Open lazygit split | <leader>tsg
-Open nushell vertical | <leader>tvn
-Open lazygit vertical | <leader>tvg
+Exit Terminal Insert Mode | <C-o>
+Operator send (not sure tbh) | <leader>ts
+Toggle Terminal | <leader>to
+Toggle Terminal belowright | <leader>tO
+Create a new terminal | <leader>tr
+Create a new terminal belowright | <leader>tR
+kill current terminal | <leader>tk
+Cycle terminal next | <leader>t]
+Cycle terminal prev | <leader>t[
+Move terminal belowright vertical | <leader>tl
+Move terminal bottomright vertical | <leader>tL
+Move terminal belowright | <leader>th
+Move terminal bottomright | <leader>tH
+Move terminal to floating | <leader>tf
+Open Lazygit (floating) | <leader>tg
+
