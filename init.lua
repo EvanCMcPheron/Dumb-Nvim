@@ -22,6 +22,8 @@ vim.cmd("set colorcolumn=" .. default_textwidth)
 
 -- vim.cmd("set foldmethod=indent")
 
+vim.cmd("set wrap")
+vim.cmd("set textwidth=80")
 vim.cmd("set cmdheight=0")
 
 vim.cmd("set expandtab")
@@ -33,6 +35,15 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 
 vim.g.smarttab = true
+
+-- Make terminals not have numbers
+vim.api.nvim_create_autocmd({"TermOpen", "TermEnter"}, {
+    pattern = "*",
+    callback = function ()
+      vim.cmd("set norelativenumber")
+      vim.cmd("set nonumber")
+    end,
+  })
 
 -- autocmds based on file extensions
 for _,v in ipairs(require("autocmds")) do
@@ -60,7 +71,7 @@ end
 -- Adds the lazy path to the runtime paths
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(require("plugins"), {})
+require("lazy").setup(require("plugins"), {defaults = {lazy=true}})
 
 -- Load file mappings
 local maps = require("mappings");

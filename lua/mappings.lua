@@ -8,7 +8,6 @@
 -- GCC comments out the current line in normal mode
 -- GC comments out the selected area in v mode
 
-local tb = require('telescope.builtin')
 local harpoon = require('harpoon')
 local term_map = require("terminal.mappings")
 
@@ -25,13 +24,13 @@ local r = {
   },
   n = {
     ["<leader>f"] = { name = "+navigation" },
-    ["<leader>ff"] = { tb.find_files, "Find File" },
-    ["<leader>fg"] = { tb.live_grep, "Live Grep" },
+    ["<leader>ff"] = { ":Telescope find_files<CR>", "Find File" },
+    ["<leader>fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
     ["<leader>fb"] = { ":Telescope help_tags<CR>", "Find Help" },
     --    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
     ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
-    ['<leader>fc'] = { ":NvimTreeCollapse<CR>", "Collapse File Tree" },
+    ['<leader>fc'] = { ":NvimTreeFindFileToggle<CR>", "Toggle File Tree to Here" },
 
     ['<leader>h'] = { name = "+harpoon" },
     ['<leader>fh'] = { ":Telescope harpoon marks <CR>", "Harpoon Marks" },
@@ -51,25 +50,6 @@ local r = {
     [']d'] = { vim.diagnostic.goto_next, "Goto next diagnostic" },
     ['<space>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
 
-    ["r"] = { name = "+Search and Replace" },
-
-    ["rs"] = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
-    ["ro"] = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
-    ["rw"] = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
-    ["rW"] = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" },
-    ["re"] = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
-    ["rf"] = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
-
-    ["rb"] = { name = "+Search and replace multi-buffer" },
-
-    ["rbs"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" },
-    ["rbo"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
-    ["rbw"] = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" },
-    ["rbW"] = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" },
-    ["rbe"] = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
-    ["rbf"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
-
-
     -- Autocomplete
     ['<C-n>'] = { "Autocomplete move down." },
     ['<C-p>'] = { "Autocomplete move up." },
@@ -78,6 +58,7 @@ local r = {
     ['<leader>cs'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
     ['<leader>cz'] = { function() require("zen-mode").toggle({ window = { width = .55 } }) end, "Toggle zen mode" },
     ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
+    ['<leader>ch'] = { ":set foldmethod=indent<CR>", "Enable cold folding" },
 
     ['<leader>?'] = { ":Cheatsheet<CR>", "Open Cheatsheet" },
 
@@ -124,9 +105,9 @@ local r = {
     ['<leader>t'] = { name = "+terminal" },
     ['<leader>ts'] = { term_map.operator_send, { expr = true }, "Operator send (not sure tbh)" },
     ['<leader>to'] = { term_map.toggle, "Toggle Terminal" },
-    ['<leader>tO'] = { term_map.toggle({ open_cmd = "belowright" }), "Toggle Terminal belowright" },
+    ['<leader>tO'] = { term_map.open({ open_cmd = "enew" }), "Toggle Terminal in buffer" },
     ['<leader>tr'] = { term_map.run, "Create a new terminal" },
-    ['<leader>tR'] = { term_map.run(nil, { layout = { open_cmd = "belowright" } }), "Create a new terminal belowright" },
+    ['<leader>tR'] = { term_map.run(nil, {layout = { open_cmd = "enew" }}), "Create a new Terminal in buffer" },
     ['<leader>tk'] = { term_map.kill, "kill current terminal" },
     ['<leader>t]'] = { term_map.cycle_next, "Cycle terminal next" },
     ['<leader>t['] = { term_map.cycle_prev, "Cycle terminal prev" },

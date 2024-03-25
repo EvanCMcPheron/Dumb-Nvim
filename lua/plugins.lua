@@ -25,11 +25,21 @@ local r = {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
+    cmd = "Telescope",
     config = function() require('telescope').setup(require('configs.telescope')) end,
   },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
+    keys = {
+      '<leader>fh',
+      '<leader>hm',
+      '<leader>hh',
+      '<leader>nn',
+      '<leader>nh',
+      '<leader>nt',
+      '<leader>ns'
+    },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function() require('harpoon').setup(require('configs.harpoon')) end,
   },
@@ -44,6 +54,7 @@ local r = {
   },
   {
     "ThePrimeagen/vim-be-good",
+    cmd = "VimBeGood",
   },
   { -- noice is a cool idea, but it breaks typing so no can do lmao
     "folke/noice.nvim",
@@ -59,24 +70,32 @@ local r = {
     }
   },
   {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
+    lazy = false,
   },
   {
     "nvim-tree/nvim-tree.lua",
+    cmd = {
+      "NvimTreeToggle",
+      "NvimTreeFindFileToggle",
+    },
     config = function()
       require('nvim-tree').setup(require('configs.nvim-tree'))
     end,
   },
   {
     "williamboman/mason.nvim",
+    lazy = false,
     config = function() require('mason').setup() end,
     build = ":MasonUpdate",
   },
   {
     'jghauser/mkdir.nvim',
+    lazy = false,
   },
   {
     'gaborvecsei/usage-tracker.nvim',
+    lazy = false,
     config = function()
       require('usage-tracker').setup({
         keep_eventlog_days = 14,
@@ -92,6 +111,8 @@ local r = {
   {
     'sudormrfbin/cheatsheet.nvim',
 
+    cmd = "Cheatsheet",
+
     requires = {
       { 'nvim-telescope/telescope.nvim' },
       { 'nvim-lua/popup.nvim' },
@@ -100,12 +121,13 @@ local r = {
   },
   {
     'stevearc/dressing.nvim',
-    lazy = false,
+    event = "VeryLazy",
     opts = {},
   },
   {
     'anuvyklack/fold-preview.nvim',
     requires = 'anuvyklack/keymap-amend.nvim',
+    lazy = false,
     config = function()
       require('fold-preview').setup(require('configs.fold-preview'))
     end
@@ -121,33 +143,37 @@ local r = {
   },
   {
     'neovim/nvim-lspconfig',
+    lazy = false,
   },
-  { "folke/neodev.nvim",         opts = {} },
-  { 'echasnovski/mini.nvim',     version = false, init = function() require('configs.mini') end },
-  { 'NvChad/nvim-colorizer.lua', opts = {} },
+  { "folke/neodev.nvim",         lazy = false, opts = {} },
+  { 'echasnovski/mini.nvim',     lazy = false, version = false, init = function() require('configs.mini') end },
+  { 'NvChad/nvim-colorizer.lua', lazy = false, opts = {} },
   {
     'tomasiser/vim-code-dark',
     lazy = false,
     priority = 1000,
     config = function() vim.cmd(":colorscheme codedark") end,
   },
-  { 'dstein64/nvim-scrollview', opts = {} },
+  { 'dstein64/nvim-scrollview', opts = {},     lazy = false },
   {
     'lewis6991/gitsigns.nvim',
+    lazy = false,
     opts = {},
   },
-  { 'alec-gibson/nvim-tetris' },
+  { 'alec-gibson/nvim-tetris',  cmd = "Tetris" },
   {
     'ggandor/leap.nvim',
+    lazy = false,
     init = function()
       require('leap').create_default_mappings()
     end,
   },
-  { 'anuvyklack/keymap-amend.nvim' },
-  { "rcarriga/nvim-notify" },
+  { 'anuvyklack/keymap-amend.nvim', lazy = false },
+  { "rcarriga/nvim-notify",         lazy = false },
   {
     'nvim-treesitter/nvim-treesitter',
     opts = require 'configs.treesitter',
+    lazy = false,
     dependencies = {
       -- NOTE: additional parser
       { "nushell/tree-sitter-nu" },
@@ -171,17 +197,26 @@ local r = {
   {
     'Wansmer/treesj',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+
+    cmd = "TSJToggle",
+
     opts = {
       use_default_keymaps = false,
     }
   },
   {
     "folke/twilight.nvim",
+    keys = {
+      '<leader>cz',
+      '<leader>ct',
+    },
     opts = require('configs.twilight'),
   },
   {
     "kawre/leetcode.nvim",
+
     build = ":TSUpdate html",
+    cmd = "Leet",
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim", -- required by telescope
@@ -193,21 +228,15 @@ local r = {
     },
     opts = require('configs.leetcode'),
   },
-  { 'm-demare/hlargs.nvim',     opts = {} },
-  {
-    "roobert/search-replace.nvim",
-    opts = {
-      -- optionally override defaults
-      default_replace_single_buffer_options = "gcI",
-      default_replace_multi_buffer_options = "egcI",
-    },
-  },
+  { 'm-demare/hlargs.nvim', lazy = false, opts = {} },
   {
     'Bekaboo/deadcolumn.nvim',
+    lazy = false,
     opts = require('configs.deadcolumn'),
   },
   {
     'yamatsum/nvim-cursorline',
+    lazy = false,
     opts = {
       cursorline = {
         enable = true,
@@ -221,31 +250,36 @@ local r = {
       }
     }
   },
-  { 'rktjmp/lush.nvim' },
-  { 'metalelf0/jellybeans-nvim' },
   {
     'hrsh7th/nvim-cmp',
+    lazy = false,
     priority = 100,
     opts = require('configs.cmp.nvim'),
   },
   {
     'hrsh7th/cmp-nvim-lsp',
+    lazy = false,
     opts = require('configs.cmp.nvim-lsp'),
   },
   {
     'hrsh7th/cmp-buffer',
+    lazy = false,
   },
   {
     'hrsh7th/cmp-path',
+    lazy = false,
   },
   {
     'hrsh7th/cmp-cmdline',
+    lazy = false,
   },
   {
     'saadparwaiz1/cmp_luasnip',
+    lazy = false,
   },
   {
     "L3MON4D3/LuaSnip",
+    lazy = false,
     -- follow latest release.
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
@@ -253,10 +287,12 @@ local r = {
   },
   {
     "folke/zen-mode.nvim",
+    keys = "<leader>cz",
     opts = require('configs.zen-mode'),
   },
   {
     "karb94/neoscroll.nvim",
+    lazy = false,
     config = function()
       require('configs.neoscroll')
     end
@@ -271,7 +307,11 @@ local r = {
   -- },
   {
     "natecraddock/sessions.nvim",
+    lazy = false,
     opts = {
+
+
+      lazy = false,
       events = { "WinEnter", "VimLeavePre" },
       session_filepath = vim.fn.stdpath("data") .. "/sessions",
       absolute = true,
@@ -279,10 +319,43 @@ local r = {
   },
   {
     'mrjones2014/smart-splits.nvim',
-    opts = {}
+    opts = {},
+
+    keys = {
+      '<A-h>',
+      '<A-j>',
+      '<A-k>',
+      '<A-l>',
+
+      '<C-A-h>',
+      '<C-A-j>',
+      '<C-A-k>',
+      '<C-A-l>',
+
+      '<leader><leader>h',
+      '<leader><leader>j',
+      '<leader><leader>k',
+      '<leader><leader>l',
+    },
   },
   {
     'rebelot/terminal.nvim',
+    keys = {
+      '<leader>ts',
+      '<leader>to',
+      '<leader>tO',
+      '<leader>tr',
+      '<leader>tR',
+      '<leader>tk',
+      '<leader>t]',
+      '<leader>t[',
+      '<leader>tl',
+      '<leader>tL',
+      '<leader>th',
+      '<leader>tH',
+      '<leader>tf',
+      '<leader>tg',
+    },
     config = function()
       require('configs.terminal')
     end,
@@ -290,28 +363,29 @@ local r = {
   {
     "Bryley/neoai.nvim",
     dependencies = {
-        "MunifTanjim/nui.nvim",
+      "MunifTanjim/nui.nvim",
     },
     cmd = {
-        "NeoAI",
-        "NeoAIOpen",
-        "NeoAIClose",
-        "NeoAIToggle",
-        "NeoAIContext",
-        "NeoAIContextOpen",
-        "NeoAIContextClose",
-        "NeoAIInject",
-        "NeoAIInjectCode",
-        "NeoAIInjectContext",
-        "NeoAIInjectContextCode",
+      "NeoAI",
+      "NeoAIOpen",
+      "NeoAIClose",
+      "NeoAIToggle",
+      "NeoAIContext",
+      "NeoAIContextOpen",
+      "NeoAIContextClose",
+      "NeoAIInject",
+      "NeoAIInjectCode",
+      "NeoAIInjectContext",
+      "NeoAIInjectContextCode",
     },
     keys = {
-        { "<leader>as", desc = "summarize text" },
+      { "<leader>as", desc = "summarize text" },
     },
-    config = function ()
+    config = function()
       vim.env['OPENAI_API_KEY'] = require('openai_key')
       require('neoai').setup {
-} end,
+      }
+    end,
   }
 }
 return r
