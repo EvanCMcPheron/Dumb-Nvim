@@ -56,7 +56,7 @@ local r = {
 
     ['<leader>c'] = { name = '+code' },
     ['<leader>cs'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
-    ['<leader>cz'] = { function() require("zen-mode").toggle({ window = { width = .55 } }) end, "Toggle zen mode" },
+    ['<leader>cg'] = { ":ZenMode<CR>", "Toggle zen mode" },
     ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
     ['<leader>ch'] = { ":set foldmethod=indent<CR>", "Enable cold folding" },
 

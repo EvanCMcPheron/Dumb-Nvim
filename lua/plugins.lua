@@ -287,7 +287,8 @@ local r = {
   },
   {
     "folke/zen-mode.nvim",
-    keys = "<leader>cz",
+    cmd = "ZenMode",
+    keys = "<leader>cp",
     opts = require('configs.zen-mode'),
   },
   {
@@ -386,6 +387,6 @@ local r = {
       require('neoai').setup {
       }
     end,
-  }
+  },
 }
 return r
