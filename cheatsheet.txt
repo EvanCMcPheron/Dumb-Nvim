@@ -127,4 +127,6 @@ Open Lazygit (floating) | <leader>tg
 ## AI @ML @GPT @Open-ai @generation
 Summarize slection | <leader>as
 
+## Undo @tree @history
+Toggle Undo Tree | <leader>cu
 
