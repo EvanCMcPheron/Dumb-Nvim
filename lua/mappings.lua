@@ -59,6 +59,7 @@ local r = {
     ['<leader>cg'] = { ":ZenMode<CR>", "Toggle zen mode" },
     ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
     ['<leader>ch'] = { ":set foldmethod=indent<CR>", "Enable cold folding" },
+    ['<leader>cu'] = { ":UndotreeToggle<CR>", "Undo Tree Toggle" },
 
     ['<leader>?'] = { ":Cheatsheet<CR>", "Open Cheatsheet" },
 

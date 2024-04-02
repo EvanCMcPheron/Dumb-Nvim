@@ -388,5 +388,12 @@ local r = {
       }
     end,
   },
+  {
+    'mbbill/undotree',
+    cmd = "UndotreeToggle",
+    keys = {
+      { '<leader>cu', desc = "Undo tree Toggle" },
+    }
+  },
 }
 return r
