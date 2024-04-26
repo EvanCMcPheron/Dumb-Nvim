@@ -159,5 +159,6 @@ for l,o in pairs(require('lsp-list')) do
   require('lspconfig')[l].setup(o)
 end
 
-
+-- Setup DAP
+require('configs.dap')
 

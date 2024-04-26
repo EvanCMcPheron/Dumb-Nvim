@@ -11,6 +11,8 @@
 local harpoon = require('harpoon')
 local term_map = require("terminal.mappings")
 
+local run_cmd = nil
+
 local r = {
   i = {
     ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips" },
@@ -45,10 +47,10 @@ local r = {
     ['<leader>m'] = { name = "+syntax" },
 
     -- lspconfig suggested keybindings
-    ['<space>e'] = { vim.diagnostic.open_float, "Open diagnostics floating" },
+    ['<leader>e'] = { vim.diagnostic.open_float, "Open diagnostics floating" },
     ['[d'] = { vim.diagnostic.goto_prev, "Goto previous diagnostic" },
     [']d'] = { vim.diagnostic.goto_next, "Goto next diagnostic" },
-    ['<space>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
+    ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
 
     -- Autocomplete
     ['<C-n>'] = { "Autocomplete move down." },
@@ -60,6 +62,42 @@ local r = {
     ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
     ['<leader>ch'] = { ":set foldmethod=indent<CR>", "Enable cold folding" },
     ['<leader>cu'] = { ":UndotreeToggle<CR>", "Undo Tree Toggle" },
+    ['<leader>cp'] = { "<cmd>TodoTelescope<CR>", "Todo Comments Telescope" },
+    ['<leader>cd'] = { name = "+rust stuff"},
+    ['<leader>cdd'] = {
+      "<cmd>!cargo doc --open<CR>", "Generates and opens rust docs",
+    },
+    ['<leader>cds'] = {
+      "<cmd>!rustup doc --std<CR>", "Open docs for rust's standard library",
+    },
+    ['<leader>cdf'] = { function ()
+      vim.cmd("!cargo fix")
+      vim.cmd("redraw")
+    end, "Cargo Fix"},,
+    ['<leader>crc'] = {
+      function ()
+        run_cmd = vim.fn.input({prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil})
+        if run_cmd == "" then
+          run_cmd = nil
+        end
+      end,
+      "Change run cmd",
+    },
+
+    ['<leader>crr'] = {
+      function ()
+        if run_cmd == nil then
+          run_cmd = vim.fn.input({prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil})
+          if run_cmd == "" then
+            run_cmd = nil
+          end
+        end
+        if run_cmd ~= nil then    -- This double checking is necessary bcs the input could return nil
+          vim.cmd("TermRun " .. run_cmd)
+        end
+      end,
+      "Run Code Shell Command",
+    },
 
     ['<leader>?'] = { ":Cheatsheet<CR>", "Open Cheatsheet" },
 
@@ -108,7 +146,7 @@ local r = {
     ['<leader>to'] = { term_map.toggle, "Toggle Terminal" },
     ['<leader>tO'] = { term_map.open({ open_cmd = "enew" }), "Toggle Terminal in buffer" },
     ['<leader>tr'] = { term_map.run, "Create a new terminal" },
-    ['<leader>tR'] = { term_map.run(nil, {layout = { open_cmd = "enew" }}), "Create a new Terminal in buffer" },
+    ['<leader>tR'] = { term_map.run(nil, { layout = { open_cmd = "enew" } }), "Create a new Terminal in buffer" },
     ['<leader>tk'] = { term_map.kill, "kill current terminal" },
     ['<leader>t]'] = { term_map.cycle_next, "Cycle terminal next" },
     ['<leader>t['] = { term_map.cycle_prev, "Cycle terminal prev" },
@@ -139,6 +177,13 @@ local r = {
       end,
       "NeoAI Inject (only code)"
     },
+    ['<leader>dr'] = { '<cmd>lua require("dap").continue()<cr>', "start debugging" },
+    ['<leader>do'] = { '<cmd>lua require("dap").step_over()<cr>', "step over" },
+    ['<leader>di'] = { '<cmd>lua require("dap").step_into()<cr>', "step into" },
+    ['<leader>de'] = { '<cmd>lua require("dap").step_out()<cr>', "step out" },
+    ['<leader>db'] = { '<cmd>lua require("dap").toggle_breakpoint()<cr>', "toggle breakpoint" },
+    ['<leader>dB'] = { '<cmd>lua require("dap").toggle_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>', "toggle breakpoint with condition" },
+    ['<leader>dui'] = { '<cmd>lua require("dapui").toggle()<cr>', "toggle DapUI" },
   },
   v = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
@@ -183,16 +228,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
+    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>cf', function()
+    vim.keymap.set('n', '<leader>cf', function()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,

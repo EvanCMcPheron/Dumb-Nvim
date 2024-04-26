@@ -1,0 +1,23 @@
+{
+  "filetypes": ["xml", "go", "lua", "js", "py", "sh", "c", "cpp", "rs"], 
+  "window_cmd": "edit", 
+  "scratch_file_dir": "C:\\Users\\evani\\AppData\\Local\\Temp\\nvim\\scratch.nvim",
+  "use_telescope": true,
+  "filetype_details": {
+    "go": {
+      
+      "filename": "main", 
+      "cursor": {
+        "location": [4, 2], 
+        "insert_mode": true 
+      },
+      "requireDir": true, 
+      "content": ["package main", "", "func main() {", "  ", "}"] 
+    },
+    "yaml": {}, 
+    "k8s.yaml": {
+      "subdir": "learn-k8s" 
+    },
+    "json": {}
+  }
+}

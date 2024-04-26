@@ -82,8 +82,14 @@ Rename buffer (lsp) | <leader>rn
 Type definitions | <leader>D
 Code Actions | <leader>ca
 Format Code | <leader>cf
+Go to declaration | gD
+Go to definition | gd
+Go to implimentations | gi
+Go to references | gr
+Code Action | <leader>ca
+Format code | <leader>cf
 
-## Leap @movement
+n# Leap @movement
 s{cc} | Search forward for the 2 {cc} chars
 S{cc} | Search backwards for the 2 {cc} chars
 
@@ -130,3 +136,23 @@ Summarize slection | <leader>as
 ## Undo @tree @history
 Toggle Undo Tree | <leader>cu
 
+## Debug @DAP @Gdb @errors
+start debugging | <leader>dr
+step over | <leader>do
+step into | <leader>di
+step out | <leader>de
+toggle breakpoint | <leader>db
+toggle breakpoint with condition | <leader>dB
+toggle DapUI | <leader>dui
+
+## TodoComments @highlight @error @markers @markings
+Telescope Search | <leader>cp
+
+##Cargo @rust 
+Generate and open crate docs | <leader>cdd
+Open rust std docs | <leader>cds
+Cargo fix | <leader>cdf
+
+##Running @execution
+Execute run cmd | <leader>crr
+Change run cmd | <leader>crc
