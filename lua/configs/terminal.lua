@@ -1,7 +1,7 @@
 require('terminal').setup {
   layout = { open_cmd = "float" },
   cmd = { vim.o.shell },
-  autoclose = true,
+  autoclose = false,
 }
 
 local lazygit = require("terminal").terminal:new({

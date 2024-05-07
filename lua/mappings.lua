@@ -73,7 +73,7 @@ local r = {
     ['<leader>cdf'] = { function ()
       vim.cmd("!cargo fix")
       vim.cmd("redraw")
-    end, "Cargo Fix"},,
+    end, "Cargo Fix"},
     ['<leader>crc'] = {
       function ()
         run_cmd = vim.fn.input({prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil})
