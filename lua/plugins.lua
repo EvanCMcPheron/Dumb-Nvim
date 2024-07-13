@@ -458,6 +458,10 @@ local r = {
   {
     "LintaoAmons/scratch.nvim",
     event = "VeryLazy",
-  }
+  },
+  {
+    'habamax/vim-godot',
+    event = 'VimEnter',
+  },
 }
 return r

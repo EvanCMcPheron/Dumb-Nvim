@@ -3,5 +3,6 @@ local r = {
   highlight = {
     enable = true,
   },
+  indent = { enable = false },
 }
 return r

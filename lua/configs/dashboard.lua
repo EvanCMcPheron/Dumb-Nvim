@@ -1,5 +1,5 @@
 local dumb_nvim = {
-  '', 
+  '',
   '██████╗░██╗░░░██╗███╗░░░███╗██████╗░',
   '██╔══██╗██║░░░██║████╗░████║██╔══██╗',
   '██║░░██║██║░░░██║██╔████╔██║██████╦╝',
@@ -101,16 +101,35 @@ local r = {
         icon_hl = '@variable',
         desc = 'Change Directory',
         group = 'label',
-        action = function ()
+        action = function()
           local new_dir = vim.fn.input({
             prompt = "",
-            default = vim.loop.cwd(),
+            default = vim.loop.cwd() .. '\\',
             completion = "file"
           })
           vim.fn.chdir(new_dir)
         end,
         key = 'd',
       },
+      {
+        icon = ' ',
+        icon_hl = '@variable',
+        desc = 'Godot',
+        group = 'label',
+        action = function()
+          -- set the godot external editor pipe depending on system
+          local addr = './godot.pipe'
+          if vim.fn.has('win32') then
+            addr = '127.0.0.1:6004'
+          end
+          -- Start the godot server connection
+          vim.fn.serverstart(addr)
+          -- Create a new buffer so it doesnt look like nothing changed
+          vim.cmd 'enew | r ! echo "Connected to Godot, open a script in Godot..."'
+        end,
+        key = 'g',
+      },
+      -- Setup godot server listening when open on a godot project
       {
         icon = '󰊪 ',
         icon_hl = '@variable',
@@ -129,9 +148,10 @@ local r = {
         icon = ' ',
         desc = 'Config',
         group = 'Label',
-        action = function() 
+        action = function()
           vim.cmd("cd " .. vim.fn.stdpath("config"))
           vim.cmd("e lua/plugins.lua")
+          vim.cmd("SessionsLoad")
         end,
         key = 'c',
       },

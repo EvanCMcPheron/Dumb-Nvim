@@ -14,30 +14,30 @@ harpoon:setup({})
 -- basic telescope configuration
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)
-    local file_paths = {}
-    for _, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, item.value)
-    end
+  local file_paths = {}
+  for _, item in ipairs(harpoon_files.items) do
+    table.insert(file_paths, item.value)
+  end
 
-    require("telescope.pickers").new({}, {
-        prompt_title = "Harpoon",
-        finder = require("telescope.finders").new_table({
-            results = file_paths,
-        }),
-        previewer = conf.file_previewer({}),
-        sorter = conf.generic_sorter({}),
-    }):find()
+  require("telescope.pickers").new({}, {
+    prompt_title = "Harpoon",
+    finder = require("telescope.finders").new_table({
+      results = file_paths,
+    }),
+    previewer = conf.file_previewer({}),
+    sorter = conf.generic_sorter({}),
+  }):find()
 end
 
 vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" })
+  { desc = "Open harpoon window" })
 
 -- Setup snippets
 local ls = require("luasnip")
 
 ls.setup(require('configs.luasnip'))
 
-for suffix,snippets in pairs(require('snippets')) do
+for suffix, snippets in pairs(require('snippets')) do
   ls.add_snippets(suffix, snippets)
 end
 
@@ -90,7 +90,7 @@ end
 -- })
 
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
   snippet = {
@@ -154,11 +154,24 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-for l,o in pairs(require('lsp-list')) do
+for l, o in pairs(require('lsp-list')) do
   o.capabilities = capabilities
   require('lspconfig')[l].setup(o)
 end
 
+-- Setup gdscript config
+local gdscript_config = {
+  capabilities = capabilities,
+  settings = {},
+}
+if vim.fn.has 'win32' == 1 then
+  gdscript_config['cmd'] = { 'ncat', '127.0.0.1', os.getenv 'GDScript_Port' or '6005' }
+end
+require('lspconfig').gdscript.setup(gdscript_config)
+
+
 -- Setup DAP
 require('configs.dap')
+
+vim.g.godot_started = false
 

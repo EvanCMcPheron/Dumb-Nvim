@@ -88,6 +88,8 @@ Go to implimentations | gi
 Go to references | gr
 Code Action | <leader>ca
 Format code | <leader>cf
+Comment line | GCC
+Comment selection | GC
 
 n# Leap @movement
 s{cc} | Search forward for the 2 {cc} chars
