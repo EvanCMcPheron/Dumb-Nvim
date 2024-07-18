@@ -25,8 +25,29 @@ local r = {
     ['<C-o>'] = { '<Escape>', "quick escape" },
   },
   n = {
+    -- Keybindings established elsewhere, but still of NOTES
+    -- 
+    -- keys = {
+    --   -- Sample keybind for prompt menu. Note that the <c-u> is important for selections to work properly.
+    --   {
+    --     "<leader>oo",
+    --     ":<c-u>lua require('ollama').prompt()<cr>",
+    --     desc = "ollama prompt",
+    --     mode = { "n", "v" },
+    --   },
+    --
+    --   -- Sample keybind for direct prompting. Note that the <c-u> is important for selections to work properly.
+    --   {
+    --     "<leader>oG",
+    --     ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
+    --     desc = "ollama Generate Code",
+    --     mode = { "n", "v" },
+    --   },
+    -- },
+    -- END
+
     ["<leader>f"] = { name = "+navigation" },
-    ["<leader>ff"] = { ":Telescope find_files<CR>", "Find File" },
+    ["<leader>ff"] = { ":Telescope find_files hidden=true<CR>", "Find File" },
     ["<leader>fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
     ["<leader>fb"] = { ":Telescope help_tags<CR>", "Find Help" },
     --    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
@@ -101,17 +122,6 @@ local r = {
 
     ['<leader>?'] = { ":Cheatsheet<CR>", "Open Cheatsheet" },
 
-    --    ['<leader>hp}'] = { harpoon.append, "Harpoon Append" },
-    --    ["<C-e>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Harpoon Toggle Menu" },
-
-    --    ["<C-h>"] = { function() harpoon:list():select(1) end, "Harppon select 1" },
-    --    ["<C-t>"] = { function() harpoon:list():select(2) end, "Harppon select 2" },
-    --    ["<C-n>"] = { function() harpoon:list():select(3) end, "Harppon select 3" },
-    --    ["<C-s>"] = { function() harpoon:list():select(4) end, "Harppon select 4" },
-
-    -- Toggle previou}s & next buffers stored within Harpoon list
-    --    ["<C-S-P>"] = { function() harpoon:list():prev() end, "Harpoon prev" },
-    --    ["<C-S-N>"] = { function() harpoon:list():next() end, "Harpoon next" },
     ['<leader>w'] = { name = '+workspace' },
     ['<leader>wa'] = { "Add workspace folder" },
     ['<leader>wr'] = { "Remove workspace folder" },
@@ -157,26 +167,26 @@ local r = {
     ['<leader>tf'] = { term_map.move({ open_cmd = "float" }), "Move terminal to floating" },
     ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
 
-    ['<leader>a'] = { name = "+AI" },
-    ['<leader>ag'] = { ":NeoAI<CR>", "Open NeoAI TUI" },
-    ['<leader>ai'] = {
-      function()
-        local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
-        if i ~= "nil" then
-          vim.cmd("NeoAIInject " .. i)
-        end
-      end,
-      "NeoAI Inject"
-    },
-    ['<leader>ac'] = {
-      function()
-        local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
-        if i ~= "nil" then
-          vim.cmd("NeoAIInjectCode " .. i)
-        end
-      end,
-      "NeoAI Inject (only code)"
-    },
+    ['<leader>o'] = { name = "+Ollama LLM" },
+    -- ['<leader>ag'] = { ":NeoAI<CR>", "Open NeoAI TUI" },
+    -- ['<leader>ai'] = {
+    --   function()
+    --     local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
+    --     if i ~= "nil" then
+    --       vim.cmd("NeoAIInject " .. i)
+    --     end
+    --   end,
+    --   "NeoAI Inject"
+    -- },
+    -- ['<leader>ac'] = {
+    --   function()
+    --     local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
+    --     if i ~= "nil" then
+    --       vim.cmd("NeoAIInjectCode " .. i)
+    --     end
+    --   end,
+    --   "NeoAI Inject (only code)"
+    -- },
     ['<leader>dr'] = { '<cmd>lua require("dap").continue()<cr>', "start debugging" },
     ['<leader>do'] = { '<cmd>lua require("dap").step_over()<cr>', "step over" },
     ['<leader>di'] = { '<cmd>lua require("dap").step_into()<cr>', "step into" },

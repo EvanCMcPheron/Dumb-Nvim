@@ -2,6 +2,14 @@ local r = {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
+    theme = "center",
+    sorting_strategy = "ascending",
+    layout_config = {
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.45,
+      },
+    },
     mappings = {
       i = {
         -- map actions.which_key to <C-h> (default: <C-/>)

@@ -1,5 +1,3 @@
- - Godot Integration
-  - https://www.reddit.com/r/neovim/comments/13ski66/neovim_configuration_for_godot_4_lsp_as_simple_as/
  - Switch AI companion plugin to codeCompanion
   - https://github.com/olimorris/codecompanion.nvim
  - DAP support??
