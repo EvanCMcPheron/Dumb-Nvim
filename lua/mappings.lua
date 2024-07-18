@@ -47,13 +47,15 @@ local r = {
     -- END
 
     ["<leader>f"] = { name = "+navigation" },
+    ["<space>fb"] = {":Telescope file_browser<CR>", "File Browser" },
+    -- ["<space>ff"] = {":Telescope file_browser path=%:p:h select_buffer=true<CR>", "File Browser" },
     ["<leader>ff"] = { ":Telescope find_files hidden=true<CR>", "Find File" },
     ["<leader>fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
-    ["<leader>fb"] = { ":Telescope help_tags<CR>", "Find Help" },
-    --    ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
+    ["<leader>ft"] = { ":Telescope help_tags<CR>", "Find Help tags" },
+       -- ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
-    ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
-    ['<leader>fc'] = { ":NvimTreeFindFileToggle<CR>", "Toggle File Tree to Here" },
+    -- ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
+    -- ['<leader>fc'] = { ":NvimTreeFindFileToggle<CR>", "Toggle File Tree to Here" },
 
     ['<leader>h'] = { name = "+harpoon" },
     ['<leader>fh'] = { ":Telescope harpoon marks <CR>", "Harpoon Marks" },
@@ -104,7 +106,6 @@ local r = {
       end,
       "Change run cmd",
     },
-
     ['<leader>crr'] = {
       function ()
         if run_cmd == nil then

@@ -10,6 +10,7 @@ local r = {
         preview_width = 0.45,
       },
     },
+    find_command = {'fd', '--type', 'f', '--hidden', '--exclude', '.git', '--exclude', 'node_modules'}, -- Adjust the exclude patterns according to your needs
     mappings = {
       i = {
         -- map actions.which_key to <C-h> (default: <C-/>)
@@ -32,6 +33,19 @@ local r = {
     }
   },
   extensions = {
+    file_browser = {
+      theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

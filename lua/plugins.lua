@@ -26,7 +26,10 @@ local r = {
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
     cmd = "Telescope",
-    config = function() require('telescope').setup(require('configs.telescope')) end,
+    config = function()
+      require('telescope').setup(require('configs.telescope'))
+      require('telescope').load_extension "file_browser"
+    end,
   },
   {
     "ThePrimeagen/harpoon",
@@ -487,9 +490,9 @@ local r = {
         adapters = {
           anthropic = require("codecompanion.adapters").use("anthropic", {
             schema = {
-              model = {
-                default = "claude-3-sonnet-20240229",
-              },
+              -- model = {
+              --   default = "claude-3-sonnet-20240229",
+              -- },
             },
           }),
           ollama = require("codecompanion.adapters").use("ollama", {
@@ -502,6 +505,10 @@ local r = {
         },
       })
     end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
   -- NOT USING this because code companion.nvim seems like a much sleeker option
   -- {
