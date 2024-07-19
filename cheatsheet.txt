@@ -163,17 +163,57 @@ Change run cmd | <leader>crc
 (OS Path separator) When typing filepath, the path separator will open a directory like `<cr>. | `/`, `\` 
 Opens the currently selected file/directory, or creates whatever is in the prompt | <cr> 
 Create path in prompt | <s-cr> 
-Create file/folder at current `path (trailing path separator creates folder) | <A-c>/c
-Rename multi-selected files/folders | <A-r>/r
-Move multi-selected files/folders to current `path | <A-m>/m
-Copy (multi-)selected files/folders to current `path | <A-y>/y
-Delete (multi-)selected files/folders | <A-d>/d
-Open file/folder with default system application | <C-o>/o
-Go to parent directory | <C-g>/g
-Go to home directory | <C-e>/e
-Go to current working directory (cwd) | <C-w>/w
-Change nvim's cwd to selected folder/file(parent) | <C-t>/t
-Toggle between file and folder browser | <C-f>/f
-Toggle hidden files/folders | <C-h>/h
-Toggle all entries ignoring `./` and `../ | <C-s>/s
-Goes to parent dir if prompt is empty, otherwise acts normally | <bs>/ 
+Create file/folder at current `path (trailing path separator creates folder) | c
+Create file/folder at current `path (trailing path separator creates folder) [normal] | <A-c>
+Rename multi-selected files/folders | r
+Rename multi-selected files/folders [normal] | <A-r>
+Move multi-selected files/folders to current `path | m
+Move multi-selected files/folders to current `path [normal] | <A-m>
+Copy (multi-)selected files/folders to current `path | y
+Copy (multi-)selected files/folders to current `path [normal] | <A-y>
+Delete (multi-)selected files/folders | d
+Delete (multi-)selected files/folders [normal] | <A-d>
+Open file/folder with default system application | o
+Open file/folder with default system application [normal] | <C-o>
+Go to parent directory | g
+Go to parent directory [normal] | <C-g>
+Go to home directory | e
+Go to home directory [normal] | <C-e>
+Go to current working directory (cwd) | w
+Go to current working directory (cwd) [normal] | <C-w>
+Change nvim's cwd to selected folder/file(parent) | t
+Change nvim's cwd to selected folder/file(parent) [normal] | <C-t>
+Toggle between file and folder browser | f
+Toggle between file and folder browser [normal] | <C-f>
+Toggle hidden files/folders | h
+Toggle hidden files/folders [normal] | <C-h>
+Toggle all entries ignoring `./` and `../ | s
+Toggle all entries ignoring `./` and `../ [normal] | <C-s>
+Goes to parent dir if prompt is empty, otherwise acts normally [normal] | <bs>
+Next item | <C-n>/<Down>
+Previous item | <C-p>/<Up>
+Next/previous (in normal mode) | j/k
+Select High/Middle/Low [ normal mode ] | H/M/L
+Select the first/last item [ normal mode ] | gg/G
+Confirm selection | <CR>
+Go to file selection as a split | <C-x>
+Go to file selection as a vsplit | <C-v>
+Go to a file in a new tab | <C-t>
+Scroll up in preview window | <C-u>
+Scroll down in preview window | <C-d>
+Scroll left in preview window | <C-f>
+Scroll right in preview window | <C-k>
+Scroll left in results window | <M-f>
+Scroll right in results window | <M-k>
+Show mappings for picker actions [ insert mode ] | <C-/>
+Show mappings for picker actions [ normal mode ] | ?
+Close telescope [ insert mode ] | <C-c>
+Close telescope [ normal mode ] | <Esc>
+Toggle selection and move to next selection | <Tab>
+Toggle selection and move to prev selection | <S-Tab>
+Send all items not filtered to quickfixlist [ qflist ] | <C-q>
+Send all selected items to qflist | <M-q>
+Insert cword in original window into prompt [ insert mode ] | <C-r><C-w>
+Insert cWORD in original window into prompt [ insert mode ] | <C-r><C-a>
+Insert cfile in original window into prompt [ insert mode ] | <C-r><C-f>
+Insert cline in original window into prompt [ insert mode ] | <C-r><C-l>
