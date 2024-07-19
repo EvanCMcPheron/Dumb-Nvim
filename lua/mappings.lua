@@ -49,7 +49,7 @@ local r = {
     ["<leader>f"] = { name = "+navigation" },
     ["<space>fb"] = {":Telescope file_browser<CR>", "File Browser" },
     -- ["<space>ff"] = {":Telescope file_browser path=%:p:h select_buffer=true<CR>", "File Browser" },
-    ["<leader>ff"] = { ":Telescope find_files hidden=true<CR>", "Find File" },
+    ["<leader>ff"] = { ":Telescope find_files<CR>", "Find File" },
     ["<leader>fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
     ["<leader>ft"] = { ":Telescope help_tags<CR>", "Find Help tags" },
        -- ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon

@@ -319,8 +319,6 @@ local r = {
     "natecraddock/sessions.nvim",
     lazy = false,
     opts = {
-
-
       lazy = false,
       events = { "WinEnter", "VimLeavePre" },
       session_filepath = vim.fn.stdpath("data") .. "/sessions",
@@ -509,6 +507,10 @@ local r = {
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+  {
+    "tpope/vim-surround",
+    lazy = false,
   },
   -- NOT USING this because code companion.nvim seems like a much sleeker option
   -- {
