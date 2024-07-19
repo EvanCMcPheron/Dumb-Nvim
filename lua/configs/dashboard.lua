@@ -83,7 +83,7 @@ local r = {
       {
         icon = ' ',
         icon_hl = '@variable',
-        desc = 'Files',
+        desc = 'Find Files',
         group = 'Label',
         action = 'Telescope find_files',
         key = 'f',
@@ -99,16 +99,9 @@ local r = {
       {
         icon = '󱁽 ',
         icon_hl = '@variable',
-        desc = 'Change Directory',
+        desc = 'Open File Browser',
         group = 'label',
-        action = function()
-          local new_dir = vim.fn.input({
-            prompt = "",
-            default = vim.loop.cwd() .. '\\',
-            completion = "file"
-          })
-          vim.fn.chdir(new_dir)
-        end,
+        action = 'Telescope file_browser',
         key = 'd',
       },
       {

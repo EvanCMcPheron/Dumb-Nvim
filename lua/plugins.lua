@@ -77,16 +77,6 @@ local r = {
     lazy = false,
   },
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = {
-      "NvimTreeToggle",
-      "NvimTreeFindFileToggle",
-    },
-    config = function()
-      require('nvim-tree').setup(require('configs.nvim-tree'))
-    end,
-  },
-  {
     "williamboman/mason.nvim",
     lazy = false,
     config = function() require('mason').setup() end,

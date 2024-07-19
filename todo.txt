@@ -1,5 +1,7 @@
  - Switch out session manager to one that includes window size
 
+ - get harpoon working again
+
  - Switch AI companion plugin to codeCompanion
   - https://github.com/olimorris/codecompanion.nvim
 

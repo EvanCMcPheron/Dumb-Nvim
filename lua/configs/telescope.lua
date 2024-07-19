@@ -52,10 +52,10 @@ local r = {
       find_command = find_file_cmd,
       layout_strategy = "vertical",
       layout_config = {
-        height = 0.8,
-        preview_height = 0.7,
+        height = 0.7,
+        preview_height = 0.6,
         prompt_position = "top",
-        width = 0.4,
+        width = 0.25,
       }
     },
     colorscheme = {
@@ -69,10 +69,10 @@ local r = {
       layout_strategy = "vertical",
       respect_gitignore = respect_gitignore,
       layout_config = {
-        height = 0.8,
+        height = 0.9,
         preview_height = 0.5,
         prompt_position = "top",
-        width = 0.6,
+        width = 0.8,
       },
       hidden = true,
       -- disables netrw and use telescope-file-browser in its place
