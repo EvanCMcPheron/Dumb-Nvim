@@ -1,7 +1,7 @@
 Open cheatsheet | <leader>?
 quick normal (insert and term) | <C-o>
 
-## Surround @sandwich @parentheses @brackets
+##Surround @sandwich @parentheses @brackets
 Add surrounding | tsa
 Delete surrounding | tsd
 Replace surrounding | tsr
@@ -10,16 +10,16 @@ Find surroundings (left) | tsF
 Highlight surrounding | tsh
 Update n lines surroundings | tsn
 
-## Snippets @autocomplete @luasnips
+##Snippets @autocomplete @luasnips
 Expand luasnips | <C-k>
 Snippet Jump | <C-l>
 Snippet Jump Back | <C-h>
 
-## Mappings @bindings @keys
+##Mappings @bindings @keys
 Open mappings file | <leader>th
 Open Cheatsheet | <leader>?
 
-## Navigation @Telescope @Grep @Search @Files
+##Navigation @Telescope @Grep @Search @Files
 Find File | <leader>ff
 Live Grep | <leader>fg
 Find Help | <leader>fb
@@ -27,7 +27,7 @@ Open shell | <leader>fs
 Toggle File Tree | <leader>ft
 Collapse File Tree | <leader>fc
 
-## Harpoon @quickselects
+##Harpoon @quickselects
 Harpoon Marks | <leader>fh
 Add Harpoon Mark | <leader>hm
 Toggle Harpoon (quickmenu) | <leader>hh
@@ -36,16 +36,16 @@ Second harpoon item | <leader>nh
 Third harpoon item | <leader>nt
 Fourth harpoon item | <leader>ns
 
-## TreeSJ @blocks @split @join @Tree @Sitter @syntax @lines
+##TreeSJ @blocks @split @join @Tree @Sitter @syntax @lines
 Split/unsplit text blocks | <leader>ts
 
-## Diagnostics @errors @warnings @lsp
+##Diagnostics @errors @warnings @lsp
 Open diagnostics floating | <space>e
 Goto previous diagnostic | [d
 Goto next diagnostic | ]d
 Open diagnostics list | <space>q
 
-## SearchAndReplace @substitute
+##SearchAndReplace @substitute
 SearchReplaceSingleBuffer [s]elction list | rs
 [o]pen | ro
 [w]ord | rw
@@ -62,23 +62,23 @@ Search and Replace Single Buffer (Visual) | <C-r>
 Search and Replace Within Selection (Visual) | <C-s>
 Search and Replace within Selection Word (Visual) | <C-b>
 
-## Autocomplete @lsp @cmp
+##Autocomplete @lsp @cmp
 Autocomplete move down. | <C-n>
 Autocomplete move up. | <C-p>
 
-## Appearance
+##Appearance
 Toggle zen mode | <leader>cz
 Toggle Twilight | <leader>ct
 
-## Workspace
+##Workspace
 Add workspace folder | <leader>wa
 Remove workspace folder | <leader>wr
 Print workspace folders | <leader>wl
 
-## RenameBuffer
+##RenameBuffer
 Rename buffer (lsp) | <leader>rn
 
-## Code @lsp
+##Code @lsp
 Type definitions | <leader>D
 Code Actions | <leader>ca
 Format Code | <leader>cf
@@ -91,15 +91,15 @@ Format code | <leader>cf
 Comment line | GCC
 Comment selection | GC
 
-n# Leap @movement
+##Leap @movement
 s{cc} | Search forward for the 2 {cc} chars
 S{cc} | Search backwards for the 2 {cc} chars
 
-## Sessions @Saving @Layout
+##Sessions @Saving @Layout
 Save current session | <leader>ss
 Load session attatched to current dir |<leader>sl
 
-## WindowManagment @Resize @panes @split @move
+##WindowManagment @Resize @panes @split @move
 Resize window left | <A-h>
 Resize window down | <A-j>
 Resize window up | <A-k>
@@ -115,7 +115,7 @@ Move cursor down | <C-A-j>
 Move cursor up | <C-A-k>
 Move cursor right | <C-A-l>
 
-## Terminal @shell @comand @cmd @git
+##Terminal @shell @comand @cmd @git
 Exit Terminal Insert Mode | <C-o>
 Operator send (not sure tbh) | <leader>ts
 Toggle Terminal | <leader>to
@@ -132,13 +132,13 @@ Move terminal bottomright | <leader>tH
 Move terminal to floating | <leader>tf
 Open Lazygit (floating) | <leader>tg
 
-## AI @ML @GPT @Open-ai @generation
+##AI @ML @GPT @Open-ai @generation
 Summarize slection | <leader>as
 
-## Undo @tree @history
+##Undo @tree @history
 Toggle Undo Tree | <leader>cu
 
-## Debug @DAP @Gdb @errors
+##Debug @DAP @Gdb @errors
 start debugging | <leader>dr
 step over | <leader>do
 step into | <leader>di
@@ -147,7 +147,7 @@ toggle breakpoint | <leader>db
 toggle breakpoint with condition | <leader>dB
 toggle DapUI | <leader>dui
 
-## TodoComments @highlight @error @markers @markings
+##TodoComments @highlight @error @markers @markings
 Telescope Search | <leader>cp
 
 ##Cargo @rust 

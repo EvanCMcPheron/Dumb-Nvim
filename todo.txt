@@ -1,7 +1,6 @@
  - Switch out session manager to one that includes window size
 
  - Add cheetsheet hints for file browser
- - fix Telescope file finder to include files in .gitignore
  
  - Switch AI companion plugin to codeCompanion
   - https://github.com/olimorris/codecompanion.nvim
