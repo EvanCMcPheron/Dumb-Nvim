@@ -77,8 +77,16 @@ local r = {
         icon_hl = '@variable',
         desc = 'Load Session',
         group = 'Label',
-        action = 'SessionsLoad',
+        action = 'SessionManager load_current_dir_session',
         key = 's',
+      },
+      {
+        icon = ' ',
+        icon_hl = '@variable',
+        desc = 'All Sessions',
+        group = 'Label',
+        action = 'SessionManager load_session',
+        key = 'a',
       },
       {
         icon = ' ',
@@ -144,7 +152,7 @@ local r = {
         action = function()
           vim.cmd("cd " .. vim.fn.stdpath("config"))
           vim.cmd("e lua/plugins.lua")
-          vim.cmd("SessionsLoad")
+          vim.cmd("SessionManager load_current_dir_session")
         end,
         key = 'c',
       },
