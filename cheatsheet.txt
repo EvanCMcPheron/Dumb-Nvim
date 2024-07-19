@@ -158,3 +158,22 @@ Cargo fix | <leader>cdf
 ##Running @execution
 Execute run cmd | <leader>crr
 Change run cmd | <leader>crc
+
+##Telescope @files @file-browser @browser @file @finder @fuzzy @find
+(OS Path separator) When typing filepath, the path separator will open a directory like `<cr>. | `/`, `\` 
+Opens the currently selected file/directory, or creates whatever is in the prompt | <cr> 
+Create path in prompt | <s-cr> 
+Create file/folder at current `path (trailing path separator creates folder) | <A-c>/c
+Rename multi-selected files/folders | <A-r>/r
+Move multi-selected files/folders to current `path | <A-m>/m
+Copy (multi-)selected files/folders to current `path | <A-y>/y
+Delete (multi-)selected files/folders | <A-d>/d
+Open file/folder with default system application | <C-o>/o
+Go to parent directory | <C-g>/g
+Go to home directory | <C-e>/e
+Go to current working directory (cwd) | <C-w>/w
+Change nvim's cwd to selected folder/file(parent) | <C-t>/t
+Toggle between file and folder browser | <C-f>/f
+Toggle hidden files/folders | <C-h>/h
+Toggle all entries ignoring `./` and `../ | <C-s>/s
+Goes to parent dir if prompt is empty, otherwise acts normally | <bs>/ 
