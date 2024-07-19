@@ -22,8 +22,8 @@ vim.cmd("set colorcolumn=" .. default_textwidth)
 
 -- vim.cmd("set foldmethod=indent")
 
-vim.cmd("set wrap")
-vim.cmd("set textwidth=80")
+-- vim.cmd("set wrap")
+-- vim.cmd("set textwidth=80")
 vim.cmd("set cmdheight=0")
 
 vim.cmd("set expandtab")
