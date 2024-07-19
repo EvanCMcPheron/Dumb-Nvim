@@ -5,6 +5,10 @@ local leader = " "
 
 -- End of Properties
 
+-- Fix change to themes present in vim 0.10.0+
+vim.cmd('colorscheme vim')
+vim.o.termguicolors = false
+
 -- disable netrw at the very start of your init.lua (required by nvim-tree)
 vim.go.fillchars='eob: '
 vim.cmd("map ; :")
@@ -22,7 +26,7 @@ vim.cmd("set colorcolumn=" .. default_textwidth)
 
 -- vim.cmd("set foldmethod=indent")
 
--- vim.cmd("set wrap")
+vim.cmd("set nowrap")
 -- vim.cmd("set textwidth=80")
 vim.cmd("set cmdheight=0")
 

@@ -1,0 +1,20 @@
+local themes = {
+  'tomasiser/vim-code-dark',
+  'folke/tokyonight.nvim',
+  'catppuccin/nvim',
+  'kepano/flexoki',
+  'nyoom-engineering/nyoom.nvim',
+  'nyoom-engineering/oxocarbon.nvim',
+  'bluz71/vim-moonfly-colors',
+  'bluz71/vim-nightfly-colors',
+  'savq/melange-nvim',
+  'AlexvZyl/nordic.nvim',
+  'scottmckendry/cyberdream.nvim',
+  'Shatur/neovim-ayu',
+  'olivercederborg/poimandres.nvim',
+  'ray-x/aurora',
+  'uloco/bluloco.nvim',
+  'oxfist/night-owl.nvim',
+  'aktersnurra/no-clown-fiesta.nvim',
+}
+return themes

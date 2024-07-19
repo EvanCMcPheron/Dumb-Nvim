@@ -175,3 +175,4 @@ require('configs.dap')
 
 vim.g.godot_started = false
 
+vim.cmd('colorscheme ' .. require('colorscheme'))
