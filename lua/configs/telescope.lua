@@ -1,4 +1,11 @@
+local respect_gitignore = false
+
+-- set the find_file cmd to either respect of not respect gitignore based on
+-- above declared local bool
 local find_file_cmd = { 'fd', '-I', '--type', 'f', '--hidden', '--exclude', '.git', '--exclude', 'node_modules' }
+if respect_gitignore then
+  find_file_cmd = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git', '--exclude', 'node_modules' }
+end
 
 local r = {
   defaults = {
@@ -60,7 +67,7 @@ local r = {
       theme = "dropdown",
       find_command = find_file_cmd,
       layout_strategy = "vertical",
-      respect_gitignore = false,
+      respect_gitignore = respect_gitignore,
       layout_config = {
         height = 0.8,
         preview_height = 0.5,
