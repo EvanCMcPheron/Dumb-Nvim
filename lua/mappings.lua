@@ -221,7 +221,7 @@ local r = {
     ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
   },
   i = {
-    ['<C-i>'] = { "<ESC>:CodeCompanion<CR>", "Inline code companion" },
+    ['<C-;>'] = { "<ESC>:CodeCompanion<CR>", "Inline code companion" },
     ['<S-BS>'] = { '<C-w>', '' },
     ['<C-a>'] = { "<ESC>:CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
     ['<C-s>'] = { "<ESC>:w<CR>i", "" },
