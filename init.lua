@@ -15,7 +15,7 @@ if vim.g.neovide then
   vim.keymap.set('v', '<C-v>', '"+P')         -- Paste visual mode
   vim.keymap.set('c', '<C-v>', '<C-R>+')      -- Paste command mode
   vim.keymap.set('t', '<C-v>', '<C-\\><C-n>"+pi')  -- Paste terminal mode
-  vim.keymap.set('i', '<C-v>', '<ESC>l"+pi') -- Paste insert mode
+  vim.keymap.set('i', '<C-v>', '<C-\\><C-n>"+pi') -- Paste insert mode
   vim.g.neovide_scale_factor = default_scale
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta

@@ -191,14 +191,24 @@ local r = {
     ['<leader>at'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
     ['<C-a>'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
     ['<leader>ai'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
-    ['<C-;>'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
+    ['<C-;>'] = { function()
+      local message = vim.fn.input("Inline Prompt (eg. /commit)")
+      if message ~= "" then
+        vim.cmd("CodeCompanion " .. message)
+      end
+    end, "Inline code companion" },
     ['<leader>an'] = { "<cmd>CodeCompanionChat<CR>zH", "Create a new chat" },
     ['<leader>aa'] = { "<cmd>CodeCompanionActions<CR>", "AI Actions" },
   },
   v = {
     ['<leader>a'] = { name = "AI Tooling" },
     ['<leader>ai'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
-    ['<C-;>'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
+    ['<C-;>'] = { function()
+      local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
+      if message ~= "" then
+        vim.cmd("'<,'>CodeCompanion " .. message)
+      end
+    end, "Inline code companion" },
     ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
     ['<C-a>'] = { "<cmd>'<,'>CodeCompanionAdd<CR><cmd>CodeCompanionToggle<CR>", "Add visual selection to chat" },
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
@@ -210,7 +220,12 @@ local r = {
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
   t = {
-    ['<C-;>'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
+    ['<C-;>'] = { function()
+      local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
+      if message ~= "" then
+        vim.cmd("CodeCompanion " .. message)
+      end
+    end, "Inline code companion" },
     ['<C-a>'] = { "<C-o><cmd>CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
     ['<S-BS>'] = { '<C-w>', '' },
     ['<C-s>'] = { "<C-o><cmd>w<CR>i", "" },
@@ -221,7 +236,12 @@ local r = {
     ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
   },
   i = {
-    ['<C-;>'] = { "<ESC><cmd>CodeCompanion<CR>", "Inline code companion" },
+    ['<C-;>'] = { function()
+      local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
+      if message ~= "" then
+        vim.cmd("CodeCompanion " .. message)
+      end
+    end, "Inline code companion" },
     ['<S-BS>'] = { '<C-w>', '' },
     ['<C-a>'] = { "<ESC><cmd>CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
     ['<C-s>'] = { "<ESC><cmd>w<CR>i", "" },
