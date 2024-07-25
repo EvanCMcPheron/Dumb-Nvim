@@ -2,6 +2,7 @@
   - https://github.com/olimorris/codecompanion.nvim
   - Add new mappings to cheatsheet
 
+ - fix harpoons saving
  - add harpoon tabline
  - add harpoon cycling with <C-h> and <C-S-h>
 

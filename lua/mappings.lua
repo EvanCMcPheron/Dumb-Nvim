@@ -200,7 +200,7 @@ local r = {
     ['<leader>ai'] = { ":'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
     ['<C-;>'] = { ":'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
     ['<leader>aa'] = { ":'<,'>CodeCompanionActions<CR>", "AI Actions" },
-    ['<C-a>'] = { ":'<,'>CodeCompanionAdd<CR>", "Add visual selection to chat" },
+    ['<C-a>'] = { ":'<,'>CodeCompanionAdd<CR>:CodeCompanionToggle<CR>", "Add visual selection to chat" },
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },

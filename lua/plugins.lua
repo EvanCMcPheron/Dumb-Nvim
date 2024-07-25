@@ -389,33 +389,33 @@ local r = {
       require('configs.terminal')
     end,
   },
-  {
-    "Bryley/neoai.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    cmd = {
-      "NeoAI",
-      "NeoAIOpen",
-      "NeoAIClose",
-      "NeoAIToggle",
-      "NeoAIContext",
-      "NeoAIContextOpen",
-      "NeoAIContextClose",
-      "NeoAIInject",
-      "NeoAIInjectCode",
-      "NeoAIInjectContext",
-      "NeoAIInjectContextCode",
-    },
-    keys = {
-      { "<leader>as", desc = "summarize text" },
-    },
-    config = function()
-      vim.env['OPENAI_API_KEY'] = require('openai_key')
-      require('neoai').setup {
-      }
-    end,
-  },
+  -- {
+  --   "Bryley/neoai.nvim",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   cmd = {
+  --     "NeoAI",
+  --     "NeoAIOpen",
+  --     "NeoAIClose",
+  --     "NeoAIToggle",
+  --     "NeoAIContext",
+  --     "NeoAIContextOpen",
+  --     "NeoAIContextClose",
+  --     "NeoAIInject",
+  --     "NeoAIInjectCode",
+  --     "NeoAIInjectContext",
+  --     "NeoAIInjectContextCode",
+  --   },
+  --   keys = {
+  --     { "<leader>as", desc = "summarize text" },
+  --   },
+  --   config = function()
+  --     vim.env['OPENAI_API_KEY'] = require('openai_key')
+  --     require('neoai').setup {
+  --     }
+  --   end,
+  -- },
   {
     'mbbill/undotree',
     cmd = "UndotreeToggle",
