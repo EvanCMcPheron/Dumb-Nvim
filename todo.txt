@@ -4,8 +4,6 @@
  - Add Kanagawa theme
  - Try manually making a theme
 
- - Nevide support
-
  - add harpoon tabline
  - add harpoon cycling with <C-h> and <C-S-h>
 
