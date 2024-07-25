@@ -154,13 +154,13 @@ local r = {
   },
   { 'echasnovski/mini.nvim',     lazy = false, version = false, init = function() require('configs.mini') end },
   { 'NvChad/nvim-colorizer.lua', lazy = false, opts = {} },
-  { 'dstein64/nvim-scrollview', opts = {},     lazy = false },
+  { 'dstein64/nvim-scrollview',  opts = {},    lazy = false },
   {
     'lewis6991/gitsigns.nvim',
     lazy = false,
     opts = {},
   },
-  { 'alec-gibson/nvim-tetris',  cmd = "Tetris" },
+  { 'alec-gibson/nvim-tetris',      cmd = "Tetris" },
   {
     'ggandor/leap.nvim',
     lazy = false,
@@ -300,7 +300,7 @@ local r = {
   },
   {
     "Shatur/neovim-session-manager",
-    dependencies = {'nvim-lua/plenary.nvim'},
+    dependencies = { 'nvim-lua/plenary.nvim' },
     lazy = false,
     config = function()
       local Path = require('plenary.path')
@@ -499,8 +499,8 @@ local r = {
     },
     cmd = { "CodeCompanion" },
     config = function()
+      vim.env.ANTHROPIC_API_KEY_1 = require('api_keys').anthropic
       require("codecompanion").setup({
-        model = "gemma:2b",
         strategies = {
           chat = "anthropic",
           inline = "anthropic",
@@ -509,18 +509,21 @@ local r = {
         adapters = {
           anthropic = require("codecompanion.adapters").use("anthropic", {
             schema = {
-              -- model = {
-              --   default = "claude-3-sonnet-20240229",
-              -- },
-            },
-          }),
-          ollama = require("codecompanion.adapters").use("ollama", {
-            schema = {
+              env = {
+                api_key = "ANTHROPIC_API_KEY_1"
+              },
               model = {
-                default = "gemma:2b",
+                default = "claude-3-sonnet-20240229",
               },
             },
           }),
+          -- ollama = require("codecompanion.adapters").use("ollama", {
+          --   schema = {
+          --     model = {
+          --       default = "gemma:2b",
+          --     },
+          --   },
+          -- }),
         },
       })
     end,
@@ -589,8 +592,8 @@ local r = {
 }
 -- include themes in plugins list
 local t = require('themes')
-for i,v in ipairs(t) do
-  r[#r+1] = {
+for i, v in ipairs(t) do
+  r[#r + 1] = {
     v,
     lazy = false,
     priority = 1000,

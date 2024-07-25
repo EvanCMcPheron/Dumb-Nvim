@@ -1,8 +1,13 @@
- - add harpoon tabline
- - add harpoon cycling with <C-h> and <C-S-h>
-
  - Switch AI companion plugin to codeCompanion
   - https://github.com/olimorris/codecompanion.nvim
+
+ - Add Kanagawa theme
+ - Try manually making a theme
+
+ - Nevide support
+
+ - add harpoon tabline
+ - add harpoon cycling with <C-h> and <C-S-h>
 
  - DAP support??
   - DAP ui
