@@ -110,10 +110,10 @@ Swap window right | <leader><leader>j
 Swap window up | <leader><leader>k
 Swap winow right | <leader><leader>l
 
-Move cursor left | <A-S-h>
-Move cursor down | <A-S-j>
-Move cursor up | <A-S-k>
-Move cursor right | <A-S-l>
+Move cursor left | <C-A-h>
+Move cursor down | <C-A-j>
+Move cursor up | <C-A-k>
+Move cursor right | <C-A-l>
 
 ##Terminal @shell @comand @cmd @git
 Exit Terminal Insert Mode | <C-o>

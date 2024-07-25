@@ -168,8 +168,7 @@ local r = {
     ['<leader>tf'] = { term_map.move({ open_cmd = "float" }), "Move terminal to floating" },
     ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
 
-    ['<leader>a'] = { name = "+AI Tooling" },
-    ['<leader>ai'] = { "" },
+    ['<leader>o'] = { name = "+Ollama LLM" },
     -- ['<leader>ag'] = { ":NeoAI<CR>", "Open NeoAI TUI" },
     -- ['<leader>ai'] = {
     --   function()
@@ -201,10 +200,10 @@ local r = {
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
     ['<leader>a'] = { name = "AI" },
-    -- ['<leader>as'] = { "AI summarize text" },
-    -- ['<leader>ag'] = { ":'<,'>NeoAIContext<CR>", "Open NeoAI TUI" },
-    -- ['<leader>ai'] = { ":'<,'>NeoAIInjectContext ", "NeoAI Inject" },
-    -- ['<leader>ac'] = { ":'<,'>NeoAIInjectContextCode ", "NeoAI Inject (only code)" },
+    ['<leader>as'] = { "AI summarize text" },
+    ['<leader>ag'] = { ":'<,'>NeoAIContext<CR>", "Open NeoAI TUI" },
+    ['<leader>ai'] = { ":'<,'>NeoAIInjectContext ", "NeoAI Inject" },
+    ['<leader>ac'] = { ":'<,'>NeoAIInjectContextCode ", "NeoAI Inject (only code)" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
