@@ -14,19 +14,9 @@ local term_map = require("terminal.mappings")
 local run_cmd = nil
 
 local r = {
-  i = {
-    ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips" },
-    ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
-    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
-    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "" },
-    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
-    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
-    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
-    ['<C-o>'] = { '<Escape>', "quick escape" },
-  },
   n = {
     -- Keybindings established elsewhere, but still of NOTES
-    -- 
+    --
     -- keys = {
     --   -- Sample keybind for prompt menu. Note that the <c-u> is important for selections to work properly.
     --   {
@@ -47,12 +37,12 @@ local r = {
     -- END
 
     ["<leader>f"] = { name = "+navigation" },
-    ["<space>fb"] = {":Telescope file_browser<CR>", "File Browser" },
+    ["<space>fb"] = { ":Telescope file_browser<CR>", "File Browser" },
     -- ["<space>ff"] = {":Telescope file_browser path=%:p:h select_buffer=true<CR>", "File Browser" },
     ["<leader>ff"] = { ":Telescope find_files<CR>", "Find File" },
     ["<leader>fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
     ["<leader>ft"] = { ":Telescope help_tags<CR>", "Find Help tags" },
-       -- ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
+    -- ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
     -- ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
     -- ['<leader>fc'] = { ":NvimTreeFindFileToggle<CR>", "Toggle File Tree to Here" },
@@ -86,20 +76,20 @@ local r = {
     ['<leader>ch'] = { ":set foldmethod=indent<CR>", "Enable cold folding" },
     ['<leader>cu'] = { ":UndotreeToggle<CR>", "Undo Tree Toggle" },
     ['<leader>cp'] = { "<cmd>TodoTelescope<CR>", "Todo Comments Telescope" },
-    ['<leader>cd'] = { name = "+rust stuff"},
+    ['<leader>cd'] = { name = "+rust stuff" },
     ['<leader>cdd'] = {
       "<cmd>!cargo doc --open<CR>", "Generates and opens rust docs",
     },
     ['<leader>cds'] = {
       "<cmd>!rustup doc --std<CR>", "Open docs for rust's standard library",
     },
-    ['<leader>cdf'] = { function ()
+    ['<leader>cdf'] = { function()
       vim.cmd("!cargo fix")
       vim.cmd("redraw")
-    end, "Cargo Fix"},
+    end, "Cargo Fix" },
     ['<leader>crc'] = {
-      function ()
-        run_cmd = vim.fn.input({prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil})
+      function()
+        run_cmd = vim.fn.input({ prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil })
         if run_cmd == "" then
           run_cmd = nil
         end
@@ -107,14 +97,14 @@ local r = {
       "Change run cmd",
     },
     ['<leader>crr'] = {
-      function ()
+      function()
         if run_cmd == nil then
-          run_cmd = vim.fn.input({prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil})
+          run_cmd = vim.fn.input({ prompt = "Run Code Shell Cmd: ", commpletion = "file", cancelreturn = nil })
           if run_cmd == "" then
             run_cmd = nil
           end
         end
-        if run_cmd ~= nil then    -- This double checking is necessary bcs the input could return nil
+        if run_cmd ~= nil then -- This double checking is necessary bcs the input could return nil
           vim.cmd("TermRun " .. run_cmd)
         end
       end,
@@ -168,7 +158,8 @@ local r = {
     ['<leader>tf'] = { term_map.move({ open_cmd = "float" }), "Move terminal to floating" },
     ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
 
-    ['<leader>o'] = { name = "+Ollama LLM" },
+    ['<C-s>'] = { ":w<CR>", "" },
+    -- ['<leader>o'] = { name = "+Ollama LLM" },
     -- ['<leader>ag'] = { ":NeoAI<CR>", "Open NeoAI TUI" },
     -- ['<leader>ai'] = {
     --   function()
@@ -195,15 +186,18 @@ local r = {
     ['<leader>db'] = { '<cmd>lua require("dap").toggle_breakpoint()<cr>', "toggle breakpoint" },
     ['<leader>dB'] = { '<cmd>lua require("dap").toggle_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>', "toggle breakpoint with condition" },
     ['<leader>dui'] = { '<cmd>lua require("dapui").toggle()<cr>', "toggle DapUI" },
+
+    ['<leader>a'] = { name = '+AI Tooling' },
+    ['<leader>at'] = { ":CodeCompanionToggle<CR>", "Toggle the chat window" },
+    ['<C-a>'] = { ":CodeCompanionToggle<CR>", "Toggle the chat window" },
+    ['<leader>ai'] = { ":CodeCompanion<CR>", "Inline code companion" },
+    ['<C-i>'] = { ":CodeCompanion<CR>", "Inline code companion" },
   },
   v = {
+    ['<leader>a'] = { name = "AI Tooling" },
+    ['<leader>ai'] = { ":'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
-    ['<leader>a'] = { name = "AI" },
-    ['<leader>as'] = { "AI summarize text" },
-    ['<leader>ag'] = { ":'<,'>NeoAIContext<CR>", "Open NeoAI TUI" },
-    ['<leader>ai'] = { ":'<,'>NeoAIInjectContext ", "NeoAI Inject" },
-    ['<leader>ac'] = { ":'<,'>NeoAIInjectContextCode ", "NeoAI Inject (only code)" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
@@ -211,12 +205,30 @@ local r = {
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
   t = {
+    ['<C-i>'] = { "<ESC>:CodeCompanion<CR>", "Inline code companion" },
+    ['<S-BS>'] = { '<C-w>', '' },
+    ['<C-a>'] = { "<C-o>:CodeCompanionToggle<CR>i", "Toggle the chat window" },
+    ['<C-s>'] = { "<C-o>:w<CR>i", "" },
     ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
     ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
     ['<A-S-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
     ['<A-S-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
     ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
-  }
+  },
+  i = {
+    ['<C-i>'] = { "<ESC>:CodeCompanion<CR>", "Inline code companion" },
+    ['<S-BS>'] = { '<C-w>', '' },
+    ['<C-a>'] = { "<ESC>:CodeCompanionToggle<CR>i", "Toggle the chat window" },
+    ['<C-s>'] = { "<ESC>:w<CR>i", "" },
+    ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips" },
+    ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
+    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
+    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "" },
+    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
+    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
+    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
+    ['<C-o>'] = { '<Escape>', "quick escape" },
+  },
 }
 
 -- show the effects of a search / replace in a live preview window

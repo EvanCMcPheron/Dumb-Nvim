@@ -12,7 +12,7 @@ local r = {
     warning = {
         alpha = 0.4,
         offset = 0,
-        colorcode = '#FF0000',
+        colorcode = '#F07070',
         hlgroup = { 'Error', 'bg' },
     },
     extra = {

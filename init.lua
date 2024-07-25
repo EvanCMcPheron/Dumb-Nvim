@@ -2,7 +2,7 @@
 local default_textwidth = 80
 local default_tabwidth = 2
 local leader = " "
-local default_scale = 0.55
+local default_scale = 0.606
 
 -- End of Properties
 
@@ -65,6 +65,15 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 
 vim.g.smarttab = true
+
+-- Autocmd to allways have highlighting enabled
+vim.api.nvim_create_autocmd( {"BufEnter", "BufWinEnter", "BufFilePost"}, {
+  pattern = "*",
+  callback = function ()
+    vim.cmd("TSEnable highlight")
+  end
+
+})
 
 -- Make terminals not have numbers
 vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter" }, {
