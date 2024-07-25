@@ -2,3 +2,5 @@
 ./lua/openai_key.lua
 lua/openai_key.lua
 lua/api_keys.lua
+usage_data.json
+usage_data.json
