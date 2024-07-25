@@ -492,38 +492,36 @@ local r = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope.nvim", -- Optional
       {
-        "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
-        opts = {
-        },
+        "stevearc/dressing.nvim",    -- Optional: Improves the default Neovim UI
+        opts = {},
       },
     },
     cmd = { "CodeCompanion" },
+    event = { "BufReadPost", "BufNewFile" }, -- Lazy-load on buffer events
     config = function()
-      vim.env.ANTHROPIC_API_KEY_1 = require('api_keys').anthropic
+      vim.env.ANTHROPIC_API_KEY = require('api_keys').anthropic
       require("codecompanion").setup({
-        strategies = {
-          chat = "anthropic",
-          inline = "anthropic",
-          agent = "anthropic"
-        },
         adapters = {
-          anthropic = require("codecompanion.adapters").use("anthropic", {
-            schema = {
-              env = {
-                api_key = "ANTHROPIC_API_KEY_1"
+          anthropic = function()
+            return require("codecompanion.adapters").use("anthropic", {
+              schema = {
+                model = {
+                  default = "claude-3-5-sonnet-20240620",
+                },
               },
-              model = {
-                default = "claude-3-sonnet-20240229",
-              },
-            },
-          }),
-          -- ollama = require("codecompanion.adapters").use("ollama", {
-          --   schema = {
-          --     model = {
-          --       default = "gemma:2b",
-          --     },
-          --   },
-          -- }),
+            })
+          end,
+        },
+        strategies = {
+          chat = {
+            adapter = "anthropic",
+          },
+          inline = {
+            adapter = "anthropic",
+          },
+          agent = {
+            adapter = "anthropic"
+          },
         },
       })
     end,

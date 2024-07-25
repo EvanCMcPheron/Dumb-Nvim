@@ -142,10 +142,10 @@ local r = {
     ['<A-k>'] = { require('smart-splits').resize_up, "Resize window up" },
     ['<A-l>'] = { require('smart-splits').resize_right, "Resize window right" },
 
-    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
-    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
-    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
-    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
+    ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
+    ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
+    ['<A-S-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
+    ['<A-S-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
 
     ['<leader><leader>h'] = { require('smart-splits').swap_buf_left, "Swap window left" },
     ['<leader><leader>j'] = { require('smart-splits').swap_buf_down, "Swap window right" },
@@ -211,10 +211,10 @@ local r = {
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
   t = {
-    ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "" },
-    ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
-    ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },
-    ['<C-A-l>'] = { require('smart-splits').move_cursor_right, "" },
+    ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
+    ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
+    ['<A-S-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
+    ['<A-S-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
     ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
   }
 }
