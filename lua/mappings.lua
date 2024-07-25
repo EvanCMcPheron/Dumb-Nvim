@@ -21,7 +21,7 @@ local r = {
     --   -- Sample keybind for prompt menu. Note that the <c-u> is important for selections to work properly.
     --   {
     --     "<leader>oo",
-    --     ":<c-u>lua require('ollama').prompt()<cr>",
+    --     "<cmd><c-u>lua require('ollama').prompt()<cr>",
     --     desc = "ollama prompt",
     --     mode = { "n", "v" },
     --   },
@@ -29,7 +29,7 @@ local r = {
     --   -- Sample keybind for direct prompting. Note that the <c-u> is important for selections to work properly.
     --   {
     --     "<leader>oG",
-    --     ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
+    --     "<cmd><c-u>lua require('ollama').prompt('Generate_Code')<cr>",
     --     desc = "ollama Generate Code",
     --     mode = { "n", "v" },
     --   },
@@ -37,18 +37,18 @@ local r = {
     -- END
 
     ["<leader>f"] = { name = "+navigation" },
-    ["<space>fb"] = { ":Telescope file_browser<CR>", "File Browser" },
-    -- ["<space>ff"] = {":Telescope file_browser path=%:p:h select_buffer=true<CR>", "File Browser" },
-    ["<leader>ff"] = { ":Telescope find_files<CR>", "Find File" },
-    ["<leader>fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
-    ["<leader>ft"] = { ":Telescope help_tags<CR>", "Find Help tags" },
+    ["<space>fb"] = { "<cmd>Telescope file_browser<CR>", "File Browser" },
+    -- ["<space>ff"] = {"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", "File Browser" },
+    ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find File" },
+    ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+    ["<leader>ft"] = { "<cmd>Telescope help_tags<CR>", "Find Help tags" },
     -- ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
-    -- ['<leader>ft'] = { ":NvimTreeToggle<CR>", "Toggle File Tree" },
-    -- ['<leader>fc'] = { ":NvimTreeFindFileToggle<CR>", "Toggle File Tree to Here" },
+    -- ['<leader>ft'] = { "<cmd>NvimTreeToggle<CR>", "Toggle File Tree" },
+    -- ['<leader>fc'] = { "<cmd>NvimTreeFindFileToggle<CR>", "Toggle File Tree to Here" },
 
     ['<leader>h'] = { name = "+harpoon" },
-    ['<leader>fh'] = { ":Telescope harpoon marks <CR>", "Harpoon Marks" },
+    ['<leader>fh'] = { "<cmd>Telescope harpoon marks <CR>", "Harpoon Marks" },
     ['<leader>hm'] = { function() harpoon:list():add() end, "Add Harpoon Mark" },
     ['<leader>hh'] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Toggle Harpoon (quickmenu)" },
     ['<leader>n'] = { name = "+Harpoon quickselects" },
@@ -70,11 +70,11 @@ local r = {
     ['<C-p>'] = { "Autocomplete move up." },
 
     ['<leader>c'] = { name = '+code' },
-    ['<leader>cs'] = { ":TSJToggle<CR>", "Split/unsplit text blocks" },
-    ['<leader>cg'] = { ":ZenMode<CR>", "Toggle zen mode" },
-    ['<leader>ct'] = { ":Twilight<CR>", "Toggle Twilight" },
-    ['<leader>ch'] = { ":set foldmethod=indent<CR>", "Enable cold folding" },
-    ['<leader>cu'] = { ":UndotreeToggle<CR>", "Undo Tree Toggle" },
+    ['<leader>cs'] = { "<cmd>TSJToggle<CR>", "Split/unsplit text blocks" },
+    ['<leader>cg'] = { "<cmd>ZenMode<CR>", "Toggle zen mode" },
+    ['<leader>ct'] = { "<cmd>Twilight<CR>", "Toggle Twilight" },
+    ['<leader>ch'] = { "<cmd>set foldmethod=indent<CR>", "Enable cold folding" },
+    ['<leader>cu'] = { "<cmd>UndotreeToggle<CR>", "Undo Tree Toggle" },
     ['<leader>cp'] = { "<cmd>TodoTelescope<CR>", "Todo Comments Telescope" },
     ['<leader>cd'] = { name = "+rust stuff" },
     ['<leader>cdd'] = {
@@ -111,7 +111,7 @@ local r = {
       "Run Code Shell Command",
     },
 
-    ['<leader>?'] = { ":Cheatsheet<CR>", "Open Cheatsheet" },
+    ['<leader>?'] = { "<cmd>Cheatsheet<CR>", "Open Cheatsheet" },
 
     ['<leader>w'] = { name = '+workspace' },
     ['<leader>wa'] = { "Add workspace folder" },
@@ -124,8 +124,8 @@ local r = {
     ['<leader>cf'] = { "Format Code" },
 
     ['<leader>s'] = { name = '+sessions' },
-    ['<leader>ss'] = { ":SessionsSave<CR>", "Save current session" },
-    ['<leader>sl'] = { ":SessionsLoad<CR>", "Load session attatched to current dir" },
+    ['<leader>ss'] = { "<cmd>SessionsSave<CR>", "Save current session" },
+    ['<leader>sl'] = { "<cmd>SessionsLoad<CR>", "Load session attatched to current dir" },
 
     ['<A-h>'] = { require('smart-splits').resize_left, "Resize window left" },
     ['<A-j>'] = { require('smart-splits').resize_down, "Resize window down" },
@@ -156,11 +156,11 @@ local r = {
     ['<leader>th'] = { term_map.move({ open_cmd = "belowright new" }), "Move terminal belowright" },
     ['<leader>tH'] = { term_map.move({ open_cmd = "botright new" }), "Move terminal bottomright" },
     ['<leader>tf'] = { term_map.move({ open_cmd = "float" }), "Move terminal to floating" },
-    ['<leader>tg'] = { ":Lazygit<CR>", "Open Lazygit (floating)" },
+    ['<leader>tg'] = { "<cmd>Lazygit<CR>", "Open Lazygit (floating)" },
 
-    ['<C-s>'] = { ":w<CR>", "" },
+    ['<C-s>'] = { "<cmd>w<CR>", "" },
     -- ['<leader>o'] = { name = "+Ollama LLM" },
-    -- ['<leader>ag'] = { ":NeoAI<CR>", "Open NeoAI TUI" },
+    -- ['<leader>ag'] = { "<cmd>NeoAI<CR>", "Open NeoAI TUI" },
     -- ['<leader>ai'] = {
     --   function()
     --     local i = vim.fn.input { prompt = "Prompt for AI: ", cancelreturn = "nil" }
@@ -188,19 +188,19 @@ local r = {
     ['<leader>dui'] = { '<cmd>lua require("dapui").toggle()<cr>', "toggle DapUI" },
 
     ['<leader>a'] = { name = '+AI Tooling' },
-    ['<leader>at'] = { ":CodeCompanionToggle<CR>zH", "Toggle the chat window" },
-    ['<C-a>'] = { ":CodeCompanionToggle<CR>zH", "Toggle the chat window" },
-    ['<leader>ai'] = { ":CodeCompanion<CR>", "Inline code companion" },
-    ['<C-;>'] = { ":CodeCompanion<CR>", "Inline code companion" },
-    ['<leader>an'] = { ":CodeCompanionChat<CR>zH", "Create a new chat" },
-    ['<leader>aa'] = { ":CodeCompanionActions<CR>", "AI Actions" },
+    ['<leader>at'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
+    ['<C-a>'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
+    ['<leader>ai'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
+    ['<C-;>'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
+    ['<leader>an'] = { "<cmd>CodeCompanionChat<CR>zH", "Create a new chat" },
+    ['<leader>aa'] = { "<cmd>CodeCompanionActions<CR>", "AI Actions" },
   },
   v = {
     ['<leader>a'] = { name = "AI Tooling" },
-    ['<leader>ai'] = { ":'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
-    ['<C-;>'] = { ":'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
-    ['<leader>aa'] = { ":'<,'>CodeCompanionActions<CR>", "AI Actions" },
-    ['<C-a>'] = { ":'<,'>CodeCompanionAdd<CR>:CodeCompanionToggle<CR>", "Add visual selection to chat" },
+    ['<leader>ai'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
+    ['<C-;>'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
+    ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
+    ['<C-a>'] = { "<cmd>'<,'>CodeCompanionAdd<CR>:CodeCompanionToggle<CR>", "Add visual selection to chat" },
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },
@@ -210,7 +210,7 @@ local r = {
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
   t = {
-    ['<C-;>'] = { ":CodeCompanion<CR>", "Inline code companion" },
+    ['<C-;>'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
     ['<C-a>'] = { "<C-o>:CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
     ['<S-BS>'] = { '<C-w>', '' },
     ['<C-s>'] = { "<C-o>:w<CR>i", "" },
