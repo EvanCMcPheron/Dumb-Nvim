@@ -1,9 +1,8 @@
 local r = {
-  global_settings = {
-    tabline = true,
-    tabline_prefix = "   ",
-    tabline_suffix = "   ",
-  },
+  settings = {
+    save_on_toggle = true,
+    sync_on_ui_close = true,
+  }
 }
 
 return r

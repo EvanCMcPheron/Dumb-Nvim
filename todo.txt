@@ -1,4 +1,4 @@
- - fix harpoons saving
+ - fix harpoons saving (difficulty level IMPOSSIBLE WTF)
  - add harpoon cycling with <C-h> and <C-S-h>
 
  - Code folding is broken?
