@@ -1,14 +1,7 @@
- - Switch AI companion plugin to codeCompanion
-  - https://github.com/olimorris/codecompanion.nvim
-  - Add new mappings to cheatsheet
-
  - fix harpoons saving
- - add harpoon tabline
  - add harpoon cycling with <C-h> and <C-S-h>
 
  - Code folding is broken?
-
- - Go through plugins.lua and comment what each plugin does
 
  - Add Kanagawa theme
  - Try manually making a theme

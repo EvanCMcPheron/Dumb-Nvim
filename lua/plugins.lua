@@ -44,7 +44,7 @@ local r = {
       '<leader>ns'
     },
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function() require('harpoon').setup(require('configs.harpoon')) end,
+    config = function() require('harpoon'):setup(require('configs.harpoon')) end,
   },
   {
     "folke/which-key.nvim",
@@ -492,7 +492,7 @@ local r = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope.nvim", -- Optional
       {
-        "stevearc/dressing.nvim",    -- Optional: Improves the default Neovim UI
+        "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
         opts = {},
       },
     },
@@ -560,6 +560,12 @@ local r = {
   {
     'rktjmp/lush.nvim',
     lazy = false,
+  },
+  {
+    "romgrk/barbar.nvim",
+    lazy = false,
+    dependencies = { "ThePrimeagen/harpoon" },
+    config = require 'configs.barbar',
   },
 }
 -- include themes in plugins list
