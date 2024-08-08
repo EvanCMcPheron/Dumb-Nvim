@@ -2,20 +2,20 @@
 local default_textwidth = 80
 local default_tabwidth = 2
 local leader = " "
-local default_scale = 0.606
+local default_scale = 0.5788
 
 -- End of Properties
 
 -- Graphical frontend configuration
 if vim.g.neovide then
   vim.g.neovide_fullscreen = true
-  vim.o.guifont = "3270 Nerd Font Mono:h14"
+  vim.o.guifont = "FiraCode Nerd Font:h12"        -- 3270 Nerd Font Mono:h14  -- Alternative
   vim.keymap.set('v', '<C-c>', '"+y')         -- Copy
   vim.keymap.set('n', '<C-v>', '"+P')         -- Paste normal mode
   vim.keymap.set('v', '<C-v>', '"+P')         -- Paste visual mode
   vim.keymap.set('c', '<C-v>', '<C-R>+')      -- Paste command mode
-  vim.keymap.set('t', '<C-v>', '<C-\\><C-n>"+pi')  -- Paste terminal mode
-  vim.keymap.set('i', '<C-v>', '<C-\\><C-n>"+pi') -- Paste insert mode
+  vim.keymap.set('t', '<C-v>', '<C-\\><C-n>"+pa')  -- Paste terminal mode
+  vim.keymap.set('i', '<C-v>', '<C-\\><C-n>"+pa') -- Paste insert mode
   vim.g.neovide_scale_factor = default_scale
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta

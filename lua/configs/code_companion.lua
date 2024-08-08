@@ -1,4 +1,17 @@
-local adapter = "openai"
+-- Define models for convenience
+local anthropic_models = {}
+anthropic_models.sonnet = "claude-3-5-sonnet-20240620"  --3/15 $ per M Token
+anthropic_models.opus = "claude-3-opus-20240229"  --15/75 $ per M Token
+anthropic_models.haiku = "claude-3-haiku-20240307"  --0.25/1.25 $ per M Token
+local openai_models = {}
+openai_models["gpt-4o"] = "gpt-4o"  --5/15 $ per M Token
+openai_models["gpt-4o-mini"] = "gpt-40-mini"  --0.15/0.6 $ per M Token
+
+-- Actual configuration
+local adapter = "anthropic"
+local anthropic_model = anthropic_models.haiku
+local openai_model = openai_models["gpt-4o-mini"]
+
 -- local utils = require("codecompanion.utils.util")
 
 return function()
@@ -20,16 +33,16 @@ return function()
         return require("codecompanion.adapters").use("openai", {
           schema = {
             model = {
-              default = "gpt-4o-mini",
+              default = openai_model,
             },
           },
         })
       end,
       anthropic = function()
-        return require("codecompanion.adapters").use(adapter, {
+        return require("codecompanion.adapters").use("anthropic", {
           schema = {
             model = {
-              default = "claude-3-5-sonnet-20240620",
+              default = anthropic_model,
             },
           },
         })

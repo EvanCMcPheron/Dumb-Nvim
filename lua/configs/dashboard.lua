@@ -13,7 +13,7 @@ local choose = function ()
   elseif rand == 4 then
     return '𝑏𝑒𝑖𝑛𝑔 𝑠𝑚𝑎𝑟𝑡 𝑖𝑠 𝑓𝑜𝑟 𝑑𝑢𝑚𝑏 𝑝𝑒𝑜𝑝𝑙𝑒, 𝑏𝑒𝑖𝑛𝑔 𝑑𝑢𝑚𝑏 𝑖𝑠 𝑓𝑜𝑟 𝑠𝑚𝑎𝑟𝑡 𝑝𝑜𝑒𝑝𝑙𝑒'
   elseif rand == 5 then
-    return "It's not the size of the boat, but uh... what were we talking about?"
+    return "𝐼𝑡'𝑠 𝑛𝑜𝑡 𝑡h𝑒 𝑠𝑖𝑧𝑒 𝑜𝑓 𝑡h𝑒 𝑏𝑜𝑎𝑡, 𝑏𝑢𝑡 𝑢h... 𝑤h𝑎𝑡 𝑤𝑒𝑟𝑒 𝑤𝑒 𝑡𝑎𝑙𝑘𝑖𝑛𝑔 𝑎𝑏𝑜𝑢𝑡?"
   elseif rand == 6 then
     return "𝑏𝑒𝑖𝑛𝑔 𝑠𝑚𝑎𝑟𝑡 𝑖𝑠 𝑓𝑜𝑟 𝑑𝑢𝑚𝑏 𝑝𝑒𝑜𝑝𝑙𝑒, 𝑏𝑒𝑖𝑛𝑔 𝑑𝑢𝑚𝑏 𝑖𝑠 𝑓𝑜𝑟 𝑠𝑚𝑎𝑟𝑡 𝑝𝑜𝑒𝑝𝑙𝑒'"
   elseif rand == 7 then
@@ -31,7 +31,7 @@ local choose = function ()
   elseif rand == 13 then
     return "        𝑏𝑟𝑖𝑔h𝑒𝑟 𝑏𝑢𝑙𝑏𝑠 𝑏𝑢𝑟𝑛𝑜𝑢𝑡 𝑓𝑎𝑠𝑡𝑒𝑟!         "
   elseif rand == 13 then
-    return "Hey pal, did you just blow in from stupid town? Yeah me too..."
+    return "𝐻𝑒𝑦 𝑝𝑎𝑙, 𝑑𝑖𝑑 𝑦𝑜𝑢 𝑗𝑢𝑠𝑡 𝑏𝑙𝑜𝑤 𝑖𝑛 𝑓𝑟𝑜𝑚 𝑠𝑡𝑢𝑝𝑖𝑑 𝑡𝑜𝑤𝑛? 𝑌𝑒𝑎h 𝑚𝑒 𝑡𝑜𝑜..."
   elseif rand == 13 then
     return "𝑃𝑎𝑡𝑟𝑖𝑐𝑘'𝑠 𝑓𝑎𝑣𝑜𝑟𝑖𝑡𝑒 𝑐𝑜𝑑𝑒 𝑒𝑑𝑖𝑡𝑜𝑟!"
   elseif rand == 13 then
@@ -153,7 +153,7 @@ local r = {
         desc = 'Open File Browser',
         group = 'label',
         action = 'Telescope file_browser',
-        key = 'd',
+        key = 'b',
       },
       {
         icon = ' ',

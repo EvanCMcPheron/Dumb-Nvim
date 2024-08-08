@@ -3,8 +3,13 @@
 
  - Code folding is broken?
 
- - Add Kanagawa theme
- - Try manually making a theme
+ - Create mapping for find and replace
+
+ - AI code completion
+
+ - markdown integration
+
+ - obsidian integration
 
  - look into rebinding capslock
 
