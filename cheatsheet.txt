@@ -3,7 +3,7 @@ quick normal (insert and term) | <C-o>
 
 ##Surround @sandwich @parentheses @brackets
 Add surrounding | tsa
-qDelete surrounding | tsd
+Delete surrounding | tsd
 Replace surrounding | tsr
 Find surrounding (right) | tsf
 Find surroundings (left) | tsF

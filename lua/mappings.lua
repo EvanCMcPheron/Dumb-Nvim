@@ -42,6 +42,63 @@ local r = {
     ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find File" },
     ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
     ["<leader>ft"] = { "<cmd>Telescope help_tags<CR>", "Find Help tags" },
+    ["<leader>fr"] = { name = "+find and replace" },
+    ["<leader>frr"] = {
+      function()
+        local key = vim.fn.input("Key")
+        if key == "" then
+          return
+        end
+        local replace = vim.fn.input("Replacement")
+        if replace == "" then
+          return
+        end
+        vim.cmd("%s/" .. key .. "/" .. replace .. "/g")
+      end,
+      "Find and Replace"
+    },
+    ["<leader>fri"] = {
+      function()
+        local key = vim.fn.input("Key")
+        if key == "" then
+          return
+        end
+        local replace = vim.fn.input("Replacement")
+        if replace == "" then
+          return
+        end
+        vim.cmd("%s/" .. key .. "/" .. replace .. "/gi")
+      end,
+      "Find and Replace Case Insensitive"
+    },
+    ["<leader>frc"] = {
+      function()
+        local key = vim.fn.input("Key")
+        if key == "" then
+          return
+        end
+        local replace = vim.fn.input("Replacement")
+        if replace == "" then
+          return
+        end
+        vim.cmd("%s/" .. key .. "/" .. replace .. "/gc")
+      end,
+      "Find and Replace with Confirmation"
+    },
+    ["<leader>fra"] = {
+      function()
+        local key = vim.fn.input("Key")
+        if key == "" then
+          return
+        end
+        local replace = vim.fn.input("Replacement")
+        if replace == "" then
+          return
+        end
+        vim.cmd("%s/" .. key .. "/" .. replace .. "/gic")
+      end,
+      "Find and Replace Case Insensitive"
+    },
     -- ["<leader>fh"] = { tb.help_tags, "Help Tags" }, fh now used by harpoon
 
     -- ['<leader>ft'] = { "<cmd>NvimTreeToggle<CR>", "Toggle File Tree" },
@@ -227,7 +284,7 @@ local r = {
       end
     end, "Inline code companion" },
     ['<C-a>'] = { "<C-o><cmd>CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
-    ['<S-BS>'] = { '<C-w>', '' },
+    ['<C-BS>'] = { '<C-w>', '' },
     ['<C-s>'] = { "<C-o><cmd>w<CR>i", "" },
     ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
     ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },

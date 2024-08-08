@@ -3,8 +3,6 @@
 
  - Code folding is broken?
 
- - Create mapping for find and replace
-
  - AI code completion
 
  - markdown integration
@@ -12,6 +10,8 @@
  - obsidian integration
 
  - look into rebinding capslock
+
+ - Grammar checking
 
  - DAP support??
   - DAP ui
