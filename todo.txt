@@ -1,16 +1,13 @@
- - AI code completion
-
- - markdown integration
-
  - obsidian integration
 
  - look into rebinding capslock
 
  - look into nvim remote
 
+ - Switch to oil.nvim
+
  - switch code companion (which has less functionality than I hoped) to
    parrot.nvim
-
 
  - fix harpoons saving (difficulty level IMPOSSIBLE WTF)
  - add harpoon cycling with <C-h> and <C-S-h>
