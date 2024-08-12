@@ -159,6 +159,7 @@ local r = {
         desc = 'Obsidian',
         group = 'label',
         action = function()
+          -- load obsidian integration
           vim.cmd('Lazy load obsidian.nvim')
 
           local pickers = require("telescope.pickers")
@@ -166,15 +167,17 @@ local r = {
           local actions = require "telescope.actions"
           local action_state = require "telescope.actions.state"
 
-          local selection = {}
+          -- Load workspaces outlined in nvim config
+          local workspaces = {}
           for i, v in ipairs(require 'obsidian_worspaces') do
-            selection[i] = v.name
+            workspaces[i] = v.name
           end
 
+          -- use telescope picker to select workspace
           pickers
               .new({}, {
                 finder = finders.new_table({
-                  results = selection,
+                  results = workspaces,
                 }),
                 attach_mappings = function(prompt_bufnr, _)
                   actions.select_default:replace(function()
@@ -196,7 +199,6 @@ local r = {
 
                     vim.cmd('cd ' .. fp)
                     vim.cmd('enew')
-
                   end)
                   return true
                 end,
