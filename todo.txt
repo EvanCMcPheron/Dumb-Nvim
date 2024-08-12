@@ -1,3 +1,5 @@
+ - AI code completion
+
  - markdown integration
 
  - obsidian integration
@@ -6,7 +8,9 @@
 
  - look into nvim remote
 
- - Look into starting with wave terminal
+ - switch code companion (which has less functionality than I hoped) to
+   parrot.nvim
+
 
  - fix harpoons saving (difficulty level IMPOSSIBLE WTF)
  - add harpoon cycling with <C-h> and <C-S-h>

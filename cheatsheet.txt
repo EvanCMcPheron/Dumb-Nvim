@@ -236,9 +236,3 @@ Save the chat to disk | gs
 Add an agent to an existing chat | gt
 Move to the next header | [
 Move to the previous header | ]
-
-## FindAndReplace @Find @Replace @Search
-Find and replace | <leader>frr
-Find and replace Ignore Case | <leader>fri
-Find and replace with confirm | <leader>frc
-Find and replace all (confirm and ignore case) | <leader>fra

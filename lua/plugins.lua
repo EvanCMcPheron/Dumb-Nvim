@@ -490,79 +490,20 @@ local r = {
     event = 'VimEnter',
   },
   {
-    "frankroeder/parrot.nvim",
-    cmd = {
-      "PrtChatNew",
-      "PrtChatToggle",
-      "PrtChatPaste",
-      "PrtInfo",
-      "PrtContext",
-      "PrtChatFinder",
-      "PrtChatDelete",
-      "PrtChatRespond",
-      "PrtStop",
-      "PrtProvider",
-      "PrtModel",
-      "Interactive",
-      "PrtRewrite",
-      "PrtAppend",
-      "PrtPrepend",
-      "PrtNew",
-      "PrtEnew",
-      "PrtVnew",
-      "PrtTabnew",
-      "Example",
-      "PrtImplement",
-      "PrtAsk",
-    },
-    tag = "v0.4.2",
-    dependencies = { 'ibhagwan/fzf-lua', 'nvim-lua/plenary.nvim' },
-    -- optionally include "rcarriga/nvim-notify" for beautiful notifications
-    opts = {
-      -- Providers must be explicitly added to make them available.
-      providers = {
-        -- pplx = {
-        --   api_key = require('api_keys').perplexity,
-        --   -- OPTIONAL
-        --   -- gpg command
-        --   -- api_key = { "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/pplx_api_key.txt.gpg"  },
-        --   -- macOS security tool
-        --   -- api_key = { "/usr/bin/security", "find-generic-password", "-s pplx-api-key", "-w" },
-        -- },
-        openai = {
-          api_key = require('api_keys').open_ai,
-        },
-        anthropic = {
-          api_key = require('api_keys').anthropic,
-        },
-        -- mistral = {
-        --   api_key = require('api_keys').mistral,
-        -- },
-        -- gemini = {
-        --   api_key = require('api_keys').gemini,
-        -- },
-        -- groq = {
-        --   api_key = require('api_keys').groq,
-        -- },
-        ollama = {} -- provide an empty list to make provider available
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- Optional
+      {
+        "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
+        opts = {},
       },
-    }
+    },
+    cmd = { "CodeCompanion" },
+    event = { "BufReadPost", "BufNewFile" }, -- Lazy-load on buffer events
+    config = require('configs.code_companion'),
   },
-  -- {
-  --   "olimorris/codecompanion.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "nvim-telescope/telescope.nvim", -- Optional
-  --     {
-  --       "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
-  --       opts = {},
-  --     },
-  --   },
-  --   cmd = { "CodeCompanion" },
-  --   event = { "BufReadPost", "BufNewFile" }, -- Lazy-load on buffer events
-  --   config = require('configs.code_companion'),
-  -- },
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
