@@ -244,29 +244,57 @@ local r = {
     ['<leader>dB'] = { '<cmd>lua require("dap").toggle_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>', "toggle breakpoint with condition" },
     ['<leader>dui'] = { '<cmd>lua require("dapui").toggle()<cr>', "toggle DapUI" },
 
+
     ['<leader>a'] = { name = '+AI Tooling' },
-    ['<leader>at'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
-    ['<C-a>'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
-    ['<leader>ai'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
-    ['<C-;>'] = { function()
-      local message = vim.fn.input("Inline Prompt (eg. /commit)")
-      if message ~= "" then
-        vim.cmd("CodeCompanion " .. message)
-      end
-    end, "Inline code companion" },
-    ['<leader>an'] = { "<cmd>CodeCompanionChat<CR>zH", "Create a new chat" },
-    ['<leader>aa'] = { "<cmd>CodeCompanionActions<CR>", "AI Actions" },
+
+    ['<leader>at'] = { "<cmd>PrtChatToggle popup<CR>", "Toggle the chat window" },
+    ['<C-a>'] = { "<cmd>PrtChatToggle popup<CR>", "Toggle the chat window" },
+    ['<leader>ap'] = { "'<,'><cmd>PrtChatPaste<CR>", "Fuzzy Find Chats" },
+    ['<leader>an'] = { "<cmd>PrtChatNew popup<CR>", "Create a new chat buffer" },
+    ['<leader>ad'] = { "<cmd>PrtChatDelete<CR>", "Delete current chat" },
+    ['<leader>af'] = { "<cmd>PrtChatFinder<CR>", "Fuzzy Find Chats" },
+
+    ['<leader>ac'] = { name = "+change" },
+    ['<leader>acp'] = { "<cmd>PrtProvider<CR>","Change Provider"},
+    ['<leader>acm'] = { "<cmd>PrtModel<CR>","Change Model"},
+
+    ['<C-r>'] = { "<cmd>PrtChatRespond<CR>", "Trigger LLM Chat Response" },
+
+    ['<leader>ai'] = { name = "+interactive"},
+    ['<leader>aii'] = { "'<,'><cmd>PrtImplement<CR>", "Use selected comment as prompt" },
+    ['<leader>air'] = { "'<,'><cmd>PrtRewrite<CR>", "Rewrite the visual selection based on prompt" },
+    ['<leader>aia'] = { "'<,'><cmd>PrtAppend<CR>", "Append visual selection based on prompt" },
+    ['<leader>aiA'] = { "'<,'><cmd>PrtPrepend<CR>", "Prepend visual selection based on prompt" },
+    ['<leader>aiq'] = { "'<,'><cmd>PrtAsk<CR>", "Ask the model a question" },
+
+    -- ['<C-a>'] = { "<cmd>CodeCompanionToggle<CR>zH", "Toggle the chat window" },
+    -- ['<leader>ai'] = { "<cmd>CodeCompanion<CR>", "Inline code companion" },
+    -- ['<C-;>'] = { function()
+    --   local message = vim.fn.input("Inline Prompt (eg. /commit)")
+    --   if message ~= "" then
+    --     vim.cmd("CodeCompanion " .. message)
+    --   end
+    -- end, "Inline code companion" },
+    -- ['<leader>an'] = { "<cmd>CodeCompanionChat<CR>zH", "Create a new chat" },
+    -- ['<leader>aa'] = { "<cmd>CodeCompanionActions<CR>", "AI Actions" },
   },
   v = {
-    ['<leader>a'] = { name = "AI Tooling" },
-    ['<leader>ai'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
-    ['<C-;>'] = { function()
-      local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
-      if message ~= "" then
-        vim.cmd("'<,'>CodeCompanion " .. message)
-      end
-    end, "Inline code companion" },
-    ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
+    ['<leader>a'] = { name = '+AI Tooling' },
+
+    ['<leader>ai'] = { name = "+interactive"},
+    ['<leader>aii'] = { "'<,'><cmd>PrtImplement<CR>", "Use selected comment as prompt" },
+    ['<leader>air'] = { "'<,'><cmd>PrtRewrite<CR>", "Rewrite the visual selection based on prompt" },
+    ['<leader>aia'] = { "'<,'><cmd>PrtAppend<CR>", "Append visual selection based on prompt" },
+    ['<leader>aiA'] = { "'<,'><cmd>PrtPrepend<CR>", "Prepend visual selection based on prompt" },
+
+    -- ['<leader>ai'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
+    -- ['<C-;>'] = { function()
+    --   local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
+    --   if message ~= "" then
+    --     vim.cmd("'<,'>CodeCompanion " .. message)
+    --   end
+    -- end, "Inline code companion" },
+    -- ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
     ['<C-a>'] = { "<cmd>'<,'>CodeCompanionAdd<CR><cmd>CodeCompanionToggle<CR>", "Add visual selection to chat" },
     ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
     ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
@@ -277,6 +305,10 @@ local r = {
     ["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]],
   },
   t = {
+    ['<C-a>'] = { "<cmd>PrtChatToggle popup<CR>", "Toggle the chat window" },
+    ['<C-r>'] = { "<cmd>PrtChatRespond<CR>", "Trigger LLM Chat Response" },
+
+
     ['<C-;>'] = { function()
       local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
       if message ~= "" then
@@ -284,7 +316,7 @@ local r = {
       end
     end, "Inline code companion" },
     ['<C-a>'] = { "<C-o><cmd>CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
-    ['<C-BS>'] = { '<C-w>', '' },
+    ['<S-BS>'] = { '<C-w>', '' }, -- Doesn't work with neovide for some reason
     ['<C-s>'] = { "<C-o><cmd>w<CR>i", "" },
     ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
     ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
@@ -293,6 +325,10 @@ local r = {
     ['<C-o>'] = { '<C-\\><C-n>', "quick escape" },
   },
   i = {
+    ['<C-a>'] = { "<cmd>PrtChatToggle popup<CR>", "Toggle the chat window" },
+    ['<C-r>'] = { "<cmd>PrtChatRespond<CR>", "Trigger LLM Chat Response" },
+
+
     ['<C-;>'] = { function()
       local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
       if message ~= "" then
