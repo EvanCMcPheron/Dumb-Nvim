@@ -1,9 +1,7 @@
-
-
-local choose = function ()
+local choose = function()
   math.randomseed(os.time())
   math.random(); math.random(); math.random(); math.random(); math.random(); math.random(); math.random(); math.random()
-  local rand = math.random(1,14)
+  local rand = math.random(1, 14)
   if rand == 1 then
     return '       𝑏𝑦 𝑑𝑢𝑚𝑏 𝑝𝑒𝑜𝑝𝑙𝑒, 𝑓𝑜𝑟 𝑑𝑢𝑚𝑏 𝑝𝑒𝑜𝑝𝑙𝑒        '
   elseif rand == 2 then
@@ -154,6 +152,58 @@ local r = {
         group = 'label',
         action = 'Telescope file_browser',
         key = 'b',
+      },
+      {
+        icon = '󰇈 ',
+        icon_hl = '@variable',
+        desc = 'Obsidian',
+        group = 'label',
+        action = function()
+          vim.cmd('Lazy load obsidian.nvim')
+
+          local pickers = require("telescope.pickers")
+          local finders = require("telescope.finders")
+          local actions = require "telescope.actions"
+          local action_state = require "telescope.actions.state"
+
+          local selection = {}
+          for i, v in ipairs(require 'obsidian_worspaces') do
+            selection[i] = v.name
+          end
+
+          pickers
+              .new({}, {
+                finder = finders.new_table({
+                  results = selection,
+                }),
+                attach_mappings = function(prompt_bufnr, _)
+                  actions.select_default:replace(function()
+                    actions.close(prompt_bufnr)
+                    local selection = action_state.get_selected_entry()
+                    -- print(selection[1])
+                    local ws = require 'obsidian_worspaces'
+                    local fp = ''
+                    for i, w in ipairs(ws) do
+                      if w.name == selection[1] then
+                        fp = w.path
+                        break
+                      end
+                    end
+                    if fp == '' then
+                      vim.notify("Bad obsidian filepath (empty path string found)", "error")
+                      return true
+                    end
+
+                    vim.cmd('cd ' .. fp)
+                    vim.cmd('enew')
+
+                  end)
+                  return true
+                end,
+              })
+              :find()
+        end,
+        key = 'o',
       },
       {
         icon = ' ',
