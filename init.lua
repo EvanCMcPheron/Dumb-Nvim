@@ -8,6 +8,8 @@ local default_scale = 0.5788
 
 -- Graphical frontend configuration
 if vim.g.neovide then
+  vim.keymap.set('n', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen')         -- Paste normal mode
+  vim.keymap.set('i', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen')         -- Paste normal mode
   vim.g.neovide_fullscreen = true
   vim.o.guifont = "FiraCode Nerd Font:h12"        -- 3270 Nerd Font Mono:h14  -- Alternative
   vim.keymap.set('v', '<C-c>', '"+y')         -- Copy

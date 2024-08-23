@@ -373,25 +373,26 @@ local r = {
   },
   {
     'rebelot/terminal.nvim',
-    keys = {
-      '<leader>ts',
-      '<leader>to',
-      '<leader>tO',
-      '<leader>tr',
-      '<leader>tR',
-      '<leader>tk',
-      '<leader>t]',
-      '<leader>t[',
-      '<leader>tl',
-      '<leader>tL',
-      '<leader>th',
-      '<leader>tH',
-      '<leader>tf',
-      '<leader>tg',
-    },
+    -- keys = {
+    --   '<leader>ts',
+    --   '<leader>to',
+    --   '<leader>tO',
+    --   '<leader>tr',
+    --   '<leader>tR',
+    --   '<leader>tk',
+    --   '<leader>t]',
+    --   '<leader>t[',
+    --   '<leader>tl',
+    --   '<leader>tL',
+    --   '<leader>th',
+    --   '<leader>tH',
+    --   '<leader>tf',
+    --   '<leader>tg',
+    -- },
     config = function()
       require('configs.terminal')
     end,
+    lazy = false,
   },
   -- {
   --   "Bryley/neoai.nvim",
@@ -602,6 +603,10 @@ local r = {
 
       -- see below for full list of options 👇
     },
+  },
+  {
+    'xiyaowong/transparent.nvim',
+    lazy = false,
   }
 }
 -- include themes in plugins list

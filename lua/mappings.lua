@@ -285,7 +285,7 @@ local r = {
     end, "Inline code companion" },
     ['<C-a>'] = { "<C-o><cmd>CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
     ['<C-BS>'] = { '<C-w>', '' },
-    ['<C-s>'] = { "<C-o><cmd>w<CR>i", "" },
+    ['<C-s>'] = { "<C-o><cmd>w<CR>a", "" },
     ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
     ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
     ['<A-S-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },

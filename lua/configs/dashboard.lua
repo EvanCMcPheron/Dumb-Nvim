@@ -154,6 +154,16 @@ local r = {
         key = 'b',
       },
       {
+        icon = ' ',
+        icon_hl = '@variable',
+        desc = 'Open Terminal',
+        group = 'label',
+        action = function()
+          require("terminal.mappings").run(nil, { layout = { open_cmd = "enew" } })()
+        end,
+        key = 't',
+      },
+      {
         icon = '󰇈 ',
         icon_hl = '@variable',
         desc = 'Obsidian',

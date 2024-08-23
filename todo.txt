@@ -1,17 +1,11 @@
  - Obsidian mappings
 
- - GlazeWM for window managment
+ - look into nvim remote
 
- - switch to fish
-
- - add starship for prompting
-
- - add flow launcher for launching stuff
 
  - create private github repo just to take notes on my windows setup
   ^- (kanata rebinding, nvim config, neovide, fish/nushell, starship, flow launcher, glazewm)
 
- - look into nvim remote
 
  - fix harpoons saving (difficulty level IMPOSSIBLE WTF)
  - add harpoon cycling with <C-h> and <C-S-h>
