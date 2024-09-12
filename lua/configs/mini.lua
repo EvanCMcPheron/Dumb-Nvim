@@ -2,7 +2,7 @@
 
 require('mini.ai').setup()
 require('mini.pairs').setup()
-require('mini.indentscope').setup()
+-- require('mini.indentscope').setup()
 require('mini.comment').setup()
 -- require('mini.notify').setup()
 -- require('mini.surround').setup {

@@ -607,6 +607,16 @@ local r = {
   {
     'xiyaowong/transparent.nvim',
     lazy = false,
+  },
+  {
+    'glacambre/firenvim',
+    build = ":call firenvim#install(0)"
+  },
+  {
+    'jbyuki/nabla.nvim',
+    ft = {
+      "markdown"
+    }
   }
 }
 -- include themes in plugins list

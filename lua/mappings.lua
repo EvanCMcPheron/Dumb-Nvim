@@ -256,6 +256,24 @@ local r = {
     end, "Inline code companion" },
     ['<leader>an'] = { "<cmd>CodeCompanionChat<CR>zH", "Create a new chat" },
     ['<leader>aa'] = { "<cmd>CodeCompanionActions<CR>", "AI Actions" },
+
+    ['<leader>o'] = { name = '+Obsidian' },
+    ['<leader>oo'] = {
+      "<cmd>ObsidianQuickSwitch<CR>",
+      "Open an obsidian note"
+    },
+    ['<leader>on'] = {
+      function()
+        local note = vim.fn.input("Note")
+        if note == "" then
+          return
+        end
+        vim.cmd('ObsidianNew ' .. note)
+      end,
+      "Create a new obsidian note"
+    },
+    ['<leader>ofv'] = { '<cmd>ObsidianFollowLink vsplit<CR>', 'Follow link vsplit'}
+
   },
   v = {
     ['<leader>a'] = { name = "AI Tooling" },
@@ -268,8 +286,8 @@ local r = {
     end, "Inline code companion" },
     ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
     ['<C-a>'] = { "<cmd>'<,'>CodeCompanionAdd<CR><cmd>CodeCompanionToggle<CR>", "Add visual selection to chat" },
-    ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
-    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
+    ['<a-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
+    ['<a-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
@@ -303,8 +321,8 @@ local r = {
     ['<C-a>'] = { "<ESC><cmd>CodeCompanionToggle<CR>zHi", "Toggle the chat window" },
     ['<C-s>'] = { "<ESC><cmd>w<CR>i", "" },
     ['<C-k>'] = { function() require('luasnip').expand() end, "Expand luasnips" },
-    ['<C-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
-    ['<C-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
+    ['<a-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
+    ['<a-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
     ['<C-A-h>'] = { require('smart-splits').move_cursor_left, "" },
     ['<C-A-j>'] = { require('smart-splits').move_cursor_down, "" },
     ['<C-A-k>'] = { require('smart-splits').move_cursor_up, "" },

@@ -13,5 +13,8 @@ local r = {
   -- gdscript = {
   --
   -- },
+  -- basedpyright = {},   -- Was giving exit code 103
+  -- pyright = {},
+  pylsp = {},
 }
 return r

@@ -1,5 +1,7 @@
  - Obsidian mappings
 
+ - Yank Bank!
+
  - look into nvim remote
 
 
