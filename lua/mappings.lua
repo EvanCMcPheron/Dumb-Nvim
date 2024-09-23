@@ -127,6 +127,9 @@ local r = {
     ['<C-p>'] = { "Autocomplete move up." },
 
     ['<leader>c'] = { name = '+code' },
+    ['<leader>cw'] = { function()
+      require('writers_mode')
+    end, "Set Writer Mode" },
     ['<leader>cs'] = { "<cmd>TSJToggle<CR>", "Split/unsplit text blocks" },
     ['<leader>cg'] = { "<cmd>ZenMode<CR>", "Toggle zen mode" },
     ['<leader>ct'] = { "<cmd>Twilight<CR>", "Toggle Twilight" },
@@ -272,7 +275,7 @@ local r = {
       end,
       "Create a new obsidian note"
     },
-    ['<leader>ofv'] = { '<cmd>ObsidianFollowLink vsplit<CR>', 'Follow link vsplit'}
+    ['<leader>ofv'] = { '<cmd>ObsidianFollowLink vsplit<CR>', 'Follow link vsplit' }
 
   },
   v = {

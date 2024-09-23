@@ -1,0 +1,28 @@
+vim.cmd("syntax on")
+
+vim.cmd("set noerrorbells")  -- This removes vim's default error bell, turning it off so that it doesn't annoy us
+vim.cmd("set textwidth=80")  -- Ensures that each line is not longer than 100 columns
+vim.cmd("set tabstop=4 softtabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set expandtab")
+vim.cmd("set smartindent")
+vim.cmd("set linebreak")
+vim.cmd("set number")
+vim.cmd("set showmatch")
+vim.cmd("set showbreak=+++")
+vim.cmd("set smartcase")
+vim.cmd("set noswapfile")
+vim.cmd("set undodir=~/.vim/undodir")
+vim.cmd("set undofile")
+vim.cmd("set incsearch")
+vim.cmd("set spell")
+vim.cmd("set showmatch")
+vim.cmd("set confirm")
+vim.cmd("set ruler")
+vim.cmd("set autochdir")
+vim.cmd("set autowriteall")
+vim.cmd("set undolevels=1000")
+vim.cmd("set backspace=indent,eol,start")
+
+vim.cmd("nnoremap <F5> :set linebreak<CR>")
+vim.cmd("nnoremap <C-F5> :set nolinebreak<CR>")

@@ -176,3 +176,5 @@ require('configs.dap')
 vim.g.godot_started = false
 
 vim.cmd('colorscheme ' .. require('colorscheme'))
+
+vim.fn.chdir('C:\\Users\\evani')
