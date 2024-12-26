@@ -117,14 +117,14 @@ local r = {
     event = "VeryLazy",
     opts = {},
   },
-  {
-    'anuvyklack/fold-preview.nvim',
-    requires = 'anuvyklack/keymap-amend.nvim',
-    lazy = false,
-    config = function()
-      require('fold-preview').setup(require('configs.fold-preview'))
-    end
-  },
+  -- {
+  --   'anuvyklack/fold-preview.nvim',
+  --   requires = 'anuvyklack/keymap-amend.nvim',
+  --   lazy = false,
+  --   config = function()
+  --     require('fold-preview').setup(require('configs.fold-preview'))
+  --   end
+  -- },
   {
     "willothy/flatten.nvim",
     config = true,
@@ -616,6 +616,13 @@ local r = {
     'jbyuki/nabla.nvim',
     ft = {
       "markdown"
+    }
+  },
+  {
+    "NStefan002/speedtyper.nvim",
+    cmd = "Speedtyper",
+    opts = {
+      -- your config
     }
   }
 }

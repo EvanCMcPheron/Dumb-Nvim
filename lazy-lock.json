@@ -64,6 +64,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "8fdfc320ce897638bf5c7b41b6f55e0656792d66" },
   "scratch.nvim": { "branch": "main", "commit": "b397b0f2191778bd642e9e8326c119f3f84ab508" },
   "smart-splits.nvim": { "branch": "master", "commit": "e5209df1aa04ee2d4910a25a289efe5a978dba2f" },
+  "speedtyper.nvim": { "branch": "main", "commit": "d73b3d2bdd574dd9c2e39e3558a4fe26f081d885" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "a46780830b576049c675680650f773bedfa8677a" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "terminal.nvim": { "branch": "master", "commit": "764b7c137512bcfba2e45cf3e25c08a9f4d3b733" },
