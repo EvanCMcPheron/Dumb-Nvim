@@ -490,21 +490,21 @@ local r = {
     'habamax/vim-godot',
     event = 'VimEnter',
   },
-  -- {
-  --   "olimorris/codecompanion.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "nvim-telescope/telescope.nvim", -- Optional
-  --     {
-  --       "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
-  --       opts = {},
-  --     },
-  --   },
-  --   cmd = { "CodeCompanion" },
-  --   event = { "BufReadPost", "BufNewFile" }, -- Lazy-load on buffer events
-  --   config = require('configs.code_companion'),
-  -- },
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- Optional
+      {
+        "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
+        opts = {},
+      },
+    },
+    cmd = { "CodeCompanion" },
+    event = { "BufReadPost", "BufNewFile" }, -- Lazy-load on buffer events
+    config = require('configs.code_companion'),
+  },
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
