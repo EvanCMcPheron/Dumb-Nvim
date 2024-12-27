@@ -203,7 +203,7 @@ local r = {
     ['<leader><leader>l'] = { require('smart-splits').swap_buf_right, "Swap winow right" },
 
     ['<leader>t'] = { name = "+terminal" },
-    ['<leader>ts'] = { term_map.operator_send, { expr = true }, "Operator send (not sure tbh)" },
+    -- ['<leader>ts'] = { term_map.operator_send, { expr = true }, "Operator send (not sure tbh)" },
     ['<leader>to'] = { term_map.toggle, "Toggle Terminal" },
     ['<leader>tO'] = { term_map.open({ open_cmd = "enew" }), "Toggle Terminal in buffer" },
     ['<leader>tr'] = { term_map.run, "Create a new terminal" },
