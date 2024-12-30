@@ -33,6 +33,7 @@ local r = {
   },
   {
     "ThePrimeagen/harpoon",
+    commit = 'e76cb03',
     branch = "harpoon2",
     keys = {
       '<leader>fh',
