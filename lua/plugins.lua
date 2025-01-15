@@ -625,7 +625,7 @@ local r = {
     opts = {
       -- your config
     }
-  }
+  },
 }
 -- include themes in plugins list
 local t = require('themes')

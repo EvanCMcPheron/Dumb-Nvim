@@ -16,5 +16,6 @@ local r = {
   -- basedpyright = {},   -- Was giving exit code 103
   -- pyright = {},
   pylsp = {},
+  gopls = {},
 }
 return r

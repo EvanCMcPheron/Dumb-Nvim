@@ -130,6 +130,7 @@ local r = {
     ['<leader>cw'] = { function()
       require('writers_mode')
     end, "Set Writer Mode" },
+    ['<leader>ci'] = { "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { 0 })<CR>", "Toggle Inlay Hints" },
     ['<leader>cs'] = { "<cmd>TSJToggle<CR>", "Split/unsplit text blocks" },
     ['<leader>cg'] = { "<cmd>ZenMode<CR>", "Toggle zen mode" },
     ['<leader>ct'] = { "<cmd>Twilight<CR>", "Toggle Twilight" },
