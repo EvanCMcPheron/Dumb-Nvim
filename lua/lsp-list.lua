@@ -17,5 +17,6 @@ local r = {
   -- pyright = {},
   pylsp = {},
   gopls = {},
+  wgsl_analyzer = {},
 }
 return r

@@ -65,6 +65,13 @@ Search and Replace within Selection Word (Visual) | <C-b>
 ##Autocomplete @lsp @cmp
 Autocomplete move down. | <C-n>
 Autocomplete move up. | <C-p>
+Go to declaration | [n] gD
+Go to definition | [n] gd
+LSP Hover Panel | [n] K / <C-k>
+Go to type definition | [n] <leader>D
+Rename everywhere | [n] <leader>rn 
+Code Actions | [n,v] <leader>ca
+List all references to symbol | [n] gr
 
 ##Appearance
 Toggle zen mode | <leader>cz
