@@ -1,16 +1,11 @@
  - Yank Bank!
 
+ - ai cmp / vectorcode
+
  - look into nvim remote
 
 
- - create private github repo just to take notes on my windows setup
-  ^- (kanata rebinding, nvim config, neovide, fish/nushell, starship, flow launcher, glazewm)
-
-
- - fix harpoons saving (difficulty level IMPOSSIBLE WTF)
  - add harpoon cycling with <C-h> and <C-S-h>
-
- - Code folding is broken?
 
  - Grammar checking
 
