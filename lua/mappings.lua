@@ -282,17 +282,17 @@ local r = {
   },
   v = {
     ['<leader>a'] = { name = "AI Tooling" },
-    ['<leader>ai'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
-    ['<C-;>'] = { function()
-      local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
-      if message ~= "" then
-        vim.cmd("'<,'>CodeCompanion " .. message)
-      end
-    end, "Inline code companion" },
-    ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
-    ['<C-a>'] = { "<cmd>'<,'>CodeCompanionAdd<CR><cmd>CodeCompanionToggle<CR>", "Add visual selection to chat" },
-    ['<a-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
-    ['<a-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
+    -- ['<leader>ai'] = { "<cmd>'<,'>CodeCompanion<CR>", "Inline code companion with selected context" },
+    -- ['<C-;>'] = { function()
+    --   local message = vim.fn.input({ prompt = "inline prompt (eg. /commit)", })
+    --   if message ~= "" then
+    --     vim.cmd("'<,'>CodeCompanion " .. message)
+    --   end
+    -- end, "Inline code companion" },
+    -- ['<leader>aa'] = { "<cmd>'<,'>CodeCompanionActions<CR>", "AI Actions" },
+    -- ['<C-a>'] = { "<cmd>'<,'>CodeCompanionAdd<CR><cmd>CodeCompanionToggle<CR>", "Add visual selection to chat" },
+    -- ['<a-l>'] = { function() require('luasnip').jump(1) end, "Snippet Jump" },
+    -- ['<a-h>'] = { function() require('luasnip').jump(-1) end, "Snippet Jump Back" },
   },
   s = {
     ["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]],
