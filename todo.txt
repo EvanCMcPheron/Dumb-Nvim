@@ -1,5 +1,7 @@
  - Yank Bank!
 
+ - hover.nvim
+
  - ai cmp / vectorcode
 
  - look into nvim remote

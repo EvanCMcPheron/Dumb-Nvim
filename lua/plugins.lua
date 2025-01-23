@@ -510,10 +510,10 @@ local r = {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
-  {
-    "tpope/vim-surround",
-    lazy = false,
-  },
+  -- {
+  --   "tpope/vim-surround",
+  --   lazy = false,
+  -- },
   -- NOT USING this because code companion.nvim seems like a much sleeker option
   -- {
   --   "nomnivore/ollama.nvim",
@@ -626,10 +626,29 @@ local r = {
       -- your config
     }
   },
+  {
+    "NStefan002/visual-surround.nvim",
+    lazy = false,
+    config = function()
+      require("visual-surround").setup(
+        {
+          -- if set to false, the user must manually add keymaps
+          use_default_keymaps = true,
+          -- will be ignored if use_default_keymaps is set to false
+          surround_chars = { "{", "}", "[", "]", "(", ")", "'", '"', "`", "<", ">" },
+          -- delete surroundings when the selection block starts and ends with surroundings
+          enable_wrapped_deletion = false,
+          -- whether to exit visual mode after adding surround
+          exit_visual_mode = false,
+        }
+      )
+      -- [optional] custom keymaps
+    end,
+  },
 }
 -- include themes in plugins list
 local t = require('themes')
-for i, v in ipairs(t) do
+for _, v in ipairs(t) do
   r[#r + 1] = {
     v,
     lazy = false,

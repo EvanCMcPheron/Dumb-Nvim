@@ -80,7 +80,7 @@
   "vim-moonfly-colors": { "branch": "master", "commit": "b5d91ed970c037e849c60a05f800c7e1cd9b2952" },
   "vim-nightfly-colors": { "branch": "master", "commit": "3fe724c616f5285bafbc762dd1e9830ae1815a1e" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "virtual-types.nvim": { "branch": "master", "commit": "d652ec0b1781bbb0e83dc588fb62d638006cf61e" },
+  "visual-surround.nvim": { "branch": "main", "commit": "78faad02f1ec36a4243f108a715b1372fcdcc0b1" },
   "which-key.nvim": { "branch": "main", "commit": "8ab96b38a2530eacba5be717f52e04601eb59326" },
   "zen-mode.nvim": { "branch": "main", "commit": "863f150ca321b3dd8aa1a2b69b5f411a220e144f" }
 }
