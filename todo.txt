@@ -1,5 +1,7 @@
  - Yank Bank!
 
+ - switch to COQ, nvim-cmp keeps stopping to work
+
  - hover.nvim
 
  - ai cmp / vectorcode
