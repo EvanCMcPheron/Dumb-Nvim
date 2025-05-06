@@ -75,7 +75,7 @@ vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
 -- Setup snippets
 local ls = require("luasnip")
 
-ls.setup(require('configs.luasnip'))
+ls.setup({}) -- require('configs.luasnip'))
 
 for suffix, snippets in pairs(require('snippets')) do
   ls.add_snippets(suffix, snippets)
@@ -220,4 +220,6 @@ vim.g.godot_started = false
 
 vim.cmd('colorscheme ' .. require('colorscheme'))
 
-vim.fn.chdir('C:\\Users\\evani')
+if vim.loop.os_uname().sysname == "Widnows" then
+  vim.fn.chdir('C:\\Users\\evani')
+end
