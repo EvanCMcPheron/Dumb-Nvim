@@ -49,6 +49,7 @@ local r = {
   },
   {
     "folke/which-key.nvim",
+    version = "2.*",
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
