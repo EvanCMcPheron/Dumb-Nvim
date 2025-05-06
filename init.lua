@@ -3,6 +3,9 @@ local default_textwidth = 80
 local default_tabwidth = 2
 local leader = " "
 local default_scale = 0.5788
+if vim.loop.os_uname().sysname == 'Linux' then
+  default_scale = 0.8
+end
 
 -- End of Properties
 
@@ -10,7 +13,9 @@ local default_scale = 0.5788
 if vim.g.neovide then
   vim.keymap.set('n', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen') -- Paste normal mode
   vim.keymap.set('i', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen') -- Paste normal mode
-  vim.g.neovide_fullscreen = true
+  if vim.loop.os_uname().sysname ~= 'Linux' then
+    vim.g.neovide_fullscreen = true
+  end
   vim.o.guifont = "FiraCode Nerd Font:h12"                                                         -- 3270 Nerd Font Mono:h14  -- Alternative
   vim.keymap.set('v', '<C-c>', '"+y')                                                              -- Copy
   vim.keymap.set('n', '<C-v>', '"+P')                                                              -- Paste normal mode
