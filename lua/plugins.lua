@@ -646,10 +646,39 @@ local r = {
     end,
   },
   {
+    'milanglacier/minuet-ai.nvim',
+    lazy = false,
+    config = function()
+      vim.cmd("let $TERM = 'adsf'")
+      require('minuet').setup {
+        provider = 'openai_fim_compatible',
+        n_completions = 2, -- recommend for local model for resource saving
+        -- I recommend you start with a small context window firstly, and gradually
+        -- increase it based on your local computing power.
+        context_window = 512,
+        provider_options = {
+          openai_fim_compatible = {
+            api_key = 'TERM', -- needs to be non-null, but can be arbitrary
+            name = 'Ollama',
+            end_point = 'http://localhost:11434/v1/completions',
+            model = 'qwen2.5-coder:3b',
+            optional = {
+              max_tokens = 256,
+              top_p = 0.9,
+            },
+          },
+        },
+      }
+    end,
+  },
+  {
     'saghen/blink.cmp',
     lazy = false,
     -- optional: provides snippets for the snippet source
-    dependencies = 'rafamadriz/friendly-snippets',
+    dependencies = {
+      'rafamadriz/friendly-snippets',
+      'milanglacier/minuet-ai.nvim',
+    },
 
     -- use a release tag to download pre-built binaries
     version = '*',
@@ -658,35 +687,48 @@ local r = {
     -- If you use nix, you can build from source using latest nightly rust with:
     -- build = 'nix run .#build-plugin',
 
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
-    opts = {
-      -- 'default' for mappings similar to built-in completion
-      -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-      -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-      -- See the full "keymap" documentation for information on defining your own keymap.
-      keymap = {
-        preset = 'super-tab'
-      },
-
-      appearance = {
-        -- Sets the fallback highlight groups to nvim-cmp's highlight groups
-        -- Useful for when your theme doesn't support blink.cmp
-        -- Will be removed in a future release
-        use_nvim_cmp_as_default = true,
-        -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-        -- Adjusts spacing to ensure icons are aligned
-        nerd_font_variant = 'mono'
-      },
-
-      -- Default list of enabled providers defined so that you can extend it
-      -- elsewhere in your config, without redefining it, due to `opts_extend`
-      sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
-      },
-    },
+    -- ---@module 'blink.cmp'
+    -- ---@type blink.cmp.Config
+    -- opts = {
+    --   -- 'default' for mappings similar to built-in completion
+    --   -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+    --   -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+    --   -- See the full "keymap" documentation for information on defining your own keymap.
+    --   keymap = {
+    --     -- Manually invoke minuet completion.
+    --     preset = 'super-tab',
+    --     -- ['<A-y>'] = require('minuet').make_blink_map(),
+    --   },
+    --
+    --   appearance = {
+    --     -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+    --     -- Useful for when your theme doesn't support blink.cmp
+    --     -- Will be removed in a future release
+    --     use_nvim_cmp_as_default = true,
+    --     -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+    --     -- Adjusts spacing to ensure icons are aligned
+    --     nerd_font_variant = 'mono'
+    --   },
+    --
+    --   -- Default list of enabled providers defined so that you can extend it
+    --   -- elsewhere in your config, without redefining it, due to `opts_extend`
+    --   sources = {
+    --     -- Enable minuet for autocomplete
+    --     default = { 'lsp', 'path', 'buffer', 'snippets'},--, 'minuet' },
+    --     -- For manual completion only, remove 'minuet' from default
+    --     -- providers = {
+    --     --   minuet = {
+    --     --     name = 'minuet',
+    --     --     module = 'minuet.blink',
+    --     --     score_offset = 8, -- Gives minuet higher priority among suggestions
+    --     --   },
+    --     -- },
+    --   },
+    --   -- Recommended to avoid unnecessary request
+    --   completion = { trigger = { prefetch_on_insert = false } },
+    -- },
     opts_extend = { "sources.default" }
-  }
+  },
 }
 -- include themes in plugins list
 local t = require('themes')
@@ -698,3 +740,4 @@ for _, v in ipairs(t) do
   }
 end
 return r
+

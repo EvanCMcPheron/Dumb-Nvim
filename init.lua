@@ -8,16 +8,16 @@ local default_scale = 0.5788
 
 -- Graphical frontend configuration
 if vim.g.neovide then
-  vim.keymap.set('n', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen')         -- Paste normal mode
-  vim.keymap.set('i', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen')         -- Paste normal mode
+  vim.keymap.set('n', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen') -- Paste normal mode
+  vim.keymap.set('i', '<A-f>', '<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen') -- Paste normal mode
   vim.g.neovide_fullscreen = true
-  vim.o.guifont = "FiraCode Nerd Font:h12"        -- 3270 Nerd Font Mono:h14  -- Alternative
-  vim.keymap.set('v', '<C-c>', '"+y')         -- Copy
-  vim.keymap.set('n', '<C-v>', '"+P')         -- Paste normal mode
-  vim.keymap.set('v', '<C-v>', '"+P')         -- Paste visual mode
-  vim.keymap.set('c', '<C-v>', '<C-R>+')      -- Paste command mode
-  vim.keymap.set('t', '<C-v>', '<C-\\><C-n>"+pa')  -- Paste terminal mode
-  vim.keymap.set('i', '<C-v>', '<C-\\><C-n>"+pa') -- Paste insert mode
+  vim.o.guifont = "FiraCode Nerd Font:h12"                                                         -- 3270 Nerd Font Mono:h14  -- Alternative
+  vim.keymap.set('v', '<C-c>', '"+y')                                                              -- Copy
+  vim.keymap.set('n', '<C-v>', '"+P')                                                              -- Paste normal mode
+  vim.keymap.set('v', '<C-v>', '"+P')                                                              -- Paste visual mode
+  vim.keymap.set('c', '<C-v>', '<C-R>+')                                                           -- Paste command mode
+  vim.keymap.set('t', '<C-v>', '<C-\\><C-n>"+pa')                                                  -- Paste terminal mode
+  vim.keymap.set('i', '<C-v>', '<C-\\><C-n>"+pa')                                                  -- Paste insert mode
   vim.g.neovide_scale_factor = default_scale
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
@@ -69,9 +69,9 @@ vim.cmd("set relativenumber")
 vim.g.smarttab = true
 
 -- Autocmd to allways have highlighting enabled
-vim.api.nvim_create_autocmd( {"BufEnter", "BufWinEnter", "BufFilePost"}, {
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufFilePost" }, {
   pattern = "*",
-  callback = function ()
+  callback = function()
     vim.cmd("TSEnable highlight")
   end
 

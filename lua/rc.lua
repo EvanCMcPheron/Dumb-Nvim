@@ -11,6 +11,46 @@
 local harpoon = require('harpoon')
 harpoon:setup({})
 
+require('blink.cmp').setup {
+  -- 'default' for mappings similar to built-in completion
+  -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+  -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+  -- See the full "keymap" documentation for information on defining your own keymap.
+  keymap = {
+    -- Manually invoke minuet completion.
+    preset = 'super-tab',
+    ['<A-y>'] = require('minuet').make_blink_map(),
+  },
+
+  appearance = {
+    -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+    -- Useful for when your theme doesn't support blink.cmp
+    -- Will be removed in a future release
+    use_nvim_cmp_as_default = true,
+    -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+    -- Adjusts spacing to ensure icons are aligned
+    nerd_font_variant = 'mono'
+  },
+
+  -- Default list of enabled providers defined so that you can extend it
+  -- elsewhere in your config, without redefining it, due to `opts_extend`
+  sources = {
+    -- Enable minuet for autocomplete
+    default = { 'lsp', 'path', 'buffer', 'snippets' },    --, 'minuet' },
+    -- For manual completion only, remove 'minuet' from default
+    providers = {
+      minuet = {
+        name = 'minuet',
+        module = 'minuet.blink',
+        score_offset = 8, -- Gives minuet higher priority among suggestions
+      },
+    },
+  },
+  -- Recommended to avoid unnecessary request
+  completion = { trigger = { prefetch_on_insert = false } },
+}
+
+
 -- basic telescope configuration
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)
