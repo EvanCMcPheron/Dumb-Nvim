@@ -730,6 +730,15 @@ local r = {
     -- },
     opts_extend = { "sources.default" }
   },
+  {
+    "dmtrKovalenko/fff.nvim",
+    build = "cargo build --release",
+    -- or if you are using nixos
+    -- build = "nix run .#release",
+    opts = {
+      -- pass here all the options
+    },
+  },
 }
 -- include themes in plugins list
 local t = require('themes')
@@ -741,4 +750,3 @@ for _, v in ipairs(t) do
   }
 end
 return r
-
