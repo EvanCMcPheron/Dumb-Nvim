@@ -190,15 +190,15 @@ local r = {
     ['<leader>ss'] = { "<cmd>SessionsSave<CR>", "Save current session" },
     ['<leader>sl'] = { "<cmd>SessionsLoad<CR>", "Load session attatched to current dir" },
 
-    ['<A-h>'] = { require('smart-splits').resize_left, "Resize window left" },
-    ['<A-j>'] = { require('smart-splits').resize_down, "Resize window down" },
-    ['<A-k>'] = { require('smart-splits').resize_up, "Resize window up" },
-    ['<A-l>'] = { require('smart-splits').resize_right, "Resize window right" },
+    ['<A-S-h>'] = { require('smart-splits').resize_left, "Resize window left" },
+    ['<A-S-j>'] = { require('smart-splits').resize_down, "Resize window down" },
+    ['<A-S-k>'] = { require('smart-splits').resize_up, "Resize window up" },
+    ['<A-S-l>'] = { require('smart-splits').resize_right, "Resize window right" },
 
-    ['<A-S-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
-    ['<A-S-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
-    ['<A-S-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
-    ['<A-S-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
+    ['<A-h>'] = { require('smart-splits').move_cursor_left, "Move cursor left" },
+    ['<A-j>'] = { require('smart-splits').move_cursor_down, "Move cursor down" },
+    ['<A-k>'] = { require('smart-splits').move_cursor_up, "Move cursor up" },
+    ['<A-l>'] = { require('smart-splits').move_cursor_right, "Move cursor right" },
 
     ['<leader><leader>h'] = { require('smart-splits').swap_buf_left, "Swap window left" },
     ['<leader><leader>j'] = { require('smart-splits').swap_buf_down, "Swap window right" },
