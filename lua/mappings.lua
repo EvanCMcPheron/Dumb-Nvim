@@ -131,12 +131,14 @@ local r = {
     ['<leader>cw'] = { function()
       require('writers_mode')
     end, "Set Writer Mode" },
+    ["<leader>ct"] = { "<cmd>Trouble diagnostics toggle focus=true pinned=true win.position=bottom<cr>", "Diagnostics (Trouble)"},
+    ["<leader>cT"] = { "<cmd>Trouble diagnostics toggle focus=true pinned=true win.relative=win win.position=bottom filter.buf=0<cr>", "Buffer Diagnostics (Trouble)"},
     ['<leader>ci'] = { "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { 0 })<CR>", "Toggle Inlay Hints" },
     ['<leader>cl'] = { "<cmd>LspRestart<CR>", "Restart LSP" },
     ['<leader>cs'] = { "<cmd>TSJToggle<CR>", "Split/unsplit text blocks" },
     ['<leader>cg'] = { "<cmd>ZenMode<CR>", "Toggle zen mode" },
-    ['<leader>ct'] = { "<cmd>Twilight<CR>", "Toggle Twilight" },
     ['<leader>ch'] = { "<cmd>setlocal foldmethod=indent<CR>", "Enable cold folding" },
+    ['<leader>cH'] = { "<cmd>setlocal foldmethod=syntax<CR>", "Disable cold folding" },
     ['<leader>cu'] = { "<cmd>UndotreeToggle<CR>", "Undo Tree Toggle" },
     ['<leader>cp'] = { "<cmd>TodoTelescope<CR>", "Todo Comments Telescope" },
     ['<leader>cd'] = { name = "+rust stuff" },

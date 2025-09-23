@@ -4,7 +4,7 @@ local default_tabwidth = 2
 local leader = " "
 local default_scale = 0.5788
 if vim.loop.os_uname().sysname == 'Linux' then
-  default_scale = 1
+  default_scale = 1.21
 end
 
 -- End of Properties

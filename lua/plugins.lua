@@ -739,6 +739,13 @@ local r = {
       -- pass here all the options
     },
   },
+  {
+  "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+    },
+  }
 }
 -- include themes in plugins list
 local t = require('themes')
