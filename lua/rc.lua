@@ -69,9 +69,6 @@ local function toggle_telescope(harpoon_files)
   }):find()
 end
 
-vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-  { desc = "Open harpoon window" })
-
 -- Setup snippets
 local ls = require("luasnip")
 

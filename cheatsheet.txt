@@ -185,7 +185,6 @@ Open file/folder with default system application [normal] | <C-o>
 Go to parent directory | g
 Go to parent directory [normal] | <C-g>
 Go to home directory | e
-Go to home directory [normal] | <C-e>
 Go to current working directory (cwd) | w
 Go to current working directory (cwd) [normal] | <C-w>
 Change nvim's cwd to selected folder/file(parent) | t
