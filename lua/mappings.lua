@@ -39,7 +39,7 @@ local r = {
     ["<leader>f"] = { name = "+navigation" },
     ["<space>fb"] = { "<cmd>Telescope file_browser<CR>", "File Browser" },
     -- ["<space>ff"] = {"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", "File Browser" },
-    ["<space>ff"] = { function () require("fff").find_files() end, "Open File Picker"},
+    ["<space>ff"] = { function() require("fff").find_files() end, "Open File Picker" },
     -- ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find File" },
     ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
     ["<leader>ft"] = { "<cmd>Telescope help_tags<CR>", "Find Help tags" },
@@ -128,11 +128,12 @@ local r = {
     ['<C-p>'] = { "Autocomplete move up." },
 
     ['<leader>c'] = { name = '+code' },
+    ["<leader>ck"] = { require('codedocs').insert_docs, "Insert docstring" },
     ['<leader>cw'] = { function()
       require('writers_mode')
     end, "Set Writer Mode" },
-    ["<leader>cT"] = { "<cmd>Trouble diagnostics toggle focus=true pinned=true win.position=bottom<cr>", "Diagnostics (Trouble)"},
-    ["<leader>ct"] = { "<cmd>Trouble diagnostics toggle focus=true pinned=true win.relative=win win.position=bottom filter.buf=0<cr>", "Buffer Diagnostics (Trouble)"},
+    ["<leader>cT"] = { "<cmd>Trouble diagnostics toggle focus=true pinned=true win.position=bottom<cr>", "Diagnostics (Trouble)" },
+    ["<leader>ct"] = { "<cmd>Trouble diagnostics toggle focus=true pinned=true win.relative=win win.position=bottom filter.buf=0<cr>", "Buffer Diagnostics (Trouble)" },
     ['<leader>ci'] = { "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { 0 })<CR>", "Toggle Inlay Hints" },
     ['<leader>cl'] = { "<cmd>LspRestart<CR>", "Restart LSP" },
     ['<leader>cs'] = { "<cmd>TSJToggle<CR>", "Split/unsplit text blocks" },

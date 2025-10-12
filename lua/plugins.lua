@@ -740,11 +740,18 @@ local r = {
     },
   },
   {
-  "folke/trouble.nvim",
+    "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
     keys = {
     },
+  },
+  {
+    "jeangiraldoo/codedocs.nvim",
+    -- Remove the 'dependencies' section if you don't plan on using nvim-treesitter
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter"
+    }
   }
 }
 -- include themes in plugins list
