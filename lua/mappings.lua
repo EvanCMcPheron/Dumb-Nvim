@@ -128,7 +128,7 @@ local r = {
     ['<C-p>'] = { "Autocomplete move up." },
 
     ['<leader>c'] = { name = '+code' },
-    ["<leader>ck"] = { require('codedocs').insert_docs, "Insert docstring" },
+    ["<leader>ck"] = { require('neogen').generate, "Insert docstring" },
     ['<leader>cw'] = { function()
       require('writers_mode')
     end, "Set Writer Mode" },

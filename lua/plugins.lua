@@ -747,11 +747,12 @@ local r = {
     },
   },
   {
-    "jeangiraldoo/codedocs.nvim",
-    -- Remove the 'dependencies' section if you don't plan on using nvim-treesitter
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter"
-    }
+    "danymat/neogen",
+    config = function()
+      require("neogen").setup { snippet_engine = "nvim" }
+    end,
+    -- Uncomment next line if you want to follow only stable versions
+    version = "*"
   }
 }
 -- include themes in plugins list
