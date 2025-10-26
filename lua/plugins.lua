@@ -753,6 +753,22 @@ local r = {
     end,
     -- Uncomment next line if you want to follow only stable versions
     version = "*"
+  },
+  {
+    'RaafatTurki/hex.nvim',
+    lazy=false,
+    config = function()
+      require("hex").setup()
+    end
+  },
+  {
+    "sainnhe/everforest",
+    lazy=false,
+    config = function()
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = 'hard'
+      vim.g.everforest_dim_inactive_windows = true
+    end
   }
 }
 -- include themes in plugins list
