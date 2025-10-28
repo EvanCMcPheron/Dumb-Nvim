@@ -42,11 +42,13 @@ end
 vim.cmd('colorscheme vim')
 vim.o.termguicolors = false
 
--- disable netrw at the very start of your init.lua (required by nvim-tree)
+-- disable netrw at the very start of your init.lua (required by nvim-tree) 
 vim.go.fillchars = 'eob: '
 -- vim.cmd("map ; :")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.textwidth = 80
 
 vim.opt.termguicolors = true
 
